@@ -1,0 +1,341 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-15 10:51:40
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-07-20 10:05:10
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>第十一课：光影和着色器</title>
+        <style type="text/css">
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            #canvas-frame {
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                height: 100vh;
+                background-color: #eeeeee;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="canvas-frame"></div>
+        <div id="stats-output"></div>
+        <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+        <script src="../stat.js"></script>
+        <script src="../OrbitControls.js"></script>
+        <script src="../Lensflare.js"></script>
+        <!-- GLSL着色器语言 顶点着色器-->
+        <!-- 关于GLSL： https://developer.mozilla.org/zh-CN/docs/Games/Techniques/3D_on_the_web/GLSL_Shaders -->
+        <script type="x-shader/x-vertex" id="vertexShader">            
+			varying vec3 vWorldPosition;
+			void main() {
+				vec4 worldPosition = modelMatrix * vec4( position, 1.0 );
+				vWorldPosition = worldPosition.xyz;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+			}
+        </script>
+        <!-- GLSL着色器语言 片段着色器-->
+        <script type="x-shader/x-vertex" id="fragmentShader">            			
+			uniform vec3 topColor;
+			uniform vec3 bottomColor;
+			uniform float offset;
+			uniform float exponent;
+			varying vec3 vWorldPosition;
+			void main() {
+				float h = normalize( vWorldPosition + offset ).y;
+				gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( max( h, 0.0 ), exponent ), 0.0 ) ), 1.0 );
+			}	
+        </script>
+        <script>
+            //初始化threejs ， 和渲染器
+            var renderer;
+            function initThree() {
+                width = document.getElementById("canvas-frame").clientWidth;
+                height = document.getElementById("canvas-frame").clientHeight;
+                renderer = new THREE.WebGLRenderer({
+                    antialias: true,
+                });
+                renderer.shadowMap.enabled = true;
+                renderer.setSize(width, height);
+                document.getElementById("canvas-frame").appendChild(renderer.domElement);
+                renderer.setClearColor(0xffffff, 1.0);
+            }
+            //初始化相机
+            var camera;
+            function initCamera() {
+                camera = new THREE.PerspectiveCamera(
+                    45,
+                    width / height,
+                    1,
+                    10000
+                );
+                camera.position.x = -800;
+                camera.position.y = 300;
+                camera.position.z = 1200;
+                camera.up.x = 0;
+                camera.up.y = 1;
+                camera.up.z = 0;
+                camera.lookAt(0,0,0);
+            }
+            //初始化场景    
+            var scene;
+            function initScene() {
+                scene = new THREE.Scene();
+            }
+            //初始化光源
+            var light;
+            function initLight() {
+                //Light:基类光， DirectionalLight ： 方向光，  AmbientLight：环境光，AreaLight:区域光，PointLight:点光，SpotLight:聚光灯
+                light = new THREE.DirectionalLight(0xaabbff, 0.9);
+                light.position.set(500, 500, 500);  //光源方向
+                light.castShadow = true;
+                 // 设置平行光的的阴影属性，即一个长方体的长宽高，在设定值的范围内的物体才会产生阴影
+                const d = 140;
+                light.shadow.camera.left = -d;
+                light.shadow.camera.right = d;
+                light.shadow.camera.top = d;
+                light.shadow.camera.bottom = -d;
+                light.shadow.camera.near = 2;
+                light.shadow.camera.far = 8000;
+                light.shadow.mapSize.x = 1024;  // 定义阴影贴图的宽度和高度,必须为2的整数此幂
+                light.shadow.mapSize.y = 1024;  // 较高的值会以计算时间为代价提供更好的阴影质量
+                scene.add(light);
+
+                const lightHelper = new THREE.DirectionalLightHelper(light, 300);  // 创建一个平行光源帮助器，帮助我们看到该光源的位置以及辐射范围
+                scene.add(lightHelper);  // 将此帮助器添加进场景
+
+                // 用于模仿太阳光的图片图片,地址可以换成本地路径
+                const textureLoader = new THREE.TextureLoader();
+                const textureFlare0 = textureLoader.load("http://renyuan.bos.xyz/lensflare0.png");
+                const textureFlare3 = textureLoader.load("http://renyuan.bos.xyz/lensflare3.png");
+                const lensflare = new THREE.Lensflare(textureFlare3, 60, 0.6);   // 实例化一个屏幕炫光对象
+                lensflare.addElement(new THREE.LensflareElement(textureFlare0, 700, 0, light.color));
+                lensflare.addElement(new THREE.LensflareElement(textureFlare3, 60, 0.6));
+                lensflare.addElement(new THREE.LensflareElement(textureFlare3, 70, 0.7));
+                lensflare.addElement(new THREE.LensflareElement(textureFlare3, 120, 0.9));
+                lensflare.addElement(new THREE.LensflareElement(textureFlare3, 70, 1));
+                light.add(lensflare)
+
+            }
+            //初始化物体    
+            var cube;
+            function initObject(x = 0,y = 0,z = 0) {
+                var geometry = new THREE.BoxGeometry(100,100,100);
+                //材质
+                var material = new THREE.MeshLambertMaterial({
+                    color:'gray'
+                });
+                cube = new THREE.Mesh(geometry, material);
+                cube.position.x = x;
+                cube.position.y = y;
+                cube.position.z = z;
+                cube.castShadow = true;
+                scene.add(cube);
+               
+            }
+
+            //网格
+            function initGrid(){
+                // 网格的边长是1000，每个小网格的边长是50
+                var grid = new THREE.GridHelper( 1000, 50 ,'blue','gray' );
+                scene.add( grid );
+            }
+
+            // gui
+            var controls = new function () {
+                this.rotationSpeed = 0.02;
+            }
+            var gui = new dat.GUI();
+            gui.add(controls, 'rotationSpeed', 0, 0.5);
+
+            //物体旋转跟随鼠标旋转
+            var startX, startY,endX,endY;
+            var isLeftDown = false;
+            var offsetX = 0;
+            var offsetY = 0;
+            function addTouchListener() {         
+                document.onmousedown = function (event) {
+                    startX = event.clientX;
+                    startY = event.clientY;
+                    isLeftDown = event.button == 0;
+                };
+                document.onmouseup = function(event){
+                    isLeftDown = isRightDown = false
+                };
+                
+                //禁止右键默认 context 菜单
+                document.oncontextmenu= function(event){ 
+                    return false
+                }
+                document.onmousemove = function (event) {
+                    //左键按下
+                    if (isLeftDown) {
+                        offsetX = event.clientX - startX
+                        offsetY = event.clientY - startY
+                        if(offsetX > 50 ){
+                            cube.rotation.z = cube.rotation.z + controls.rotationSpeed;
+                        }else if(offsetX < -50){
+                            cube.rotation.z = cube.rotation.z - controls.rotationSpeed;
+                        }
+                        if(offsetY > 50){
+                            cube.rotation.x = cube.rotation.x + controls.rotationSpeed;
+                        }else if(offsetY < -50){
+                            cube.rotation.x = cube.rotation.x - controls.rotationSpeed;
+                        }
+                        endX = event.clientX
+                        endY = event.clientY;   
+                    }
+                }
+            }
+
+            //OrbitControls 相机控件
+            function initOrbit(){
+                var orbit = new THREE.OrbitControls(camera, renderer.domElement); 
+                orbit.target = new THREE.Vector3(0,0,0); // 设置中心点
+                orbit.minPolarAngle  = 0; // 最小上下旋转角度
+                orbit.maxPolarAngle = Math.PI; // 最大上下旋转角度
+                orbit.minDistance = 140; // 距离中心点最小距离
+                orbit.maxDistance = 10000; // 距离中心点最大距离
+                orbit.zoomSpeed = 0.3; // 缩放速度
+                orbit.rotateSpeed = 0.3; // 旋转速度
+                // orbit.enabled = false //是否启用
+                // orbit.addEventListener('change',()=>{
+                    
+                // })
+            }
+            
+            //光投射器
+            var raycaster;
+            var rayMouse;
+            function initRaycaster(params) {
+                raycaster = new THREE.Raycaster();
+                rayMouse = new THREE.Vector2();  //二维向量
+                document.addEventListener( 'dblclick', function(){
+                    rayMouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                    rayMouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+                    renderRaycasterObj()
+                }, false )
+            }   
+
+            // 渲染光投射器，根据光投射器判断鼠标所在向量方向是否穿过物体
+            var selectdObjList = []; //选中的列表
+            function renderRaycasterObj() {
+                raycaster.setFromCamera(rayMouse, camera);
+                var intersects = raycaster.intersectObjects(scene.children);           
+                if (intersects.length > 0) {                     
+                    cube = intersects[0].object
+                    const index = selectdObjList.findIndex(v=>v == cube.uuid)
+                    if(index > -1){
+                        cube.hasChecked = false;
+                        cube.material.color.set("gray");
+                        selectdObjList.splice(index,1)
+                    }
+                    else{
+                        if((cube instanceof THREE.AxisHelper) || (cube instanceof THREE.GridHelper)){                    
+                            return;
+                        }
+                        cube.hasChecked = true;
+                        cube.material.color.set("#dd830d");
+                        selectdObjList.push(cube.uuid)
+                    }
+                }
+            }
+
+            //天空穹顶
+            function  initSkyDome(params) {
+                //获取着色器
+                const vertexShader = document.getElementById('vertexShader').textContent;
+				const fragmentShader = document.getElementById('fragmentShader').textContent;
+				const uniforms = {
+					topColor: { value: new THREE.Color(0x0077ff) },
+					bottomColor: { value: new THREE.Color(0xffffff) },
+					offset: { value: 400 },
+					exponent: { value: 0.6 }
+				};
+				uniforms.topColor.value.copy( light.color );
+
+				const skyGeo = new THREE.SphereGeometry(4000, 32, 15);
+				const skyMat = new THREE.ShaderMaterial({
+					uniforms: uniforms,
+					vertexShader: vertexShader,
+					fragmentShader: fragmentShader,
+					side: THREE.BackSide
+				});
+
+				const sky = new THREE.Mesh( skyGeo, skyMat );
+				scene.add(sky);
+            }
+
+            //底部地面
+            function initGround() {
+                var planeGeometry = new THREE.PlaneGeometry(1000,1000);
+                var planeMaterial = new THREE.MeshStandardMaterial({color:'white'});
+        
+                var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+                plane.rotation.x = - 0.5 * Math.PI;
+                plane.position.y = -100;
+        
+                //告诉底部平面需要接收阴影
+                plane.receiveShadow = true;
+        
+                scene.add(plane);
+            }
+
+            //状态监听器
+            function  initStats() {
+                var stats = new Stats();
+                //设置统计模式
+                stats.setMode(0); // 0: fps, 1: ms
+                //统计信息显示在左上角
+                stats.domElement.style.position = 'absolute';
+                stats.domElement.style.left = '0px';
+                stats.domElement.style.top = '0px';
+                //将统计对象添加到对应的<div>元素中
+                document.getElementById("stats-output").appendChild(stats.domElement);
+            }
+
+            //窗口变化
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize( window.innerWidth, window.innerHeight );
+            }
+
+            //渲染
+            function render() {
+                renderer.clear();
+                renderer.render(scene, camera);
+                requestAnimationFrame(render);
+            }
+
+            function threeStart() {
+                initThree();
+                initCamera();
+                initScene();
+                initLight();
+                initObject();            
+                initOrbit();
+                initSkyDome();
+                initGround();
+                initStats();
+                addTouchListener();
+                render();
+                window.addEventListener( 'resize', onWindowResize, false )
+            }
+            
+            window.onload = function(){
+                threeStart()
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,187 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-15 10:51:40
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-07-16 10:55:49
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>第九课：引入相机控件</title>
+        <style type="text/css">
+            #canvas-frame {
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                height: 100vh;
+                background-color: #eeeeee;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="canvas-frame"></div>
+        <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+        <script src="../OrbitControls.js"></script>
+        <script>
+            //初始化threejs ， 和渲染器
+            var renderer;
+            function initThree() {
+                width = document.getElementById("canvas-frame").clientWidth;
+                height = document.getElementById("canvas-frame").clientHeight;
+                renderer = new THREE.WebGLRenderer({
+                    antialias: true,
+                });
+                renderer.setSize(width, height);
+                document.getElementById("canvas-frame").appendChild(renderer.domElement);
+                renderer.setClearColor(0xffffff, 1.0);
+            }
+            //初始化相机
+            var camera;
+            function initCamera() {
+                camera = new THREE.PerspectiveCamera(
+                    45,
+                    width / height,
+                    1,
+                    10000
+                );
+                camera.position.x = 500;
+                camera.position.y = 500;
+                camera.position.z = 500;
+                camera.up.x = 0;
+                camera.up.y = 1;
+                camera.up.z = 0;
+                camera.lookAt(0,0,0);
+            }
+            //初始化场景    
+            var scene;
+            function initScene() {
+                scene = new THREE.Scene();
+            }
+            //初始化光源
+            var light;
+            function initLight() {
+                //Light:基类光， DirectionalLight ： 方向光，  AmbientLight：环境光，AreaLight:区域光，PointLight:点光，SpotLight:聚光灯
+                light = new THREE.DirectionalLight(0xff0000, 1.0, 0);
+                light.position.set(100, 100, 200);  //光源方向
+                scene.add(light);
+            }
+            //初始化物体    
+            var cube;
+            function initObject() {
+                var geometry = new THREE.BoxGeometry(100,100,100);
+                //纹理
+                var texture = new THREE.TextureLoader().load('texture.png')
+                texture.wrapS = THREE.RepeatWrapping;
+                texture.wrapT = THREE.RepeatWrapping;
+                texture.repeat.set( 4, 1 );
+
+                var material = new THREE.MeshBasicMaterial({
+                    map:texture
+                });
+                cube = new THREE.Mesh(geometry, material);
+                scene.add(cube);
+               
+            }
+
+            //网格
+            function initGrid(){
+                // 网格的边长是1000，每个小网格的边长是50
+                var grid = new THREE.GridHelper( 1000, 50 ,'blue','gray' );
+                scene.add( grid );
+            }
+
+            // gui
+            var controls = new function () {
+                this.rotationSpeed = 0.02;
+            }
+            var gui = new dat.GUI();
+            gui.add(controls, 'rotationSpeed', 0, 0.5);
+
+
+            var startX, startY,endX,endY;
+            var isLeftDown = false;
+            var offsetX = 0;
+            var offsetY = 0;
+            function addTouchListener() {         
+                document.onmousedown = function (event) {
+                    startX = event.clientX;
+                    startY = event.clientY;
+                    isLeftDown = event.button == 0;
+                };
+                document.onmouseup = function(event){
+                    isLeftDown = isRightDown = false
+                };
+                
+                //禁止右键默认 context 菜单
+                document.oncontextmenu= function(event){ 
+                    return false
+                }
+                document.onmousemove = function (event) {
+                    //左键按下
+                    if (isLeftDown) {
+                        offsetX = event.clientX - startX
+                        offsetY = event.clientY - startY
+                        if(offsetX > 50 ){
+                            cube.rotation.z = cube.rotation.z + controls.rotationSpeed;
+                        }else if(offsetX < -50){
+                            cube.rotation.z = cube.rotation.z - controls.rotationSpeed;
+                        }
+                        if(offsetY > 50){
+                            cube.rotation.x = cube.rotation.x + controls.rotationSpeed;
+                        }else if(offsetY < -50){
+                            cube.rotation.x = cube.rotation.x - controls.rotationSpeed;
+                        }
+                        endX = event.clientX
+                        endY = event.clientY;   
+                    }
+                }
+            }
+
+            //OrbitControls 相机控件
+            function initOrbit(){
+                var orbit = new THREE.OrbitControls(camera, renderer.domElement); 
+                orbit.target = new THREE.Vector3(0,0,0); // 设置中心点
+                orbit.minPolarAngle  = 0; // 最小上下旋转角度
+                orbit.maxPolarAngle = Math.PI; // 最大上下旋转角度
+                orbit.minDistance = 140; // 距离中心点最小距离
+                orbit.maxDistance = 10000; // 距离中心点最大距离
+                orbit.zoomSpeed = 0.3; // 缩放速度
+                orbit.rotateSpeed = 0.3; // 旋转速度
+                // orbit.enabled = false //是否启用
+                // orbit.addEventListener('change',()=>{
+                    
+                // })
+            }
+            
+
+            //渲染
+            function render() {
+                renderer.clear();
+                renderer.render(scene, camera);
+                requestAnimationFrame(render);
+            }
+
+
+            function threeStart() {
+                initThree();
+                initCamera();
+                initScene();
+                initLight();
+                initObject();
+                initGrid();
+                initOrbit();
+                addTouchListener();
+                render();
+            }
+            
+            window.onload = function(){
+                threeStart()
+            }
+        </script>
+    </body>
+</html>

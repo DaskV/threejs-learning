@@ -1,0 +1,44 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-14 10:38:43
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-07-14 10:45:20
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一课</title>
+    <style>canvas { width: 100%; height: 100% }</style>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        var scene = new THREE.Scene();  // 场景
+        
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);  //PerspectiveCamera ： 透视相机
+        
+        var renderer = new THREE.WebGLRenderer();  // 渲染器
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);  //渲染器设置窗口大小
+        
+        document.body.appendChild(renderer.domElement);   //dom 注入渲染器
+        var geometry = new THREE.CubeGeometry(1,1,1);  // 多边形（物体）
+        var material = new THREE.MeshBasicMaterial({color: 0x00ff00}); //材质
+        var cube = new THREE.Mesh(geometry, material); // 物体对象： 多边形 + 材质
+        scene.add(cube);   //场景增加材质
+        camera.position.z = 5;  //设置相机z轴位置
+        //渲染动画
+        function render() {
+            requestAnimationFrame(render);
+            cube.rotation.x += 0.1;
+            cube.rotation.y += 0.1;
+            renderer.render(scene, camera);
+        }
+        render();
+    </script>
+</body>
+</html>

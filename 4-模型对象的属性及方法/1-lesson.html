@@ -1,0 +1,94 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-19 14:54:14
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-07-20 11:47:18
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一课:模型对象的属性</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../OrbitControls.js"></script>
+    <script>
+        var scene = new THREE.Scene();  // 场景
+        
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);  //PerspectiveCamera ： 透视相机
+        
+        var renderer = new THREE.WebGLRenderer();  // 渲染器
+        
+        var orbit = new THREE.OrbitControls(camera, renderer.domElement); 
+            orbit.target = new THREE.Vector3(0,0,0); // 设置中心点
+            orbit.minPolarAngle  = 0; // 最小上下旋转角度
+            orbit.maxPolarAngle = Math.PI; // 最大上下旋转角度
+            orbit.minDistance = 140; // 距离中心点最小距离
+            orbit.maxDistance = 10000; // 距离中心点最大距离
+            orbit.zoomSpeed = 0.3; // 缩放速度
+            orbit.rotateSpeed = 0.3; // 旋转速度
+        
+        camera.position.x = 50;
+        camera.position.y = 50;
+        camera.position.z = 500;  
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);  //渲染器设置窗口大小
+   
+        document.body.appendChild(renderer.domElement);   //dom 注入渲染器
+        
+        
+        //网格材质
+        var geometry = new THREE.BoxGeometry(100,100,100);
+        var material = new THREE.MeshBasicMaterial({
+            color: 0xffba14
+        });
+        //直线基础材质对象 
+        var mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh); 
+        
+        //缩放 x,y,z
+        mesh.scale.set(0.5, 1.5, 2)
+        mesh.scale.x = 2.0;
+
+        //设置位置 x,y,z
+        mesh.position.set(80,2,10);
+        mesh.position.y = 80;
+
+        //平移
+        mesh.translateX(100);  //沿X轴
+        mesh.translateZ(-50);  //沿Z轴
+        var axis = new THREE.Vector3(1, 1, 1);
+        axis.normalize();     
+        mesh.translateOnAxis(axis, 100);  //沿着向量axis轴表示方向平移100
+
+        //旋转
+        mesh.rotateX(Math.PI/4);    //绕x轴旋转π/4
+        
+        var axis = new THREE.Vector3(0,1,0);  //向量axis
+        mesh.rotateOnAxis(axis,Math.PI/8);  //绕向量axis轴旋转π/8
+
+        mesh.rotateY(Math.PI / 2);  // 绕着Y轴旋转90度
+        //控制台查看：旋转方法，改变了rotation属性
+        console.log(mesh.rotation);
+
+        //渲染动画
+        function render() {
+            requestAnimationFrame(render);
+            renderer.render(scene, camera);
+        }
+
+
+        render();
+    </script>
+</body>
+</html>

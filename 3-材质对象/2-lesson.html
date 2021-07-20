@@ -1,0 +1,85 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-19 14:54:14
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-07-20 11:13:07
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二课:材质的私有属性</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../OrbitControls.js"></script>
+    <script>
+        var scene = new THREE.Scene();  // 场景
+        
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);  //PerspectiveCamera ： 透视相机
+        
+        var renderer = new THREE.WebGLRenderer();  // 渲染器
+        
+        var orbit = new THREE.OrbitControls(camera, renderer.domElement); 
+            orbit.target = new THREE.Vector3(0,0,0); // 设置中心点
+            orbit.minPolarAngle  = 0; // 最小上下旋转角度
+            orbit.maxPolarAngle = Math.PI; // 最大上下旋转角度
+            orbit.minDistance = 140; // 距离中心点最小距离
+            orbit.maxDistance = 10000; // 距离中心点最大距离
+            orbit.zoomSpeed = 0.3; // 缩放速度
+            orbit.rotateSpeed = 0.3; // 旋转速度
+        
+        camera.position.x = 50;
+        camera.position.y = 50;
+        camera.position.z = 500;  
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);  //渲染器设置窗口大小
+   
+        document.body.appendChild(renderer.domElement);   //dom 注入渲染器
+        
+        
+        //网格材质
+        var geometryMesh = new THREE.BoxGeometry(100,100,100);
+        //MeshBasicMaterial 光源无效，MeshLambertMaterial 有光源时生效 , MeshPhongMaterial 光源有效且可设置高光部分颜色和亮度
+        var materialMesh = new THREE.MeshPhongMaterial({
+            color: 0xff0000,                    // 颜色          
+            // transparent: true,               // transparent设置为true，开启透明，否则opacity不起作用          
+            // opacity: 0.4,                    // 材质透明度
+            // side:THREE.DoubleSide,           // 前面FrontSide  背面：BackSide 双面：DoubleSide         
+            // wireframe: true                  // 是否网格图
+            specular:0xffffff,               // 材质为MeshPhongMaterial时 高光部分的颜色
+            shininess:50,                    // 材质为MeshPhongMaterial时 高光部分的亮度，默认30
+        });
+        //直线基础材质对象 
+        var Mesh = new THREE.Mesh(geometryMesh, materialMesh);
+        scene.add(Mesh); 
+        
+        //加载光源，有法向量的mesh，光源才会起作用
+        var light;
+        light = new THREE.DirectionalLight(0xff0000, 0.9);
+        light.position.set(-300, 300, 300);
+        scene.add(light);
+
+        const lightHelper = new THREE.DirectionalLightHelper(light, 300);  // 创建一个平行光源帮助器，帮助我们看到该光源的位置以及辐射范围
+        scene.add(lightHelper);  // 将此帮助器添加进场景
+
+        //渲染动画
+        function render() {
+            requestAnimationFrame(render);
+            renderer.render(scene, camera);
+        }
+
+
+        render();
+    </script>
+</body>
+</html>

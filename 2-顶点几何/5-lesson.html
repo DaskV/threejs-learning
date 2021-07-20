@@ -1,0 +1,67 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-19 14:54:14
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-07-19 16:13:34
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五课:几何体的旋转，缩放，平移变换</title>
+    <style>canvas { width: 100%; height: 100% }</style>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        var scene = new THREE.Scene();  // 场景
+        
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);  //PerspectiveCamera ： 透视相机
+        
+        var renderer = new THREE.WebGLRenderer();  // 渲染器
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);  //渲染器设置窗口大小
+        
+        document.body.appendChild(renderer.domElement);   //dom 注入渲染器
+        
+        var geometry = new THREE.BoxGeometry(100,100,100); //声明一个几何体对象Geometry
+
+        // 几何体xyz三个方向都放大2倍
+        geometry.scale(2, 2, 2);
+        // 几何体沿着x轴平移50
+        geometry.translate(0, 0, 0);
+        // 几何体绕着x轴旋转45度
+        geometry.rotateX(Math.PI / 4);
+        // 居中：偏移的几何体居中
+        geometry.center();
+
+        // 材质
+        var material = new THREE.MeshBasicMaterial({
+            color:0xff0000,
+            wireframe:true //以线条显示
+        });
+
+        var mesh = new THREE.Mesh(geometry, material); // 物体对象
+        scene.add(mesh);
+
+        camera.position.x = 0;
+        camera.position.y = 0;
+        camera.position.z = 1000;  
+        
+
+        //渲染动画
+        function render() {
+            requestAnimationFrame(render);
+            // mesh.rotation.x += 0.1;
+            // mesh.rotation.y += 0.1;
+            renderer.render(scene, camera);
+        }
+
+
+        render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-19 14:54:14
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-07-19 16:02:55
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四课:Face3构建三角面</title>
+    <style>canvas { width: 100%; height: 100% }</style>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        var scene = new THREE.Scene();  // 场景
+        
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);  //PerspectiveCamera ： 透视相机
+        
+        var renderer = new THREE.WebGLRenderer();  // 渲染器
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);  //渲染器设置窗口大小
+        
+        document.body.appendChild(renderer.domElement);   //dom 注入渲染器
+        
+        var geometry = new THREE.Geometry(); //声明一个几何体对象Geometry
+
+        var p1 = new THREE.Vector3(0, 0, 0); //顶点1坐标
+        var p2 = new THREE.Vector3(0, 100, 0); //顶点2坐标
+        var p3 = new THREE.Vector3(50, 0, 0); //顶点3坐标
+        var p4 = new THREE.Vector3(0, 0, 100); //顶点4坐标
+
+        //顶点坐标添加到geometry对象
+        geometry.vertices.push(p1, p2, p3,p4);
+
+        // Face3构造函数创建一个三角面 ， 参数为index索引
+        var face1 = new THREE.Face3(0, 1, 2);
+        //三角面每个顶点的法向量
+        var n1 = new THREE.Vector3(0, 0, -1); //三角面Face1顶点1的法向量
+        var n2 = new THREE.Vector3(0, 0, -1); //三角面2Face2顶点2的法向量
+        var n3 = new THREE.Vector3(0, 0, -1); //三角面3Face3顶点3的法向量
+        
+        // 设置三角面Face3三个顶点的法向量
+        face1.vertexNormals.push(n1,n2,n3);
+
+        // 三角面2
+        var face2 = new THREE.Face3(0, 2, 3);
+        // 设置三角面法向量
+        face2.normal=new THREE.Vector3(0, -1, 0);
+        //三角面face1、face2添加到几何体中
+        geometry.faces.push(face1,face2);
+
+        // 面渲染模式
+        var material = new THREE.MeshBasicMaterial({
+            color:0xff0000,
+            side: THREE.DoubleSide //两面可见
+        });
+
+        var mesh = new THREE.Mesh(geometry, material); // 物体对象
+        scene.add(mesh);
+
+        camera.position.x = 50;
+        camera.position.y = 50;
+        camera.position.z = 300;  
+        
+
+        //渲染动画
+        function render() {
+            requestAnimationFrame(render);
+            renderer.render(scene, camera);
+        }
+
+
+        render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-19 14:54:14
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-07-20 10:42:54
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一课:点，线，面材质</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../OrbitControls.js"></script>
+    <script>
+        var scene = new THREE.Scene();  // 场景
+        
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);  //PerspectiveCamera ： 透视相机
+        
+        var renderer = new THREE.WebGLRenderer();  // 渲染器
+        
+        var orbit = new THREE.OrbitControls(camera, renderer.domElement); 
+            orbit.target = new THREE.Vector3(0,0,0); // 设置中心点
+            orbit.minPolarAngle  = 0; // 最小上下旋转角度
+            orbit.maxPolarAngle = Math.PI; // 最大上下旋转角度
+            orbit.minDistance = 140; // 距离中心点最小距离
+            orbit.maxDistance = 10000; // 距离中心点最大距离
+            orbit.zoomSpeed = 0.3; // 缩放速度
+            orbit.rotateSpeed = 0.3; // 旋转速度
+        
+        camera.position.x = 50;
+        camera.position.y = 50;
+        camera.position.z = 500;  
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);  //渲染器设置窗口大小
+   
+        document.body.appendChild(renderer.domElement);   //dom 注入渲染器
+        
+        
+
+        //点材质
+        var geometryPoint = new THREE.SphereGeometry(100, 25, 25); //球体对象
+        var materialPoint = new THREE.PointsMaterial({
+            color: 0x0000ff, //颜色
+            size: 3, //点渲染尺寸
+        });
+        //点模型对象  参数：几何体  点材质
+        var point = new THREE.Points(geometryPoint, materialPoint);
+        point.position.x = -500
+        scene.add(point); 
+
+        camera.position.x = 50;
+        camera.position.y = 50;
+        camera.position.z = 500;  
+        
+        //直线材质
+        var geometryLine = new THREE.SphereGeometry(100, 25, 25); //球体对象
+        var materialLine = new THREE.LineBasicMaterial({
+            color: 0x427bd1, //颜色
+        });
+        //直线基础材质对象 
+        var Line = new THREE.Line(geometryLine, materialLine);
+        Line.position.x = -200
+        scene.add(Line);
+
+
+        //虚线材质
+        var geometryLineDashed = new THREE.SphereGeometry(100, 25, 25); //球体对象
+        var materialLineDashed = new THREE.LineDashedMaterial({
+            color: 0xffba14, //颜色
+            dashSize: 10,//显示线段的大小。默认为3。
+            gapSize: 5,//间隙的大小。默认为1
+        });
+        //直线基础材质对象 
+        var LineDashed = new THREE.Line(geometryLineDashed, materialLineDashed);
+        LineDashed.position.x = 100
+        //  computeLineDistances方法  计算LineDashedMaterial所需的距离数组
+        LineDashed.computeLineDistances()
+        scene.add(LineDashed); 
+
+
+        //网格材质
+        var geometryMesh = new THREE.SphereGeometry(100, 25, 25); //球体对象
+        //MeshBasicMaterial 光源无效，MeshLambertMaterial 有效 , MeshPhongMaterial 光源有效且可设置高光部分颜色和亮度
+        var materialMesh = new THREE.MeshBasicMaterial({
+            color: 0xec2520, //颜色
+        });
+        //直线基础材质对象 
+        var Mesh = new THREE.Mesh(geometryMesh, materialMesh);
+        Mesh.position.x = 400
+        scene.add(Mesh); 
+        
+
+        //渲染动画
+        function render() {
+            requestAnimationFrame(render);
+            renderer.render(scene, camera);
+        }
+
+
+        render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-19 14:54:14
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-07-20 10:49:22
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二课:顶点颜色及插值</title>
+    <style>canvas { width: 100%; height: 100% }</style>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        var scene = new THREE.Scene();  // 场景
+        
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);  //PerspectiveCamera ： 透视相机
+        
+        var renderer = new THREE.WebGLRenderer();  // 渲染器
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);  //渲染器设置窗口大小
+   
+        document.body.appendChild(renderer.domElement);   //dom 注入渲染器
+        var geometry = new THREE.BufferGeometry();  // Buffer类型几何体
+        
+        //顶点坐标数据
+        var vertices = new Float32Array([
+            0, 0, 0, //顶点1坐标
+            50, 0, 0, //顶点2坐标
+            0, 100, 0, //顶点3坐标
+            0, 0, 10, //顶点4坐标
+            0, 0, 100, //顶点5坐标
+            50, 0, 10, //顶点6坐标
+        ]);
+        //顶点坐标法向量数据
+        var normals = new Float32Array([
+            0, 0, 1, //顶点1法向量
+            0, 0, 1, //顶点2法向量
+            0, 0, 1, //顶点3法向量
+            0, 1, 0, //顶点4法向量
+            0, 1, 0, //顶点5法向量
+            0, 1, 0, //顶点6法向量
+        ]);
+
+        // 设置几何体attributes属性的位置属性
+        geometry.attributes.position =  new THREE.BufferAttribute(vertices, 3);
+        // 设置几何体attributes属性的位置属性
+        geometry.attributes.normal =  new THREE.BufferAttribute(normals, 3);
+
+        // 面渲染模式
+        var material = new THREE.MeshBasicMaterial({
+            color: 0x0000ff, //颜色
+            side: THREE.DoubleSide //两面可见
+        }); 
+        var mesh = new THREE.Mesh(geometry, material); // 物体对象
+        scene.add(mesh);
+
+        camera.position.x = 50;
+        camera.position.y = 50;
+        camera.position.z = 500;  
+        
+        //加载光源，有法向量的mesh，光源才会起作用
+        var light;
+        light = new THREE.DirectionalLight(0xff0000, 0.9);
+        light.position.set(-300, 300, 300);
+        scene.add(light);
+
+        const lightHelper = new THREE.DirectionalLightHelper(light, 300);  // 创建一个平行光源帮助器，帮助我们看到该光源的位置以及辐射范围
+        scene.add(lightHelper);  // 将此帮助器添加进场景
+
+        //渲染动画
+        function render() {
+            requestAnimationFrame(render);
+            renderer.render(scene, camera);
+        }
+
+
+        render();
+    </script>
+</body>
+</html>
