@@ -2,7 +2,7 @@
  * @Author: DaskV
  * @Date: 2021-07-15 10:51:40
  * @LastEditors: DaskV
- * @LastEditTime: 2021-07-16 10:55:49
+ * @LastEditTime: 2021-09-14 16:24:48
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>第九课：引入相机控件</title>
+        <title>三维家3d数据解析</title>
         <style type="text/css">
             #canvas-frame {
                 border: none;
@@ -27,6 +27,7 @@
         <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
         <script src="https://cdn.bootcdn.net/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
         <script src="../OrbitControls.js"></script>
+        <script src="./xmlTojson.js"></script>
         <script>
             //初始化threejs ， 和渲染器
             var renderer;
@@ -49,9 +50,9 @@
                     1,
                     10000
                 );
-                camera.position.x = 500;
-                camera.position.y = 500;
-                camera.position.z = 500;
+                camera.position.x = 0;
+                camera.position.y = 0;
+                camera.position.z = 7000;
                 camera.up.x = 0;
                 camera.up.y = 1;
                 camera.up.z = 0;
@@ -72,18 +73,26 @@
             }
             //初始化物体    
             var cube;
-            function initObject() {
-                var geometry = new THREE.BoxGeometry(100,100,100);
+            function initObject(opt) {
+                var geometry = new THREE.BoxGeometry(opt.W,opt.H,opt.D);
                 //纹理
-                var texture = new THREE.TextureLoader().load('https://img3.admin.3vjia.com//UpFile/C00000022/PMC/DesignMaterial/202012/121002371/e5216cd51ddb4f9a98ba9044ce5f64b5.jpg')
+                var texture = new THREE.TextureLoader().load(opt.imagePath)
                 texture.wrapS = THREE.RepeatWrapping;
                 texture.wrapT = THREE.RepeatWrapping;
                 texture.repeat.set( 4, 1 );
 
                 var material = new THREE.MeshBasicMaterial({
-                    map:texture
+                    map:texture,
+                    wireframe:opt.wireframe
                 });
                 cube = new THREE.Mesh(geometry, material);
+
+                cube.position.x = opt.PX || 0;
+                cube.position.y = opt.PY || 0;
+                cube.position.z = opt.PZ || 0;
+                cube.rotation.x = opt.RX || 0;
+                cube.rotation.y = opt.RY || 0;
+                cube.rotation.z = opt.RZ || 0;
                 scene.add(cube);
                
             }
@@ -91,7 +100,7 @@
             //网格
             function initGrid(){
                 // 网格的边长是1000，每个小网格的边长是50
-                var grid = new THREE.GridHelper( 1000, 50 ,'blue','gray' );
+                var grid = new THREE.GridHelper( 5000, 100 ,'blue','gray' );
                 scene.add( grid );
             }
 
@@ -171,16 +180,73 @@
                 initThree();
                 initCamera();
                 initScene();
-                initLight();
-                initObject();
                 initGrid();
+                initLight();
                 initOrbit();
-                addTouchListener();
                 render();
+            }
+
+
+            async function loadXml(params) {
+                const res = await fetch('./source/data.xml')
+                const xmlString = await res.text();
+                var XmlNode = new DOMParser().parseFromString(xmlString, 'text/xml')
+                const data = xmlToJson(XmlNode)
+                const node =  data.Root.Cabinet.Part
+                console.log(node)
+                //渲染根节点
+                initObject({
+                    W:node.Values['@attributes'].W,
+                    H:node.Values['@attributes'].H,
+                    D:node.Values['@attributes'].D,
+                    imagePath:node['@attributes'].imagePath,
+                    // PX:node.Values['@attributes'].PX,
+                    // PY:node.Values['@attributes'].PY,
+                    // PZ:node.Values['@attributes'].PZ,
+                    // RX:node.Values['@attributes'].RX,
+                    // RY:node.Values['@attributes'].RY,
+                    // RZ:node.Values['@attributes'].RZ,
+                    wireframe:true
+                })
+                
+                console.log(node.Part[1])
+
+                initObject({
+                        W:node.Part[1].Values['@attributes'].W,
+                        H:node.Part[1].Values['@attributes'].H,
+                        D:node.Part[1].Values['@attributes'].D,
+                        imagePath:node.Part[1]['@attributes'].imagePath,
+                        PX:node.Part[1].Values['@attributes'].PX,
+                        PY:node.Part[1].Values['@attributes'].PY,
+                        PZ:node.Part[1].Values['@attributes'].PZ,
+                        // RX:node.Part[1].Values['@attributes'].RX,
+                        RY:0,
+                        // RZ:0,
+                        wireframe:false
+                })
+
+                // node.Part.forEach(v=>{
+                //     initObject({
+                //         W:v.Values['@attributes'].W,
+                //         H:v.Values['@attributes'].H,
+                //         D:v.Values['@attributes'].D,
+                //         imagePath:v['@attributes'].imagePath,
+                //         PX:v.Values['@attributes'].PX,
+                //         PY:v.Values['@attributes'].PX,
+                //         PZ:v.Values['@attributes'].PX,
+                //         RX:v.Values['@attributes'].RX,
+                //         RY:v.Values['@attributes'].RY,
+                //         RZ:v.Values['@attributes'].RZ,
+                //         wireframe:false
+                //     })
+                // })
+                
             }
             
             window.onload = function(){
                 threeStart()
+                loadXml()
+                // addTouchListener()
             }
         </script>
     </body>
