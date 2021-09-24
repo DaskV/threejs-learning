@@ -2,7 +2,7 @@
  * @Author: DaskV
  * @Date: 2021-07-15 10:51:40
  * @LastEditors: DaskV
- * @LastEditTime: 2021-09-14 16:24:48
+ * @LastEditTime: 2021-09-24 14:16:37
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -24,13 +24,16 @@
     </head>
     <body>
         <div id="canvas-frame"></div>
-        <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r123/three.min.js"></script>
         <script src="https://cdn.bootcdn.net/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
         <script src="../OrbitControls.js"></script>
         <script src="./xmlTojson.js"></script>
         <script>
             //初始化threejs ， 和渲染器
             var renderer;
+            var axisX = new THREE.Vector3(1,0,0)
+            var axisY = new THREE.Vector3(0,1,0)
+            var axisZ = new THREE.Vector3(0,0,1)
             function initThree() {
                 width = document.getElementById("canvas-frame").clientWidth;
                 height = document.getElementById("canvas-frame").clientHeight;
@@ -83,6 +86,8 @@
 
                 var material = new THREE.MeshBasicMaterial({
                     map:texture,
+                    opacity:0.7,
+                    transparent:true,
                     wireframe:opt.wireframe
                 });
                 cube = new THREE.Mesh(geometry, material);
@@ -90,9 +95,9 @@
                 cube.position.x = opt.PX || 0;
                 cube.position.y = opt.PY || 0;
                 cube.position.z = opt.PZ || 0;
-                cube.rotation.x = opt.RX || 0;
-                cube.rotation.y = opt.RY || 0;
-                cube.rotation.z = opt.RZ || 0;
+                cube.rotation.x = opt.RX ? Math.PI/ (180 / opt.RX) : 0;
+                cube.rotation.y = opt.RY ? Math.PI/ (180 / opt.RY) : 0;
+                cube.rotation.z = opt.RY ? Math.PI/ (180 / opt.RZ) : 0;
                 scene.add(cube);
                
             }
@@ -100,8 +105,14 @@
             //网格
             function initGrid(){
                 // 网格的边长是1000，每个小网格的边长是50
-                var grid = new THREE.GridHelper( 5000, 100 ,'blue','gray' );
+                var grid = new THREE.GridHelper( 5000, 50 ,'#dddddd','#dddddd' );
                 scene.add( grid );
+            }
+
+            //坐标系
+            function initAxis(params) {
+                var axis = new THREE.AxisHelper(5000);
+                scene.add(axis);
             }
 
             // gui
@@ -181,66 +192,100 @@
                 initCamera();
                 initScene();
                 initGrid();
+                initAxis();
                 initLight();
+                initRaycaster(); 
                 initOrbit();
                 render();
             }
 
 
             async function loadXml(params) {
-                const res = await fetch('./source/data.xml')
+                const res = await fetch('./source/data3.xml')
                 const xmlString = await res.text();
                 var XmlNode = new DOMParser().parseFromString(xmlString, 'text/xml')
                 const data = xmlToJson(XmlNode)
-                const node =  data.Root.Cabinet.Part
-                console.log(node)
-                //渲染根节点
-                initObject({
-                    W:node.Values['@attributes'].W,
-                    H:node.Values['@attributes'].H,
-                    D:node.Values['@attributes'].D,
-                    imagePath:node['@attributes'].imagePath,
-                    // PX:node.Values['@attributes'].PX,
-                    // PY:node.Values['@attributes'].PY,
-                    // PZ:node.Values['@attributes'].PZ,
-                    // RX:node.Values['@attributes'].RX,
-                    // RY:node.Values['@attributes'].RY,
-                    // RZ:node.Values['@attributes'].RZ,
-                    wireframe:true
-                })
+                const root =  data.Root.Cabinet.Part
+                console.log(root)
+                loadPart(root.Part)
                 
-                console.log(node.Part[1])
+            }
 
-                initObject({
-                        W:node.Part[1].Values['@attributes'].W,
-                        H:node.Part[1].Values['@attributes'].H,
-                        D:node.Part[1].Values['@attributes'].D,
-                        imagePath:node.Part[1]['@attributes'].imagePath,
-                        PX:node.Part[1].Values['@attributes'].PX,
-                        PY:node.Part[1].Values['@attributes'].PY,
-                        PZ:node.Part[1].Values['@attributes'].PZ,
-                        // RX:node.Part[1].Values['@attributes'].RX,
-                        RY:0,
-                        // RZ:0,
-                        wireframe:false
-                })
+            function loadPart(data,parentData = undefined) {
+                if(typeof data === 'object' && data.constructor !== Array){
+                    initObject({
+                        W:data.Values['@attributes'].W,
+                        H:data.Values['@attributes'].H,
+                        D:data.Values['@attributes'].D,
+                        imagePath:data['@attributes'].imagePath,
+                        PX:data.Values['@attributes'].W /2 + Number(data.Values['@attributes'].PX) + (parentData ? Number(parentData.PX) : 0),
+                        PY:data.Values['@attributes'].H /2 + Number(data.Values['@attributes'].PZ) + (parentData ? Number(parentData.PZ) : 0),
+                        PZ:data.Values['@attributes'].D /2 + Number(data.Values['@attributes'].PY) + (parentData ? Number(parentData.PY) : 0),
+                        RX:data.Values['@attributes'].RX + (parentData ? Number(parentData.RX) : 0),
+                        RY:data.Values['@attributes'].RZ + (parentData ? Number(parentData.RZ) : 0),
+                        RZ:data.Values['@attributes'].RY + (parentData ? Number(parentData.RY) : 0),
+                        wireframe:true                            
+                    })
+                }
+                else{
+                    data.forEach(v=>{
+                        if(v.Part){
+                            loadPart(v.Part,v.Values['@attributes'])
+                        }
+                        initObject({
+                            W:v.Values['@attributes'].W,
+                            H:v.Values['@attributes'].H,
+                            D:v.Values['@attributes'].D,
+                            imagePath:v['@attributes'].imagePath,
+                            PX:v.Values['@attributes'].W /2 + Number(v.Values['@attributes'].PX) + parentData ? Number(parentData.PX) : 0,
+                            PY:v.Values['@attributes'].H /2 + Number(v.Values['@attributes'].PZ) + (parentData ? Number(parentData.PZ) : 0),
+                            PZ:v.Values['@attributes'].D /2 + Number(v.Values['@attributes'].PY) + (parentData ? Number(parentData.PY) : 0),
+                            RX:v.Values['@attributes'].RX + (parentData ? Number(parentData.RX) : 0),
+                            RY:v.Values['@attributes'].RZ + (parentData ? Number(parentData.RZ) : 0),
+                            RZ:v.Values['@attributes'].RY + (parentData ? Number(parentData.RY) : 0),
+                            wireframe:false                            
+                        })
+                    })
+                }
 
-                // node.Part.forEach(v=>{
-                //     initObject({
-                //         W:v.Values['@attributes'].W,
-                //         H:v.Values['@attributes'].H,
-                //         D:v.Values['@attributes'].D,
-                //         imagePath:v['@attributes'].imagePath,
-                //         PX:v.Values['@attributes'].PX,
-                //         PY:v.Values['@attributes'].PX,
-                //         PZ:v.Values['@attributes'].PX,
-                //         RX:v.Values['@attributes'].RX,
-                //         RY:v.Values['@attributes'].RY,
-                //         RZ:v.Values['@attributes'].RZ,
-                //         wireframe:false
-                //     })
-                // })
-                
+            }
+
+             //光投射器
+            var raycaster;
+            var rayMouse;
+            function initRaycaster(params) {
+                raycaster = new THREE.Raycaster();
+                rayMouse = new THREE.Vector2();  //二维向量
+                document.addEventListener( 'dblclick', function(){
+                    
+                    rayMouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                    rayMouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+                    renderRaycasterObj()
+                }, false )
+            }   
+
+            // 渲染光投射器，根据光投射器判断鼠标所在向量方向是否穿过物体
+            var selectdObjList = []; //选中的列表
+            function renderRaycasterObj() {
+                raycaster.setFromCamera(rayMouse, camera);
+                var intersects = raycaster.intersectObjects(scene.children);        
+                if (intersects.length > 0) {                     
+                    cube = intersects[0].object
+                    const index = selectdObjList.findIndex(v=>v == cube.uuid)
+                    if(index > -1){
+                        cube.hasChecked = false;
+                        cube.material.color.set(0xffffff);
+                        selectdObjList.splice(index,1)
+                    }
+                    else{
+                        if((cube instanceof THREE.AxisHelper) || (cube instanceof THREE.GridHelper)){                    
+                            return;
+                        }
+                        cube.hasChecked = true;
+                        cube.material.color.set("gray");
+                        selectdObjList.push(cube.uuid)
+                    }
+                }
             }
             
             window.onload = function(){

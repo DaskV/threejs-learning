@@ -1,0 +1,1190 @@
+<Root xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="https://www.w3.org/2001/XMLSchema" Application="WoodMachine" ApplicationVersion="3.0" version="4.0.0.1943">
+
+  <Cabinet Name="储物柜_3" uid="9D73374D-E624-BE69-D3FE-C4435F96C50A" Id="" Series="" Length="1590" Width="560" Height="2360" CabinetType="group" SubType="" Material="GT8033米维斯橡木" BasicMaterial="颗粒板" Model="" CraftMark="" PartNumber="group-001" GroupName="储物柜" RoomName="阳台-衣柜" OrderDate="2021-09-08" Designer="张益唯" CustomId="17768891" BatchNo="" ThinEdgeValue="1" ThickEdgeValue="1" OrderNo="EMS-7266YG21090804" AlongSys="" CabinetNo="3;2;1;4" Customer="西安何卫" ShopName="设计部" OrderName="西安何卫-雅荷盛世铭城" CustomAddress="雅荷盛世铭城" Address="雅荷盛世铭城" Contactway="------" Contactrealname="张益唯" DeliveryDate="2021-09-29" Tel="------ / " Comment="" OrderCount="1" ItemNo="" HouseType="" DiyOrderNo="20210904-66/0904-241" SchemeId="80045398" OrderType="衣柜" DisOrderNickName="廖佳鑫" SignUserNickName="华夫人丨张益唯丨">
+    <ProduceValues/>
+    <Panels>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2260" Width="520" ID="32370891387" CabinetPanelNo="3-030" Name="右侧板" StandardCategory="YCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="10EB6CA8-7156-A150-9433-164C295C6F9B" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="32370891387" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="4" EdgeGroupTypeName="自定义" thickLength="2260" thinLength="3300" customLength="0" ActualLength="2258" ActualWidth="518" slotDis="18,18" slotFace="0,0" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="520" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="2260" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="520" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="2260" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002139" IsGenCode="2" Type="2" Face="5" X="2251.00" Y="60.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002140" IsGenCode="2" Type="2" Face="5" X="2251.00" Y="460.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002141" IsGenCode="2" Type="2" Face="5" X="1270.00" Y="497.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002142" IsGenCode="2" Type="2" Face="5" X="1230.00" Y="497.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002143" IsGenCode="2" Type="2" Face="5" X="670.00" Y="511.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002144" IsGenCode="2" Type="2" Face="5" X="630.00" Y="511.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002145" IsGenCode="2" Type="2" Face="5" X="1791.00" Y="511.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002146" IsGenCode="2" Type="2" Face="5" X="1751.00" Y="511.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002147" IsGenCode="2" Type="2" Face="5" X="91.00" Y="60.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002148" IsGenCode="2" Type="2" Face="5" X="91.00" Y="460.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002149" IsGenCode="2" Type="2" Face="5" X="1833.00" Y="62.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002150" IsGenCode="2" Type="2" Face="5" X="1833.00" Y="432.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002151" IsGenCode="2" Type="2" Face="5" X="963.00" Y="62.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002152" IsGenCode="2" Type="2" Face="5" X="963.00" Y="432.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002153" IsGenCode="2" Type="2" Face="5" X="1398.00" Y="62.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002154" IsGenCode="2" Type="2" Face="5" X="1398.00" Y="432.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002155" IsGenCode="2" Type="2" Face="5" X="515.00" Y="62.50" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002156" IsGenCode="2" Type="2" Face="5" X="579.00" Y="62.50" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002157" IsGenCode="2" Type="2" Face="5" X="451.00" Y="62.50" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002158" IsGenCode="2" Type="2" Face="5" X="515.00" Y="432.50" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002159" IsGenCode="2" Type="2" Face="5" X="579.00" Y="432.50" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002160" IsGenCode="2" Type="2" Face="5" X="451.00" Y="432.50" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002161" IsGenCode="2" Type="2" Face="5" X="199.50" Y="35.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002162" IsGenCode="2" Type="2" Face="5" X="167.50" Y="35.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002163" IsGenCode="2" Type="2" Face="5" X="2174.50" Y="35.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002164" IsGenCode="2" Type="2" Face="5" X="2142.50" Y="35.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002165" IsGenCode="2" Type="2" Face="5" X="1516.50" Y="35.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002166" IsGenCode="2" Type="2" Face="5" X="1484.50" Y="35.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002167" IsGenCode="2" Type="2" Face="5" X="857.50" Y="35.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002168" IsGenCode="2" Type="2" Face="5" X="825.50" Y="35.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002169" IsGenCode="2" Type="3" Face="5" X="1205.0" Y="497.0" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="95.0" EndY="497.0" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002170" IsGenCode="2" Type="3" Face="5" X="2247.0" Y="497.0" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="1295.0" EndY="497.0" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2260" Width="520" ID="32370891388" CabinetPanelNo="3-031" Name="左侧板" StandardCategory="ZCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="5BD2B119-C544-17DB-3809-164C295CF70F" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892388" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="4" EdgeGroupTypeName="自定义" thickLength="2260" thinLength="3300" customLength="0" ActualLength="2258" ActualWidth="518" slotDis="18,18" slotFace="1,1" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="520" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="2260" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="520" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="2260" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002171" IsGenCode="2" Type="2" Face="6" X="2251.00" Y="60.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002172" IsGenCode="2" Type="2" Face="6" X="2251.00" Y="460.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002173" IsGenCode="2" Type="2" Face="6" X="1270.00" Y="497.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002174" IsGenCode="2" Type="2" Face="6" X="1230.00" Y="497.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002175" IsGenCode="2" Type="2" Face="6" X="670.00" Y="511.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002176" IsGenCode="2" Type="2" Face="6" X="630.00" Y="511.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002177" IsGenCode="2" Type="2" Face="6" X="1791.00" Y="511.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002178" IsGenCode="2" Type="2" Face="6" X="1751.00" Y="511.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002179" IsGenCode="2" Type="2" Face="6" X="91.00" Y="60.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002180" IsGenCode="2" Type="2" Face="6" X="91.00" Y="460.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002181" IsGenCode="2" Type="2" Face="6" X="1833.00" Y="62.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002182" IsGenCode="2" Type="2" Face="6" X="1833.00" Y="432.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002183" IsGenCode="2" Type="2" Face="6" X="963.00" Y="62.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002184" IsGenCode="2" Type="2" Face="6" X="963.00" Y="432.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002185" IsGenCode="2" Type="2" Face="6" X="1398.00" Y="62.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002186" IsGenCode="2" Type="2" Face="6" X="1398.00" Y="432.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002187" IsGenCode="2" Type="2" Face="6" X="515.00" Y="62.50" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002188" IsGenCode="2" Type="2" Face="6" X="579.00" Y="62.50" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002189" IsGenCode="2" Type="2" Face="6" X="451.00" Y="62.50" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002190" IsGenCode="2" Type="2" Face="6" X="515.00" Y="432.50" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002191" IsGenCode="2" Type="2" Face="6" X="579.00" Y="432.50" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002192" IsGenCode="2" Type="2" Face="6" X="451.00" Y="432.50" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002193" IsGenCode="2" Type="2" Face="6" X="167.50" Y="35.00" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002194" IsGenCode="2" Type="2" Face="6" X="199.50" Y="35.00" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002195" IsGenCode="2" Type="2" Face="6" X="2142.50" Y="35.00" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002196" IsGenCode="2" Type="2" Face="6" X="2174.50" Y="35.00" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002197" IsGenCode="2" Type="2" Face="6" X="1484.50" Y="35.00" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002198" IsGenCode="2" Type="2" Face="6" X="1516.50" Y="35.00" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002199" IsGenCode="2" Type="2" Face="6" X="825.50" Y="35.00" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002200" IsGenCode="2" Type="2" Face="6" X="857.50" Y="35.00" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002201" IsGenCode="2" Type="3" Face="6" X="1205.0" Y="497.0" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="95.0" EndY="497.0" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002202" IsGenCode="2" Type="3" Face="6" X="2247.0" Y="497.0" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="1295.0" EndY="497.0" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="1454" Width="519.5" ID="32370891389" CabinetPanelNo="3-032" Name="底板" StandardCategory="DIB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="6F7D6A30-6C66-E3FA-AD01-164C295C5766" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="32370891389" Face6ID="32370892389" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="1454" thinLength="2493" customLength="0" ActualLength="1452" ActualWidth="517.5" slotDis="18,18" slotFace="0,0" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="519.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="1454" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="519.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="1454" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002203" IsGenCode="2" Type="2" Face="5" X="727.00" Y="61.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002204" IsGenCode="2" Type="2" Face="5" X="727.00" Y="459.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002205" IsGenCode="2" Type="1" Face="3" X="1454.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002206" IsGenCode="2" Type="2" Face="5" X="1420.00" Y="60.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002207" IsGenCode="2" Type="1" Face="3" X="1454.00" Y="459.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002208" IsGenCode="2" Type="2" Face="5" X="1420.00" Y="459.50" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002209" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002210" IsGenCode="2" Type="2" Face="5" X="34.00" Y="60.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002211" IsGenCode="2" Type="1" Face="4" X="0" Y="459.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002212" IsGenCode="2" Type="2" Face="5" X="34.00" Y="459.50" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002213" IsGenCode="2" Type="2" Face="6" X="1374.00" Y="480.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002214" IsGenCode="2" Type="2" Face="6" X="80.00" Y="480.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002215" IsGenCode="2" Type="2" Face="6" X="511.33" Y="480.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002216" IsGenCode="2" Type="2" Face="6" X="942.67" Y="480.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002217" IsGenCode="2" Type="2" Face="6" X="1374.00" Y="11.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002218" IsGenCode="2" Type="2" Face="6" X="80.00" Y="11.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002219" IsGenCode="2" Type="2" Face="6" X="511.33" Y="11.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002220" IsGenCode="2" Type="2" Face="6" X="942.67" Y="11.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002221" IsGenCode="2" Type="3" Face="5" X="723.0" Y="496.5" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="0.0" EndY="496.5" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002222" IsGenCode="2" Type="3" Face="5" X="1454.0" Y="496.5" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="731.0" EndY="496.5" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="1454" Width="519.5" ID="32370891390" CabinetPanelNo="3-033" Name="顶板" StandardCategory="DINGB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="49EF6978-6503-2A39-F1B0-164C295C1341" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892390" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="1454" thinLength="2493" customLength="0" ActualLength="1452" ActualWidth="517.5" slotDis="18,18" slotFace="1,1" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="519.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="1454" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="519.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="1454" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002223" IsGenCode="2" Type="1" Face="3" X="1454.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002224" IsGenCode="2" Type="2" Face="6" X="1420.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002225" IsGenCode="2" Type="1" Face="3" X="1454.00" Y="459.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002226" IsGenCode="2" Type="2" Face="6" X="1420.00" Y="459.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002227" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002228" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002229" IsGenCode="2" Type="1" Face="4" X="0" Y="459.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002230" IsGenCode="2" Type="2" Face="6" X="34.00" Y="459.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002231" IsGenCode="2" Type="2" Face="6" X="727.00" Y="61.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002232" IsGenCode="2" Type="2" Face="6" X="727.00" Y="459.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002233" IsGenCode="2" Type="3" Face="6" X="723.0" Y="496.5" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="0.0" EndY="496.5" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002234" IsGenCode="2" Type="3" Face="6" X="1454.0" Y="496.5" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="731.0" EndY="496.5" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="451.5" Width="82" ID="32370891394" CabinetPanelNo="3-034" Name="暗脚" StandardCategory="JIAGUBAN" Material="GT8033米维斯橡木" MaterialId="132319411" uid="120307CC-F931-484A-5073-164C295C596B" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892394" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="1067" customLength="0" ActualLength="449.5" ActualWidth="80" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="451.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="451.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002235" IsGenCode="2" Type="1" Face="4" X="0" Y="62.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002236" IsGenCode="2" Type="2" Face="6" X="34.00" Y="62.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002237" IsGenCode="2" Type="1" Face="4" X="0" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002238" IsGenCode="2" Type="2" Face="6" X="34.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002239" IsGenCode="2" Type="1" Face="3" X="451.50" Y="62.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002240" IsGenCode="2" Type="2" Face="6" X="417.50" Y="62.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002241" IsGenCode="2" Type="1" Face="3" X="451.50" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002242" IsGenCode="2" Type="2" Face="6" X="417.50" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="451.5" Width="82" ID="32370891395" CabinetPanelNo="3-035" Name="暗脚" StandardCategory="JIAGUBAN" Material="GT8033米维斯橡木" MaterialId="132319411" uid="99E59288-7798-97E6-9C55-164C295CCD00" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892395" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="1067" customLength="0" ActualLength="449.5" ActualWidth="80" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="451.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="451.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002243" IsGenCode="2" Type="1" Face="4" X="0" Y="62.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002244" IsGenCode="2" Type="2" Face="6" X="34.00" Y="62.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002245" IsGenCode="2" Type="1" Face="4" X="0" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002246" IsGenCode="2" Type="2" Face="6" X="34.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002247" IsGenCode="2" Type="1" Face="3" X="451.50" Y="62.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002248" IsGenCode="2" Type="2" Face="6" X="417.50" Y="62.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002249" IsGenCode="2" Type="1" Face="3" X="451.50" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002250" IsGenCode="2" Type="2" Face="6" X="417.50" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="451.5" Width="82" ID="32370891396" CabinetPanelNo="3-036" Name="暗脚" StandardCategory="JIAGUBAN" Material="GT8033米维斯橡木" MaterialId="132319411" uid="97AE94C9-4ADC-C1C0-6C5D-164C295C918C" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="32370891396" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="1067" customLength="0" ActualLength="449.5" ActualWidth="80" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="451.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="451.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002251" IsGenCode="2" Type="1" Face="4" X="0" Y="62.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002252" IsGenCode="2" Type="2" Face="5" X="34.00" Y="62.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002253" IsGenCode="2" Type="1" Face="4" X="0" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002254" IsGenCode="2" Type="2" Face="5" X="34.00" Y="20.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002255" IsGenCode="2" Type="1" Face="3" X="451.50" Y="62.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002256" IsGenCode="2" Type="2" Face="5" X="417.50" Y="62.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002257" IsGenCode="2" Type="1" Face="3" X="451.50" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002258" IsGenCode="2" Type="2" Face="5" X="417.50" Y="20.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="1454" Width="82" ID="32370891397" CabinetPanelNo="3-037" Name="后踢脚" StandardCategory="TJB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="8EF26CFC-0E81-CBEE-7174-164C295C79BE" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="32370891397" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="3072" customLength="0" ActualLength="1452" ActualWidth="80" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="1454" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="1454" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002259" IsGenCode="2" Type="2" Face="5" X="191.00" Y="62.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002260" IsGenCode="2" Type="2" Face="5" X="191.00" Y="20.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002261" IsGenCode="2" Type="2" Face="5" X="688.00" Y="62.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002262" IsGenCode="2" Type="2" Face="5" X="688.00" Y="20.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002263" IsGenCode="2" Type="2" Face="5" X="1245.00" Y="62.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002264" IsGenCode="2" Type="2" Face="5" X="1245.00" Y="20.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002265" IsGenCode="2" Type="1" Face="1" X="1374.00" Y="82.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002266" IsGenCode="2" Type="2" Face="5" X="1374.00" Y="48.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002267" IsGenCode="2" Type="1" Face="1" X="80.00" Y="82.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002268" IsGenCode="2" Type="2" Face="5" X="80.00" Y="48.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002269" IsGenCode="2" Type="1" Face="1" X="511.33" Y="82.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002270" IsGenCode="2" Type="2" Face="5" X="511.33" Y="48.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002271" IsGenCode="2" Type="1" Face="1" X="942.67" Y="82.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002272" IsGenCode="2" Type="2" Face="5" X="942.67" Y="48.00" Z="18.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="1454" Width="82" ID="32370891398" CabinetPanelNo="3-038" Name="前踢脚" StandardCategory="TJB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="3CC4A676-A9B0-DD3A-D255-164C295C6CA6" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892398" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="3072" customLength="0" ActualLength="1452" ActualWidth="80" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="1454" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="1454" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="82" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002273" IsGenCode="2" Type="2" Face="6" X="191.00" Y="62.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002274" IsGenCode="2" Type="2" Face="6" X="191.00" Y="20.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002275" IsGenCode="2" Type="2" Face="6" X="688.00" Y="62.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002276" IsGenCode="2" Type="2" Face="6" X="688.00" Y="20.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002277" IsGenCode="2" Type="2" Face="6" X="1245.00" Y="62.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002278" IsGenCode="2" Type="2" Face="6" X="1245.00" Y="20.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002279" IsGenCode="2" Type="1" Face="1" X="1374.00" Y="82.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002280" IsGenCode="2" Type="2" Face="6" X="1374.00" Y="48.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002281" IsGenCode="2" Type="1" Face="1" X="80.00" Y="82.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002282" IsGenCode="2" Type="2" Face="6" X="80.00" Y="48.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002283" IsGenCode="2" Type="1" Face="1" X="511.33" Y="82.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002284" IsGenCode="2" Type="2" Face="6" X="511.33" Y="48.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002285" IsGenCode="2" Type="1" Face="1" X="942.67" Y="82.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002286" IsGenCode="2" Type="2" Face="6" X="942.67" Y="48.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="1490" Width="80" ID="32370891399" CabinetPanelNo="3-039" Name="外贴踢脚" StandardCategory="BDKDB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="49CD1789-3F1D-B0CD-ED24-164C295C9317" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="3140" customLength="0" ActualLength="1488" ActualWidth="78" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="1490" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="1490" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2142" Width="518.5" ID="32370891400" CabinetPanelNo="3-040" Name="中隔板" StandardCategory="ZGB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="20BE9C9A-0D12-4888-4CCC-164C295C8F2F" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="32370891400" Face6ID="32370892400" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="4" EdgeGroupTypeName="自定义" thickLength="2142" thinLength="3179" customLength="0" ActualLength="2140" ActualWidth="516.5" slotDis="18,18,18,18" slotFace="0,0,1,1" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="518.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="2142" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="518.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="2142" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002287" IsGenCode="2" Type="2" Face="5" X="1170.00" Y="495.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002288" IsGenCode="2" Type="2" Face="5" X="1130.00" Y="495.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002289" IsGenCode="2" Type="2" Face="5" X="570.00" Y="509.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002290" IsGenCode="2" Type="2" Face="5" X="530.00" Y="509.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002291" IsGenCode="2" Type="2" Face="5" X="1691.00" Y="509.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002292" IsGenCode="2" Type="2" Face="5" X="1651.00" Y="509.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002293" IsGenCode="2" Type="2" Face="6" X="1170.00" Y="495.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002294" IsGenCode="2" Type="2" Face="6" X="1130.00" Y="495.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002295" IsGenCode="2" Type="2" Face="6" X="570.00" Y="509.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002296" IsGenCode="2" Type="2" Face="6" X="530.00" Y="509.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002297" IsGenCode="2" Type="2" Face="6" X="1691.00" Y="509.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002298" IsGenCode="2" Type="2" Face="6" X="1651.00" Y="509.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002299" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002300" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002301" IsGenCode="2" Type="1" Face="4" X="0" Y="458.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002302" IsGenCode="2" Type="2" Face="6" X="34.00" Y="458.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002303" IsGenCode="2" Type="1" Face="3" X="2142.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002304" IsGenCode="2" Type="2" Face="6" X="2108.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002305" IsGenCode="2" Type="1" Face="3" X="2142.00" Y="458.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002306" IsGenCode="2" Type="2" Face="6" X="2108.00" Y="458.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002307" IsGenCode="2" Type="2" Face="5" X="1733.00" Y="60.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002308" IsGenCode="2" Type="2" Face="5" X="1733.00" Y="431.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002309" IsGenCode="2" Type="2" Face="5" X="863.00" Y="60.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002310" IsGenCode="2" Type="2" Face="5" X="863.00" Y="431.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002311" IsGenCode="2" Type="2" Face="5" X="1298.00" Y="60.50" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002312" IsGenCode="2" Type="2" Face="5" X="1298.00" Y="431.00" Z="18.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002313" IsGenCode="2" Type="2" Face="6" X="1733.00" Y="60.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002314" IsGenCode="2" Type="2" Face="6" X="1733.00" Y="431.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002315" IsGenCode="2" Type="2" Face="6" X="863.00" Y="60.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002316" IsGenCode="2" Type="2" Face="6" X="863.00" Y="431.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002317" IsGenCode="2" Type="2" Face="6" X="1298.00" Y="60.50" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002318" IsGenCode="2" Type="2" Face="6" X="1298.00" Y="431.00" Z="0.00" HoleType="0" Diameter="10.00" Depth="10.50" IsArtificial="false"/>
+          <Machining ID="002319" IsGenCode="2" Type="2" Face="5" X="415.00" Y="61.00" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002320" IsGenCode="2" Type="2" Face="5" X="479.00" Y="61.00" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002321" IsGenCode="2" Type="2" Face="5" X="351.00" Y="61.00" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002322" IsGenCode="2" Type="2" Face="5" X="415.00" Y="431.00" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002323" IsGenCode="2" Type="2" Face="5" X="479.00" Y="431.00" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002324" IsGenCode="2" Type="2" Face="5" X="351.00" Y="431.00" Z="18.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002325" IsGenCode="2" Type="2" Face="6" X="415.00" Y="61.00" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002326" IsGenCode="2" Type="2" Face="6" X="479.00" Y="61.00" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002327" IsGenCode="2" Type="2" Face="6" X="351.00" Y="61.00" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002328" IsGenCode="2" Type="2" Face="6" X="415.00" Y="431.00" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002329" IsGenCode="2" Type="2" Face="6" X="479.00" Y="431.00" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002330" IsGenCode="2" Type="2" Face="6" X="351.00" Y="431.00" Z="0.00" HoleType="0" Diameter="5.00" Depth="10.00" IsArtificial="false"/>
+          <Machining ID="002331" IsGenCode="2" Type="2" Face="5" X="2074.50" Y="33.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002332" IsGenCode="2" Type="2" Face="5" X="2042.50" Y="33.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002333" IsGenCode="2" Type="2" Face="5" X="1416.50" Y="33.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002334" IsGenCode="2" Type="2" Face="5" X="1384.50" Y="33.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002335" IsGenCode="2" Type="2" Face="5" X="99.50" Y="33.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002336" IsGenCode="2" Type="2" Face="5" X="67.50" Y="33.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002337" IsGenCode="2" Type="2" Face="5" X="757.50" Y="33.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002338" IsGenCode="2" Type="2" Face="5" X="725.50" Y="33.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002339" IsGenCode="2" Type="2" Face="6" X="2042.50" Y="33.50" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002340" IsGenCode="2" Type="2" Face="6" X="2074.50" Y="33.50" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002341" IsGenCode="2" Type="2" Face="6" X="1384.50" Y="33.50" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002342" IsGenCode="2" Type="2" Face="6" X="1416.50" Y="33.50" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002343" IsGenCode="2" Type="2" Face="6" X="67.50" Y="33.50" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002344" IsGenCode="2" Type="2" Face="6" X="99.50" Y="33.50" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002345" IsGenCode="2" Type="2" Face="6" X="725.50" Y="33.50" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002346" IsGenCode="2" Type="2" Face="6" X="757.50" Y="33.50" Z="0.00" HoleType="0" Diameter="1.00" Depth="2.50" IsArtificial="false"/>
+          <Machining ID="002347" IsGenCode="2" Type="3" Face="5" X="1105.0" Y="495.5" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="0.0" EndY="495.5" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002348" IsGenCode="2" Type="3" Face="5" X="2142.0" Y="495.5" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="1195.0" EndY="495.5" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002349" IsGenCode="2" Type="3" Face="6" X="1105.0" Y="495.5" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="0.0" EndY="495.5" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002350" IsGenCode="2" Type="3" Face="6" X="2142.0" Y="495.5" Depth="5.5" Width="10.0" ToolName="开槽刀" IsPartSlot="false" ToolOffset=" " IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="1195.0" EndY="495.5" Angle="0.00" Thickness="0"/>
+            </Lines>
+          </Machining>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="9" CraftMark="" Length="728" Width="1110" ID="32370891669" CabinetPanelNo="3-041" Name="薄背板1" StandardCategory="BB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="C58AB75F-D6D5-88DC-4953-CEA83D889FA5" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="door_core" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="3" EdgeGroupTypeName="无封边" thickLength="0" thinLength="0" customLength="0" ActualLength="728" ActualWidth="1110" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="0" EdgeType="N" Length="728" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="0" EdgeType="N" Length="1110" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="0" EdgeType="N" Length="728" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="0" EdgeType="N" Length="1110" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="9" CraftMark="" Length="728" Width="952" ID="32370891670" CabinetPanelNo="3-042" Name="薄背板2" StandardCategory="BB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="CCA62356-BE65-CFB0-4B7D-CEA83D88DAD7" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="door_core" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="3" EdgeGroupTypeName="无封边" thickLength="0" thinLength="0" customLength="0" ActualLength="728" ActualWidth="952" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="0" EdgeType="N" Length="728" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="0" EdgeType="N" Length="952" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="0" EdgeType="N" Length="728" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="0" EdgeType="N" Length="952" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="100" ID="32370891671" CabinetPanelNo="3-043" Name="水平槽背拉1" StandardCategory="BLT" Material="GT8033米维斯橡木" MaterialId="132319411" uid="0065B992-2E82-5F91-9B2B-CEA83D881CA0" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892671" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="1636" customLength="0" ActualLength="716" ActualWidth="98" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="100" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="100" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002352" Type="3" IsGenCode="2" Face="6" X="349.0" Y="45.0" Depth="1.00" ToolName="开料铣型刀" ToolOffset="左" EdgeABThickness="1" GrooveType="1" HoleType="0" IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="369.0" EndY="45.0" Angle="0"/>
+              <Line LineID="2" EndX="369.0" EndY="55.0" Angle="0"/>
+              <Line LineID="3" EndX="349.0" EndY="55.0" Angle="0"/>
+              <Line LineID="4" EndX="349.0" EndY="45.0" Angle="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002353" IsGenCode="2" Type="1" Face="4" X="0" Y="70.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002354" IsGenCode="2" Type="2" Face="6" X="34.00" Y="70.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002355" IsGenCode="2" Type="1" Face="4" X="0" Y="30.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002356" IsGenCode="2" Type="2" Face="6" X="34.00" Y="30.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002357" IsGenCode="2" Type="1" Face="3" X="718.00" Y="70.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002358" IsGenCode="2" Type="2" Face="6" X="684.00" Y="70.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002359" IsGenCode="2" Type="1" Face="3" X="718.00" Y="30.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002360" IsGenCode="2" Type="2" Face="6" X="684.00" Y="30.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002361" Type="5" IsGenCode="2" Face="2" X="718.0" Y="0.0" Depth="5.0" ToolName="开料铣型刀" ToolOffset="右" EdgeABThickness="1" Z="9" Height="9.0">
+            <Lines>
+              <Line LineID="1" EndX="718.0" EndY="5.0" Angle="0"/>
+              <Line LineID="2" EndX="0.0" EndY="5.0" Angle="0"/>
+              <Line LineID="3" EndX="0.0" EndY="0.0" Angle="0"/>
+              <Line LineID="4" EndX="718.0" EndY="0.0" Angle="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002362" Type="5" IsGenCode="2" Face="1" X="718.0" Y="95.0" Depth="5.0" ToolName="开料铣型刀" ToolOffset="右" EdgeABThickness="1" Z="9" Height="9.0">
+            <Lines>
+              <Line LineID="1" EndX="718.0" EndY="100.0" Angle="0"/>
+              <Line LineID="2" EndX="0.0" EndY="100.0" Angle="0"/>
+              <Line LineID="3" EndX="0.0" EndY="95.0" Angle="0"/>
+              <Line LineID="4" EndX="718.0" EndY="95.0" Angle="0"/>
+            </Lines>
+          </Machining>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="80" ID="32370891672" CabinetPanelNo="3-044" Name="拉条带膨胀" StandardCategory="BLT" Material="GT8033米维斯橡木" MaterialId="132319411" uid="66CC657C-B5C0-3697-3F82-CEA83D88AB87" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892672" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="1596" customLength="0" ActualLength="716" ActualWidth="78" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002363" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002364" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002365" IsGenCode="2" Type="1" Face="4" X="0" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002366" IsGenCode="2" Type="2" Face="6" X="34.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002367" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002368" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002369" IsGenCode="2" Type="1" Face="3" X="718.00" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002370" IsGenCode="2" Type="2" Face="6" X="684.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="80" ID="32370891673" CabinetPanelNo="3-045" Name="拉条带膨胀" StandardCategory="BLT" Material="GT8033米维斯橡木" MaterialId="132319411" uid="FA8F2998-F637-B4EE-23D7-CEA83D88BD19" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892673" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="1596" customLength="0" ActualLength="716" ActualWidth="78" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002371" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002372" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002373" IsGenCode="2" Type="1" Face="4" X="0" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002374" IsGenCode="2" Type="2" Face="6" X="34.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002375" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002376" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002377" IsGenCode="2" Type="1" Face="3" X="718.00" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002378" IsGenCode="2" Type="2" Face="6" X="684.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="490.5" ID="32370891404" CabinetPanelNo="3-046" Name="三合一层板" StandardCategory="GDCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="D13CA99C-2180-BFFE-9B16-164C295CD50C" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892404" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="718" thinLength="1699" customLength="0" ActualLength="716" ActualWidth="488.5" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002379" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002380" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002381" IsGenCode="2" Type="1" Face="4" X="0" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002382" IsGenCode="2" Type="2" Face="6" X="34.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002383" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002384" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002385" IsGenCode="2" Type="1" Face="3" X="718.00" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002386" IsGenCode="2" Type="2" Face="6" X="684.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="490.5" ID="32370891406" CabinetPanelNo="3-047" Name="三合一层板" StandardCategory="GDCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="C5A842E9-28F8-8EBF-AFB3-164C295C72D5" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892406" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="718" thinLength="1699" customLength="0" ActualLength="716" ActualWidth="488.5" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002387" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002388" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002389" IsGenCode="2" Type="1" Face="4" X="0" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002390" IsGenCode="2" Type="2" Face="6" X="34.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002391" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002392" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002393" IsGenCode="2" Type="1" Face="3" X="718.00" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002394" IsGenCode="2" Type="2" Face="6" X="684.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="490.5" ID="32370891407" CabinetPanelNo="3-048" Name="三合一层板" StandardCategory="GDCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="933ACA7D-A175-30C7-7C88-164C295C196F" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892407" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="718" thinLength="1699" customLength="0" ActualLength="716" ActualWidth="488.5" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002395" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002396" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002397" IsGenCode="2" Type="1" Face="4" X="0" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002398" IsGenCode="2" Type="2" Face="6" X="34.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002399" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002400" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002401" IsGenCode="2" Type="1" Face="3" X="718.00" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002402" IsGenCode="2" Type="2" Face="6" X="684.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="717" Width="490" ID="32370891414" CabinetPanelNo="3-049" Name="钉层板-三排" StandardCategory="HDCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="480FA120-33C2-4BF9-074A-C41546C64FD4" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="717" thinLength="1697" customLength="0" ActualLength="715" ActualWidth="488" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="490" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="717" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="490" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="717" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="9" CraftMark="" Length="728" Width="1110" ID="32370891674" CabinetPanelNo="3-050" Name="薄背板1" StandardCategory="BB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="BD7F24DC-A913-2E74-1D12-CEA83D8843E4" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="door_core" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="3" EdgeGroupTypeName="无封边" thickLength="0" thinLength="0" customLength="0" ActualLength="728" ActualWidth="1110" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="0" EdgeType="N" Length="728" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="0" EdgeType="N" Length="1110" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="0" EdgeType="N" Length="728" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="0" EdgeType="N" Length="1110" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="9" CraftMark="" Length="728" Width="952" ID="32370891675" CabinetPanelNo="3-051" Name="薄背板2" StandardCategory="BB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="7A831F88-F3AF-D5D9-34B1-CEA83D887BB0" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="door_core" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="3" EdgeGroupTypeName="无封边" thickLength="0" thinLength="0" customLength="0" ActualLength="728" ActualWidth="952" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="0" EdgeType="N" Length="728" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="0" EdgeType="N" Length="952" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="0" EdgeType="N" Length="728" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="0" EdgeType="N" Length="952" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="100" ID="32370891676" CabinetPanelNo="3-052" Name="水平槽背拉1" StandardCategory="BLT" Material="GT8033米维斯橡木" MaterialId="132319411" uid="F5C1F2BB-44AE-5D9D-D278-CEA83D8844FF" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892676" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="1636" customLength="0" ActualLength="716" ActualWidth="98" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="100" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="100" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002404" Type="3" IsGenCode="2" Face="6" X="349.0" Y="45.0" Depth="1.00" ToolName="开料铣型刀" ToolOffset="左" EdgeABThickness="1" GrooveType="1" HoleType="0" IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="369.0" EndY="45.0" Angle="0"/>
+              <Line LineID="2" EndX="369.0" EndY="55.0" Angle="0"/>
+              <Line LineID="3" EndX="349.0" EndY="55.0" Angle="0"/>
+              <Line LineID="4" EndX="349.0" EndY="45.0" Angle="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002405" IsGenCode="2" Type="1" Face="3" X="718.00" Y="70.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002406" IsGenCode="2" Type="2" Face="6" X="684.00" Y="70.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002407" IsGenCode="2" Type="1" Face="3" X="718.00" Y="30.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002408" IsGenCode="2" Type="2" Face="6" X="684.00" Y="30.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002409" IsGenCode="2" Type="1" Face="4" X="0" Y="70.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002410" IsGenCode="2" Type="2" Face="6" X="34.00" Y="70.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002411" IsGenCode="2" Type="1" Face="4" X="0" Y="30.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002412" IsGenCode="2" Type="2" Face="6" X="34.00" Y="30.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002413" Type="5" IsGenCode="2" Face="2" X="718.0" Y="0.0" Depth="5.0" ToolName="开料铣型刀" ToolOffset="右" EdgeABThickness="1" Z="9" Height="9.0">
+            <Lines>
+              <Line LineID="1" EndX="718.0" EndY="5.0" Angle="0"/>
+              <Line LineID="2" EndX="0.0" EndY="5.0" Angle="0"/>
+              <Line LineID="3" EndX="0.0" EndY="0.0" Angle="0"/>
+              <Line LineID="4" EndX="718.0" EndY="0.0" Angle="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002414" Type="5" IsGenCode="2" Face="1" X="718.0" Y="95.0" Depth="5.0" ToolName="开料铣型刀" ToolOffset="右" EdgeABThickness="1" Z="9" Height="9.0">
+            <Lines>
+              <Line LineID="1" EndX="718.0" EndY="100.0" Angle="0"/>
+              <Line LineID="2" EndX="0.0" EndY="100.0" Angle="0"/>
+              <Line LineID="3" EndX="0.0" EndY="95.0" Angle="0"/>
+              <Line LineID="4" EndX="718.0" EndY="95.0" Angle="0"/>
+            </Lines>
+          </Machining>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="80" ID="32370891677" CabinetPanelNo="3-053" Name="拉条带膨胀" StandardCategory="BLT" Material="GT8033米维斯橡木" MaterialId="132319411" uid="55D55106-5740-7515-2574-CEA83D888EBE" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892677" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="1596" customLength="0" ActualLength="716" ActualWidth="78" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002415" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002416" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002417" IsGenCode="2" Type="1" Face="3" X="718.00" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002418" IsGenCode="2" Type="2" Face="6" X="684.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002419" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002420" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002421" IsGenCode="2" Type="1" Face="4" X="0" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002422" IsGenCode="2" Type="2" Face="6" X="34.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="80" ID="32370891678" CabinetPanelNo="3-054" Name="拉条带膨胀" StandardCategory="BLT" Material="GT8033米维斯橡木" MaterialId="132319411" uid="8CB4848D-0B0B-CAD5-F36C-CEA83D886814" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892678" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="1596" customLength="0" ActualLength="716" ActualWidth="78" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="80" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002423" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002424" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002425" IsGenCode="2" Type="1" Face="3" X="718.00" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002426" IsGenCode="2" Type="2" Face="6" X="684.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002427" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002428" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002429" IsGenCode="2" Type="1" Face="4" X="0" Y="20.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002430" IsGenCode="2" Type="2" Face="6" X="34.00" Y="20.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="490.5" ID="32370891405" CabinetPanelNo="3-055" Name="三合一层板" StandardCategory="GDCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="079233A4-59E4-B5C0-7167-164C295C11BB" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892405" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="718" thinLength="1699" customLength="0" ActualLength="716" ActualWidth="488.5" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002431" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002432" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002433" IsGenCode="2" Type="1" Face="3" X="718.00" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002434" IsGenCode="2" Type="2" Face="6" X="684.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002435" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002436" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002437" IsGenCode="2" Type="1" Face="4" X="0" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002438" IsGenCode="2" Type="2" Face="6" X="34.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="490.5" ID="32370891408" CabinetPanelNo="3-056" Name="三合一层板" StandardCategory="GDCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="E3EFC41C-5EE6-71DE-A6F6-1F4D2E7D3260" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892408" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="718" thinLength="1699" customLength="0" ActualLength="716" ActualWidth="488.5" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002439" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002440" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002441" IsGenCode="2" Type="1" Face="3" X="718.00" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002442" IsGenCode="2" Type="2" Face="6" X="684.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002443" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002444" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002445" IsGenCode="2" Type="1" Face="4" X="0" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002446" IsGenCode="2" Type="2" Face="6" X="34.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="718" Width="490.5" ID="32370891409" CabinetPanelNo="3-057" Name="三合一层板" StandardCategory="GDCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="1D330CCD-21BC-ED95-4B06-1F4D2E7D7F62" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="32370892409" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="718" thinLength="1699" customLength="0" ActualLength="716" ActualWidth="488.5" HasHorizontalHole="1" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="490.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="718" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002447" IsGenCode="2" Type="1" Face="3" X="718.00" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002448" IsGenCode="2" Type="2" Face="6" X="684.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002449" IsGenCode="2" Type="1" Face="3" X="718.00" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002450" IsGenCode="2" Type="2" Face="6" X="684.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002451" IsGenCode="2" Type="1" Face="4" X="0" Y="60.00" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002452" IsGenCode="2" Type="2" Face="6" X="34.00" Y="60.00" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002453" IsGenCode="2" Type="1" Face="4" X="0" Y="430.50" Z="9.00" HoleType="0" Diameter="8.00" Depth="34.00" IsArtificial="false"/>
+          <Machining ID="002454" IsGenCode="2" Type="2" Face="6" X="34.00" Y="430.50" Z="0.00" HoleType="0" Diameter="15.00" Depth="13.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="717" Width="490" ID="32370891415" CabinetPanelNo="3-058" Name="钉层板-三排" StandardCategory="HDCB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="59803D1B-7982-0E36-E8B0-C41546C6AB59" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="0" EdgeGroupTypeName="三薄一厚" thickLength="717" thinLength="1697" customLength="0" ActualLength="715" ActualWidth="488" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="490" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="717" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="490" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="717" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" TextureDirection="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2175" Width="369.5" ID="32370891410" CabinetPanelNo="3-059" Name="拉直器平板门" StandardCategory="QGZKM" ModelName="拉直器平板门" Material="GT8024白绒麻" MaterialId="132319410" uid="29F35F2E-261F-FF66-59BB-164C295C85BF" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="swingDoorLeafEntity" SubType="" edgeMaterial="GT8024白绒麻" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="32370891410" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="MB" DoorDirection="左开" Category="Door" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="1" EdgeGroupTypeName="四厚" thickLength="5089" thinLength="0" customLength="0" ActualLength="2173" ActualWidth="367.5" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues/>
+        <Handles>
+          <Handle name="客户自备拉手" uid="E3CCBFEC-0881-2FF3-CCD0-5BA242BEBA24" handleDirection="2" partNumber="cabinet-001" length="20" width="20" height="100" type="knob" subType="" id="140542703" materialName="" materialId=""/>
+        </Handles>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="H" Length="2175" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="369.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="H" Length="2175" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="H" Length="369.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002456" Type="3" IsGenCode="2" Face="5" X="2175.0" Y="208.3" Depth="12.70" ToolName="开料铣型刀" ToolOffset="左" EdgeABThickness="1" GrooveType="1" HoleType="0" IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="0.0" EndY="208.3" Angle="0"/>
+              <Line LineID="2" EndX="0.0" EndY="205.8" Angle="0"/>
+              <Line LineID="3" EndX="2175.0" EndY="205.8" Angle="0"/>
+              <Line LineID="4" EndX="2175.0" EndY="208.3" Angle="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002457" IsGenCode="2" Type="2" Face="5" X="100.00" Y="22.00" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002458" IsGenCode="2" Type="2" Face="5" X="122.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002459" IsGenCode="2" Type="2" Face="5" X="77.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002460" IsGenCode="2" Type="2" Face="5" X="2075.00" Y="22.00" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002461" IsGenCode="2" Type="2" Face="5" X="2097.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002462" IsGenCode="2" Type="2" Face="5" X="2052.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002463" IsGenCode="2" Type="2" Face="5" X="1417.00" Y="22.00" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002464" IsGenCode="2" Type="2" Face="5" X="1439.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002465" IsGenCode="2" Type="2" Face="5" X="1394.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002466" IsGenCode="2" Type="2" Face="5" X="758.00" Y="22.00" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002467" IsGenCode="2" Type="2" Face="5" X="780.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002468" IsGenCode="2" Type="2" Face="5" X="735.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" TextureDirection="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2175" Width="369.5" ID="32370891411" CabinetPanelNo="3-060" Name="拉直器平板门" StandardCategory="QGYKM" ModelName="拉直器平板门" Material="GT8024白绒麻" MaterialId="132319410" uid="21338190-F15E-84B0-DEF3-164C295C51A5" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="swingDoorLeafEntity" SubType="" edgeMaterial="GT8024白绒麻" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="32370891411" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="MB" DoorDirection="右开" Category="Door" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="1" EdgeGroupTypeName="四厚" thickLength="5089" thinLength="0" customLength="0" ActualLength="2173" ActualWidth="367.5" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues/>
+        <Handles>
+          <Handle name="客户自备拉手" uid="E3CCBFEC-0881-2FF3-CCD0-5BA242BEBA24" handleDirection="8" partNumber="cabinet-001" length="20" width="20" height="100" type="knob" subType="" id="140542703" materialName="" materialId=""/>
+        </Handles>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="H" Length="2175" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="369.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="H" Length="2175" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="H" Length="369.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002470" Type="3" IsGenCode="2" Face="5" X="2175.0" Y="138.8" Depth="12.70" ToolName="开料铣型刀" ToolOffset="左" EdgeABThickness="1" GrooveType="1" HoleType="0" IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="0.0" EndY="138.8" Angle="0"/>
+              <Line LineID="2" EndX="0.0" EndY="136.3" Angle="0"/>
+              <Line LineID="3" EndX="2175.0" EndY="136.3" Angle="0"/>
+              <Line LineID="4" EndX="2175.0" EndY="138.8" Angle="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002471" IsGenCode="2" Type="2" Face="5" X="2075.00" Y="347.50" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002472" IsGenCode="2" Type="2" Face="5" X="2052.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002473" IsGenCode="2" Type="2" Face="5" X="2097.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002474" IsGenCode="2" Type="2" Face="5" X="1417.00" Y="347.50" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002475" IsGenCode="2" Type="2" Face="5" X="1394.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002476" IsGenCode="2" Type="2" Face="5" X="1439.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002477" IsGenCode="2" Type="2" Face="5" X="100.00" Y="347.50" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002478" IsGenCode="2" Type="2" Face="5" X="77.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002479" IsGenCode="2" Type="2" Face="5" X="122.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002480" IsGenCode="2" Type="2" Face="5" X="758.00" Y="347.50" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002481" IsGenCode="2" Type="2" Face="5" X="735.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002482" IsGenCode="2" Type="2" Face="5" X="780.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" TextureDirection="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2175" Width="369.5" ID="32370891412" CabinetPanelNo="3-061" Name="拉直器平板门" StandardCategory="QGZKM" ModelName="拉直器平板门" Material="GT8024白绒麻" MaterialId="132319410" uid="2FDBB469-1B0A-ADFA-52C9-164C295C9E16" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="swingDoorLeafEntity" SubType="" edgeMaterial="GT8024白绒麻" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="32370891412" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="MB" DoorDirection="左开" Category="Door" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="1" EdgeGroupTypeName="四厚" thickLength="5089" thinLength="0" customLength="0" ActualLength="2173" ActualWidth="367.5" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues/>
+        <Handles>
+          <Handle name="客户自备拉手" uid="E3CCBFEC-0881-2FF3-CCD0-5BA242BEBA24" handleDirection="2" partNumber="cabinet-001" length="20" width="20" height="100" type="knob" subType="" id="140542703" materialName="" materialId=""/>
+        </Handles>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="H" Length="2175" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="369.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="H" Length="2175" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="H" Length="369.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002484" Type="3" IsGenCode="2" Face="5" X="2175.0" Y="208.3" Depth="12.70" ToolName="开料铣型刀" ToolOffset="左" EdgeABThickness="1" GrooveType="1" HoleType="0" IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="0.0" EndY="208.3" Angle="0"/>
+              <Line LineID="2" EndX="0.0" EndY="205.8" Angle="0"/>
+              <Line LineID="3" EndX="2175.0" EndY="205.8" Angle="0"/>
+              <Line LineID="4" EndX="2175.0" EndY="208.3" Angle="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002485" IsGenCode="2" Type="2" Face="5" X="2075.00" Y="22.00" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002486" IsGenCode="2" Type="2" Face="5" X="2097.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002487" IsGenCode="2" Type="2" Face="5" X="2052.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002488" IsGenCode="2" Type="2" Face="5" X="1417.00" Y="22.00" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002489" IsGenCode="2" Type="2" Face="5" X="1439.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002490" IsGenCode="2" Type="2" Face="5" X="1394.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002491" IsGenCode="2" Type="2" Face="5" X="100.00" Y="22.00" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002492" IsGenCode="2" Type="2" Face="5" X="122.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002493" IsGenCode="2" Type="2" Face="5" X="77.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002494" IsGenCode="2" Type="2" Face="5" X="758.00" Y="22.00" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002495" IsGenCode="2" Type="2" Face="5" X="780.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002496" IsGenCode="2" Type="2" Face="5" X="735.50" Y="30.50" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" TextureDirection="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2175" Width="369.5" ID="32370891413" CabinetPanelNo="3-062" Name="拉直器平板门" StandardCategory="QGYKM" ModelName="拉直器平板门" Material="GT8024白绒麻" MaterialId="132319410" uid="7BE19FC4-3F8D-5137-EEB1-164C295C8012" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="swingDoorLeafEntity" SubType="" edgeMaterial="GT8024白绒麻" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="32370891413" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="MB" DoorDirection="右开" Category="Door" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="1" EdgeGroupTypeName="四厚" thickLength="5089" thinLength="0" customLength="0" ActualLength="2173" ActualWidth="367.5" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues/>
+        <Handles>
+          <Handle name="客户自备拉手" uid="E3CCBFEC-0881-2FF3-CCD0-5BA242BEBA24" handleDirection="8" partNumber="cabinet-001" length="20" width="20" height="100" type="knob" subType="" id="140542703" materialName="" materialId=""/>
+        </Handles>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="H" Length="2175" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="H" Length="369.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="H" Length="2175" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="H" Length="369.5" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines>
+          <Machining ID="002498" Type="3" IsGenCode="2" Face="5" X="2175.0" Y="138.8" Depth="12.70" ToolName="开料铣型刀" ToolOffset="左" EdgeABThickness="1" GrooveType="1" HoleType="0" IsArtificial="false">
+            <Lines>
+              <Line LineID="1" EndX="0.0" EndY="138.8" Angle="0"/>
+              <Line LineID="2" EndX="0.0" EndY="136.3" Angle="0"/>
+              <Line LineID="3" EndX="2175.0" EndY="136.3" Angle="0"/>
+              <Line LineID="4" EndX="2175.0" EndY="138.8" Angle="0"/>
+            </Lines>
+          </Machining>
+          <Machining ID="002499" IsGenCode="2" Type="2" Face="5" X="100.00" Y="347.50" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002500" IsGenCode="2" Type="2" Face="5" X="77.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002501" IsGenCode="2" Type="2" Face="5" X="122.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002502" IsGenCode="2" Type="2" Face="5" X="2075.00" Y="347.50" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002503" IsGenCode="2" Type="2" Face="5" X="2052.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002504" IsGenCode="2" Type="2" Face="5" X="2097.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002505" IsGenCode="2" Type="2" Face="5" X="1417.00" Y="347.50" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002506" IsGenCode="2" Type="2" Face="5" X="1394.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002507" IsGenCode="2" Type="2" Face="5" X="1439.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002508" IsGenCode="2" Type="2" Face="5" X="758.00" Y="347.50" Z="18.00" HoleType="0" Diameter="35.00" Depth="13.00" IsArtificial="false"/>
+          <Machining ID="002509" IsGenCode="2" Type="2" Face="5" X="735.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+          <Machining ID="002510" IsGenCode="2" Type="2" Face="5" X="780.50" Y="339.00" Z="18.00" HoleType="0" Diameter="1.00" Depth="12.00" IsArtificial="false"/>
+        </Machines>
+        <Panels/>
+      </Panel>
+      <Panel Grain="V" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="1490" Width="100" ID="32370891416" CabinetPanelNo="2-047" Name="顶收口前板" StandardCategory="DFBQB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="08F5E4C9-7732-33A9-0A92-164C295CF5C1" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="4" EdgeGroupTypeName="自定义" thickLength="0" thinLength="3180" customLength="0" ActualLength="1488" ActualWidth="98" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="1490" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="100" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="1490" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="100" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="1472" Width="50" ID="32370891417" CabinetPanelNo="2-048" Name="收口备条C" StandardCategory="DFBFJB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="3143A6FF-0DE2-7B9F-3163-164C295C5494" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="4" EdgeGroupTypeName="自定义" thickLength="0" thinLength="3044" customLength="0" ActualLength="1470" ActualWidth="48" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="1472" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="1472" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2342" Width="50" ID="32370891418" CabinetPanelNo="1-003" Name="收口备条" StandardCategory="DFBFJB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="FF8DAC3A-DD32-19A7-2A3D-164C295C59C3" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="4784" customLength="0" ActualLength="2340" ActualWidth="48" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="2342" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="2342" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2360" Width="50" ID="32370891419" CabinetPanelNo="1-004" Name="前封板" StandardCategory="DFBQB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="6033158C-3C22-3AA4-B684-164C295C0FAC" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="4820" customLength="0" ActualLength="2358" ActualWidth="48" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="2360" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="2360" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2342" Width="50" ID="32370891420" CabinetPanelNo="4-004" Name="收口备条" StandardCategory="DFBFJB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="D753FE90-E38F-2666-5B8B-164C295C825E" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="4784" customLength="0" ActualLength="2340" ActualWidth="48" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="2342" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="2342" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+      <Panel Grain="H" ProduceNumber="" IsProduce="true" Thickness="18" CraftMark="" Length="2360" Width="50" ID="32370891421" CabinetPanelNo="4-005" Name="前封板" StandardCategory="DFBQB" Material="GT8033米维斯橡木" MaterialId="132319411" uid="77E7BDFC-E1A5-783C-4AEB-164C295CDE5E" BaseMaterialCategoryId="104621485" MaterialCategoryId="104671959" Model="" Type="1" CabinetType="cabinet_board" SubType="standard_board" edgeMaterial="GT8033米维斯橡木" IsAccurate="0" MachiningPoint="5" ProdutionNo="" ProductionName="" Face5ID="" Face6ID="" clerk="" PkgNo="" BasicMaterial="颗粒板" PartNumber="gtb" DoorDirection="" Category="Board" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinCodeNo="" EdgeThinName="" EdgeThinMaterialCode="" EdgeThinWidth="" EdgeThinThickness="" EdgeThinType="" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="4820" customLength="0" ActualLength="2358" ActualWidth="48" HasHorizontalHole="0" Series="" isOutsourcing="false" priceP="1">
+        <ProduceValues BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <EdgeGroup X1="0" Y1="0">
+          <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="2360" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="50" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="2360" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+        </EdgeGroup>
+        <Machines/>
+        <Panels/>
+      </Panel>
+    </Panels>
+    <Metals discard="true">
+      <Metal Id="127766761" Name="附件4X30自攻丝" PartNumber="50007000010" Num="1" CraftMark="" isAccessory="true" uid="6AF1AE0F-41D7-6BF5-488F-6B2819E59321" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/127766761/497fc69df9264401982535e0f80c23c2.png" Style="" Unit="个"/>
+      <Metal Id="127766761" Name="附件4X30自攻丝" PartNumber="50007000010" Num="2" CraftMark="" isAccessory="true" uid="218D03B3-7A3B-77AB-6817-6D06F9152DCB" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/127766761/f6f6218d1b444e20bd52f4fa1b7c9cb2.png" Style="" Unit="个"/>
+      <Metal Id="126660044" Name="附件4X15自攻丝" PartNumber="50007000009" Num="2" CraftMark="" isAccessory="true" uid="C42089B2-8CFC-290A-C1EF-7E489580D37D" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/126660044/dd076b3005d14372a2a46db4951fd3b7.png" Style="" Unit="颗"/>
+      <Metal Id="126660044" Name="附件4X15自攻丝" PartNumber="50007000009" Num="2" CraftMark="" isAccessory="true" uid="C42089B2-8CFC-290A-C1EF-7E489580D37D" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/126660044/dd076b3005d14372a2a46db4951fd3b7.png" Style="" Unit="颗"/>
+      <Metal Id="126660044" Name="附件4X15自攻丝" PartNumber="50007000009" Num="2" CraftMark="" isAccessory="true" uid="C42089B2-8CFC-290A-C1EF-7E489580D37D" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/126660044/dd076b3005d14372a2a46db4951fd3b7.png" Style="" Unit="颗"/>
+      <Metal Id="126660044" Name="附件4X15自攻丝" PartNumber="50007000009" Num="2" CraftMark="" isAccessory="true" uid="C42089B2-8CFC-290A-C1EF-7E489580D37D" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/126660044/dd076b3005d14372a2a46db4951fd3b7.png" Style="" Unit="颗"/>
+      <Metal Id="122847014" Name="美工贴" PartNumber="122847014" length="16" width="16" height="1" Num="80" type="hardware" subType="Perfect_stick" uid="CB410E53-8642-E734-AF50-E1DEC4059CBE" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00002384/PMC/DesignMaterial/201705/D536A73BCE06426687600DE11114DD3A/39E46690546C4234ABB324DCF950E05F.jpg" Style="" Unit="个" relatedMaterial="GT8033米维斯橡木"/>
+      <Metal Id="122850588" Name="单头连接杆" PartNumber="dtljg" length="8" width="8" height="42" Num="80" type="hardware" subType="" uid="8BC72090-F47B-6448-8ED7-E1DEC4052C52" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00000022/PMC/DesignMaterial/201805/15079674/421-A.jpg" Style="" Unit="个"/>
+      <Metal Id="122850381" Name="偏心盖" PartNumber="pianxingai" length="15" width="15" height="11" Num="80" type="hardware" subType="" uid="BCD766A8-FD61-F98B-E8DE-E1DEC405A14D" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00000022/PMC/DesignMaterial/201803/13018908/Jinshujian-03-6.jpg" Style="" Unit="个"/>
+      <Metal Id="122850326" Name="开槽拉直器" PartNumber="58001000016" length="25" width="13" height="2175" Num="4" type="hardware" subType="" uid="684B0197-B052-1343-A243-28FFB4DED8E4" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00006446/PMC/DesignMaterial/202012/119551564/4a11bfacc47a427da9a51c65aa953f8a.png" Style="" Unit=""/>
+      <Metal Id="140625065" Name="客户自备拉手" PartNumber="50001000039" length="20" width="20" height="100" Num="4" type="hardware" subType="" uid="24C37393-F8C0-71BF-769B-5BA242BE6769" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202108/140625065/0633f6a8c48a49d0803bd54d3aba298b.png" Style="" Unit=""/>
+      <Metal Id="122847955" Name="层板销" PartNumber="CBX" length="5" width="5" height="5" Num="8" type="hardware" subType="" uid="7538BF8E-45B2-8CCC-9797-E1DEC405E803" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00000022/PMC/DesignMaterial/201711/09529590/c918da179c514c3ba5e035061c6e161a.png" Style="" Unit=""/>
+      <Metal Id="140572000" Name="活动层板钉盖" PartNumber="50007000135" length="6" width="6" height="1" Num="16" type="hardware" subType="" uid="F6C1B264-9F6F-A409-8A26-E1DEC4054D7A" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202108/140572000/faf11416d2d34ba396a49f3aa8ff36b2.png" Style="" Unit=""/>
+      <Metal Id="128371978" Name="标配直臂铰链" PartNumber="50006000003" length="1" width="1" height="1" Num="8" type="hardware" subType="hinge" uid="C40D9FD6-6D93-3FDC-5AE9-E1DEC405220B" CraftMark="进口百隆门铰" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202104/128371978/75ae6cd3be73421f8f766fd243e6a067.png" Style="" Unit="个" MT="2000"/>
+      <Metal Id="122850323" Name="自攻螺丝4x15" PartNumber="50007000009" length="4" width="4" height="15" Num="64" type="hardware" subType="" uid="03E87540-2F3E-6AF4-7CCE-E1DEC405408A" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00006446/PMC/DesignMaterial/202004/102539232/e8a585df7b614ab8877d4ff8d992f340.png" Style="" Unit="颗"/>
+      <Metal Id="137709928" Name="挡门钉" PartNumber="50007000211" length="8" width="1" height="8" Num="8" type="hardware" subType="" uid="8C28AA8A-A892-1F49-430C-E1DEC4050FB7" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202107/137709928/6f4796f8a51d4b72b3b7c2331bc91653.png" Style="" Unit="颗"/>
+      <Metal Id="128373566" Name="标配中弯铰链" PartNumber="50006000001" length="1" width="1" height="1" Num="8" type="hardware" subType="hinge" uid="4D897256-025A-366B-3104-E1DEC405D783" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202104/128373566/30858dba162d459792d8b37f23d8ff39.png" Style="" Unit="个"/>
+    </Metals>
+    <Hardwares>
+      <Hardware Id="127766761" Name="附件4X30自攻丝" PartNumber="50007000010" Num="1" CraftMark="" isAccessory="true" uid="6AF1AE0F-41D7-6BF5-488F-6B2819E59321" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/127766761/497fc69df9264401982535e0f80c23c2.png" Style="" Unit="个"/>
+      <Hardware Id="127766761" Name="附件4X30自攻丝" PartNumber="50007000010" Num="2" CraftMark="" isAccessory="true" uid="218D03B3-7A3B-77AB-6817-6D06F9152DCB" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/127766761/f6f6218d1b444e20bd52f4fa1b7c9cb2.png" Style="" Unit="个"/>
+      <Hardware Id="126660044" Name="附件4X15自攻丝" PartNumber="50007000009" Num="2" CraftMark="" isAccessory="true" uid="C42089B2-8CFC-290A-C1EF-7E489580D37D" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/126660044/dd076b3005d14372a2a46db4951fd3b7.png" Style="" Unit="颗"/>
+      <Hardware Id="126660044" Name="附件4X15自攻丝" PartNumber="50007000009" Num="2" CraftMark="" isAccessory="true" uid="C42089B2-8CFC-290A-C1EF-7E489580D37D" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/126660044/dd076b3005d14372a2a46db4951fd3b7.png" Style="" Unit="颗"/>
+      <Hardware Id="126660044" Name="附件4X15自攻丝" PartNumber="50007000009" Num="2" CraftMark="" isAccessory="true" uid="C42089B2-8CFC-290A-C1EF-7E489580D37D" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/126660044/dd076b3005d14372a2a46db4951fd3b7.png" Style="" Unit="颗"/>
+      <Hardware Id="126660044" Name="附件4X15自攻丝" PartNumber="50007000009" Num="2" CraftMark="" isAccessory="true" uid="C42089B2-8CFC-290A-C1EF-7E489580D37D" length="1" width="1" height="1" type="hardware" subType="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202103/126660044/dd076b3005d14372a2a46db4951fd3b7.png" Style="" Unit="颗"/>
+      <Hardware Id="140542703" Name="客户自备拉手" PartNumber="cabinet-001" length="20" width="20" height="100" Num="4" type="knob" subType="" uid="E3CCBFEC-0881-2FF3-CCD0-5BA242BEBA24" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202108/140542703/0babeadadcf643a9a6144db7c3a689bf.png" Style="" Unit="">
+        <Hardware Id="140625065" Name="客户自备拉手" PartNumber="50001000039" length="20" width="20" height="100" Num="4" type="hardware" subType="" uid="24C37393-F8C0-71BF-769B-5BA242BE6769" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202108/140625065/0633f6a8c48a49d0803bd54d3aba298b.png" Style="" Unit=""/>
+      </Hardware>
+      <Hardware Id="137709928" Name="挡门钉" PartNumber="50007000211" length="8" width="1" height="8" Num="8" type="hardware" subType="" uid="AF768F55-3D5F-8C57-9110-E1DEC4052C96" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202107/137709928/6f4796f8a51d4b72b3b7c2331bc91653.png" Style="" Unit="颗"/>
+      <Hardware Id="128371978" Name="标配直臂铰链" PartNumber="50006000003" length="1" width="1" height="1" Num="8" type="hardware" subType="hinge" uid="8AC9C2A3-4130-D487-E6A8-E1DEC4057237" CraftMark="进口百隆门铰" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202104/128371978/75ae6cd3be73421f8f766fd243e6a067.png" Style="" Unit="个" MT="2000">
+        <Hardware Id="122850323" Name="自攻螺丝4x15" PartNumber="50007000009" length="4" width="4" height="15" Num="32" type="hardware" subType="" uid="96944094-CF26-5587-C02D-E1DEC40529E0" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00006446/PMC/DesignMaterial/202004/102539232/e8a585df7b614ab8877d4ff8d992f340.png" Style="" Unit="颗"/>
+      </Hardware>
+      <Hardware Id="128373566" Name="标配中弯铰链" PartNumber="50006000001" length="1" width="1" height="1" Num="8" type="hardware" subType="hinge" uid="CFC45B4D-49A3-8D3A-3BD5-E1DEC4056299" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202104/128373566/30858dba162d459792d8b37f23d8ff39.png" Style="" Unit="个">
+        <Hardware Id="122850323" Name="自攻螺丝4x15" PartNumber="50007000009" length="4" width="4" height="15" Num="32" type="hardware" subType="" uid="7B252DD4-1C94-9564-77DC-E1DEC4056F9D" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00006446/PMC/DesignMaterial/202004/102539232/e8a585df7b614ab8877d4ff8d992f340.png" Style="" Unit="颗"/>
+      </Hardware>
+      <Hardware Id="122850381" Name="偏心盖" PartNumber="pianxingai" length="15" width="15" height="11" Num="80" type="hardware" subType="" uid="B8D0655C-2A03-2281-1ADB-E1DEC40594C9" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00000022/PMC/DesignMaterial/201803/13018908/Jinshujian-03-6.jpg" Style="" Unit="个"/>
+      <Hardware Id="122850588" Name="单头连接杆" PartNumber="dtljg" length="8" width="8" height="42" Num="80" type="hardware" subType="" uid="BD4E66D6-DF27-2064-47E7-E1DEC405D060" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00000022/PMC/DesignMaterial/201805/15079674/421-A.jpg" Style="" Unit="个"/>
+      <Hardware Id="122847014" Name="美工贴" PartNumber="122847014" length="16" width="16" height="1" Num="80" type="hardware" subType="Perfect_stick" uid="DB192413-473F-1AE2-5BF2-E1DEC4056F5A" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00002384/PMC/DesignMaterial/201705/D536A73BCE06426687600DE11114DD3A/39E46690546C4234ABB324DCF950E05F.jpg" Style="" Unit="个" relatedMaterial="GT8033米维斯橡木"/>
+      <Hardware Id="122847955" Name="层板销" PartNumber="CBX" length="5" width="5" height="5" Num="8" type="hardware" subType="" uid="E82EFA4E-21F1-6369-60B5-E1DEC405135F" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00000022/PMC/DesignMaterial/201711/09529590/c918da179c514c3ba5e035061c6e161a.png" Style="" Unit="">
+        <Hardware Id="140572000" Name="活动层板钉盖" PartNumber="50007000135" length="6" width="6" height="1" Num="16" type="hardware" subType="" uid="A4AAD3BB-AA86-B252-9AB5-E1DEC4051DF7" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202108/140572000/faf11416d2d34ba396a49f3aa8ff36b2.png" Style="" Unit=""/>
+      </Hardware>
+      <Hardware Id="122850326" Name="开槽拉直器" PartNumber="58001000016" length="25" width="13" height="2175" Num="4" type="hardware" subType="" uid="684B0197-B052-1343-A243-28FFB4DED8E4" CraftMark="" imagePath="https://img3.admin.3vjia.com//UpFile/C00006446/PMC/DesignMaterial/202012/119551564/4a11bfacc47a427da9a51c65aa953f8a.png" Style="" Unit=""/>
+    </Hardwares>
+    <Part UID="9D73374D-E624-BE69-D3FE-C4435F96C50A" name="储物柜" subType="" PartNumber="group-001" type="group" isSplit="false" ID="000" sizeTransform="-329.8,-1923.3,0,0,0,0,159,56,236" styleMaterialId="">
+      <Values W="1590" D="560" H="2360" PX="-3298" PY="-19233" PZ="0" RX="0" RY="0" RZ="0" BLM="0" BRM="0" BUM="0" BDM="0" BFM="0" BBM="0"/>
+      <Part UID="877616EC-62B6-854C-EC27-164C295C19FA" name="四门柜1-800-2400" subType="down_unit" PartNumber="cabinet-001" type="unit" isSplit="false" ID="000" sizeTransform="5,0,0,0,0,0,149,52,226" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123197332">
+        <Values W="1490" D="520" H="2260" PX="50" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="50" BRM="1540" BUM="2260" BDM="0" BFM="520" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        <Part UID="10EB6CA8-7156-A150-9433-164C295C6F9B" name="右侧板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="387" sizeTransform="149,0,0,0,-90,0,226,52,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122479143">
+          <Values W="2260" D="520" H="18" PX="1490" PY="0" PZ="0" RX="0" RY="-90" RZ="0" BLM="1472" BRM="1490" BUM="2260" BDM="0" BFM="520" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+        <Part UID="5BD2B119-C544-17DB-3809-164C295CF70F" name="左侧板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="388" sizeTransform="1.8,0,0,0,-90,0,226,52,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122501085">
+          <Values W="2260" D="520" H="18" PX="18" PY="0" PZ="0" RX="0" RY="-90" RZ="0" BLM="0" BRM="18" BUM="2260" BDM="0" BFM="520" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+        <Part UID="6F7D6A30-6C66-E3FA-AD01-164C295C5766" name="底板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="389" sizeTransform="1.8,0,8.2,0,0,0,145.4,51.95,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122519265">
+          <Values W="1454" D="519.5" H="18" PX="18" PY="0" PZ="82" RX="0" RY="0" RZ="0" BLM="18" BRM="1472" BUM="100" BDM="82" BFM="519.5" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+        <Part UID="49EF6978-6503-2A39-F1B0-164C295C1341" name="顶板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="390" sizeTransform="1.8,0,224.2,0,0,0,145.4,51.95,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122476986">
+          <Values W="1454" D="519.5" H="18" PX="18" PY="0" PZ="2242" RX="0" RY="0" RZ="0" BLM="18" BRM="1472" BUM="2260" BDM="2242" BFM="519.5" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+        <Part UID="9D95517C-FFE3-7553-1D01-164C295C1028" name="踢脚组" subType="wood_funtor" PartNumber="cabinet-001" type="functor" isSplit="true" ID="000" sizeTransform="1.8,0,0,0,0,0,145.4,51.85,8.2" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123051503">
+          <Values W="1454" D="518.5" H="82" PX="18" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="18" BRM="1472" BUM="82" BDM="0" BFM="518.5" BBM="0"/>
+          <Part UID="120307CC-F931-484A-5073-164C295C596B" name="暗脚" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="394" sizeTransform="20,-4.8,0,0,-90,0,8.2,45.15,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122505080">
+            <Values W="82" D="451.5" H="18" PX="200" PY="-48" PZ="82" RX="90" RY="0" RZ="-90" BLM="182" BRM="200" BUM="82" BDM="0" BFM="499.5" BBM="48" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="99E59288-7798-97E6-9C55-164C295CCD00" name="暗脚" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="395" sizeTransform="69.7,-4.8,0,0,-90,0,8.2,45.15,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122505080">
+            <Values W="82" D="451.5" H="18" PX="697" PY="-48" PZ="82" RX="90" RY="0" RZ="-90" BLM="679" BRM="697" BUM="82" BDM="0" BFM="499.5" BBM="48" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="97AE94C9-4ADC-C1C0-6C5D-164C295C918C" name="暗脚" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="396" sizeTransform="125.4,-4.8,0,0,-90,0,8.2,45.15,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122505080">
+            <Values W="82" D="451.5" H="18" PX="1254" PY="-48" PZ="82" RX="90" RY="0" RZ="-90" BLM="1236" BRM="1254" BUM="82" BDM="0" BFM="499.5" BBM="48" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="8EF26CFC-0E81-CBEE-7174-164C295C79BE" name="后踢脚" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="397" sizeTransform="0,-3,0,0,-90,90,8.2,145.4,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122525462">
+            <Values W="82" D="1454" H="18" PX="3.074507554456808e-31" PY="-29.999999999999996" PZ="82" RX="90" RY="0" RZ="0" BLM="0" BRM="1454" BUM="82" BDM="0" BFM="48" BBM="30" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="3CC4A676-A9B0-DD3A-D255-164C295C6CA6" name="前踢脚" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="398" sizeTransform="0,-49.95,0,0,-90,90,8.2,145.4,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122480197">
+            <Values W="82" D="1454" H="18" PX="3.074507554456808e-31" PY="-499.5" PZ="82" RX="90" RY="0" RZ="0" BLM="0" BRM="1454" BUM="82" BDM="0" BFM="517.5" BBM="499.5" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="49CD1789-3F1D-B0CD-ED24-164C295C9317" name="外贴踢脚" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="399" sizeTransform="-1.8,-52.05,0,0,-90,90,8,149,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122480197">
+            <Values W="80" D="1490" H="18" PX="-18" PY="-520.5" PZ="80" RX="90" RY="0" RZ="0" BLM="-18" BRM="1472" BUM="80" BDM="0" BFM="538.5" BBM="520.4999999999999" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+        </Part>
+        <Part UID="20BE9C9A-0D12-4888-4CCC-164C295C8F2F" name="中隔板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="400" sizeTransform="75.4,0,10,0,-90,0,214.2,51.85,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122523378">
+          <Values W="2142" D="518.5" H="18" PX="754" PY="0" PZ="100" RX="0" RY="-90" RZ="0" BLM="736" BRM="754" BUM="2242" BDM="100" BFM="518.5" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+        <Part UID="F29B0E59-01B2-5BD7-CEFE-CEA83D88C977" name="9mm背板" subType="wood_funtor" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="1.8,0,10,0,0,0,71.8,2.75,214.2" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="125644902">
+          <Values W="718" D="27.5" H="2142" PX="18" PY="0" PZ="100" RX="0" RY="0" RZ="0" BLM="18" BRM="736" BUM="2242" BDM="100" BFM="27.5" BBM="0"/>
+          <Part UID="C58AB75F-D6D5-88DC-4953-CEA83D889FA5" name="薄背板1" subType="standard_board" PartNumber="gtb" type="door_core" isSplit="false" ID="669" sizeTransform="-0.5,-1.85,-0.5,0,-90,90,111,72.8,0.9" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122504061">
+            <Values W="1110" D="728" H="9" PX="-5" PY="-18.499999999999932" PZ="1105" RX="90" RY="0" RZ="0" BLM="-5" BRM="723" BUM="1105" BDM="-5" BFM="27.5" BBM="18.5" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="CCA62356-BE65-CFB0-4B7D-CEA83D88DAD7" name="薄背板2" subType="standard_board" PartNumber="gtb" type="door_core" isSplit="false" ID="670" sizeTransform="-0.5,-1.85,119.5,0,-90,90,95.2,72.8,0.9" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122504061">
+            <Values W="952" D="728" H="9" PX="-5" PY="-18.499999999999943" PZ="2147" RX="90" RY="0" RZ="0" BLM="-5" BRM="723" BUM="2147" BDM="1195" BFM="27.5" BBM="18.5" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="0065B992-2E82-5F91-9B2B-CEA83D881CA0" name="水平槽背拉1" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="671" sizeTransform="0,-1.4,110,0,-90,90,10,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122523698">
+            <Values W="100" D="718" H="18" PX="3.749399456654644e-31" PY="-13.999999999999995" PZ="1200" RX="90" RY="0" RZ="0" BLM="0" BRM="718" BUM="1200" BDM="1100" BFM="32" BBM="14" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="40F04F33-9707-B4BA-EC42-CEA83D881493" name="横放背拉杆-无膨胀" subType="" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="000" sizeTransform="0,0,51,0,-90,90,8,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122479659">
+            <Values W="80" D="718" H="18" PX="0" PY="0" PZ="510" RX="0" RY="-90" RZ="90" BLM="0" BRM="718" BUM="590" BDM="510" BFM="18" BBM="0"/>
+            <Part UID="66CC657C-B5C0-3697-3F82-CEA83D88AB87" name="拉条带膨胀" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="672" sizeTransform="0,0,0,0,0,0,8,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123532885">
+              <Values W="80" D="718" H="18" PX="80" PY="0" PZ="0" RX="0" RY="0" RZ="-90" BLM="0" BRM="80" BUM="18" BDM="0" BFM="718" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+            </Part>
+          </Part>
+          <Part UID="C026C8AC-3F42-8058-E2BF-CEA83D88C131" name="横放背拉杆-无膨胀" subType="" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="000" sizeTransform="0,0,163.1,0,-90,90,8,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122479659">
+            <Values W="80" D="718" H="18" PX="0" PY="0" PZ="1631" RX="0" RY="-90" RZ="90" BLM="0" BRM="718" BUM="1711" BDM="1631" BFM="18" BBM="0"/>
+            <Part UID="FA8F2998-F637-B4EE-23D7-CEA83D88BD19" name="拉条带膨胀" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="673" sizeTransform="0,0,0,0,0,0,8,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123532885">
+              <Values W="80" D="718" H="18" PX="80" PY="0" PZ="0" RX="0" RY="0" RZ="-90" BLM="0" BRM="80" BUM="18" BDM="0" BFM="718" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+            </Part>
+          </Part>
+        </Part>
+        <Part UID="B5231D95-36F8-4496-64F8-164C295CAF1E" name="三合一层板" subType="fixed_layer_board" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="1.8,-2.75,182.4,0,0,0,71.8,49.1,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123060274">
+          <Values W="718" D="491" H="18" PX="18" PY="-27.5" PZ="1824" RX="0" RY="0" RZ="0" BLM="18" BRM="736" BUM="1842" BDM="1824" BFM="518.5" BBM="27.5"/>
+          <Part UID="D13CA99C-2180-BFFE-9B16-164C295CD50C" name="三合一层板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="404" sizeTransform="0,0,0,0,0,0,71.8,49.05,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122519275">
+            <Values W="718" D="490.5" H="18" PX="0" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="0" BRM="718" BUM="18" BDM="0" BFM="490.49999999999994" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+          </Part>
+        </Part>
+        <Part UID="D90A21F7-C91A-FC0F-0AB7-164C295CED88" name="三合一层板" subType="fixed_layer_board" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="1.8,-2.75,95.4,0,0,0,71.8,49.1,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123060274">
+          <Values W="718" D="491" H="18" PX="18" PY="-27.5" PZ="954" RX="0" RY="0" RZ="0" BLM="18" BRM="736" BUM="972" BDM="954" BFM="518.5" BBM="27.5"/>
+          <Part UID="C5A842E9-28F8-8EBF-AFB3-164C295C72D5" name="三合一层板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="406" sizeTransform="0,0,0,0,0,0,71.8,49.05,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122519275">
+            <Values W="718" D="490.5" H="18" PX="0" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="0" BRM="718" BUM="18" BDM="0" BFM="490.49999999999994" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+          </Part>
+        </Part>
+        <Part UID="0CE8D3E3-314A-3D86-04BA-164C295C6021" name="三合一层板" subType="fixed_layer_board" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="1.8,-2.75,138.9,0,0,0,71.8,49.1,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123060274">
+          <Values W="718" D="491" H="18" PX="18" PY="-27.5" PZ="1389" RX="0" RY="0" RZ="0" BLM="18" BRM="736" BUM="1407" BDM="1389" BFM="518.5" BBM="27.5"/>
+          <Part UID="933ACA7D-A175-30C7-7C88-164C295C196F" name="三合一层板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="407" sizeTransform="0,0,0,0,0,0,71.8,49.05,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122519275">
+            <Values W="718" D="490.5" H="18" PX="0" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="0" BRM="718" BUM="18" BDM="0" BFM="490.49999999999994" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+          </Part>
+        </Part>
+        <Part UID="4E1D9FB4-B7E6-5190-F2D6-C41546C6DB8D" name="活动层板" subType="layer_board" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="1.8,-2.75,51.8,0,0,0,71.8,49.1,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123056922">
+          <Values W="718" D="491" H="18" PX="18" PY="-27.5" PZ="518" RX="0" RY="0" RZ="0" BLM="18" BRM="736" BUM="536" BDM="518" BFM="518.5" BBM="27.5"/>
+          <Part UID="480FA120-33C2-4BF9-074A-C41546C64FD4" name="钉层板-三排" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="414" sizeTransform="0.05,0,0,0,0,0,71.7,49,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122500986">
+            <Values W="717" D="490" H="18" PX="0.5" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="0.5" BRM="717.5" BUM="18" BDM="0" BFM="490" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+            <Part UID="F0AD05C1-AE56-AA74-BD5D-32D5C12631FE" name="活动层板圆环标记" subType="" PartNumber="cabinet-001" type="cabinet_board" isSplit="false" ID="000" sizeTransform="33.85,-49,-1.1,0,-90,90,4,4,0.1" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="127944763">
+              <Values W="40" D="40" H="1" PX="338.5" PY="-490" PZ="-11" RX="0" RY="-90" RZ="90" BLM="338.5" BRM="378.5" BUM="29" BDM="-11" BFM="491" BBM="490"/>
+            </Part>
+          </Part>
+        </Part>
+        <Part UID="E5F1767B-4915-4A60-6FBC-CEA83D884CB0" name="9mm背板" subType="wood_funtor" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="75.4,0,10,0,0,0,71.8,2.75,214.2" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="125644902">
+          <Values W="718" D="27.5" H="2142" PX="754" PY="0" PZ="100" RX="0" RY="0" RZ="0" BLM="754" BRM="1472" BUM="2242" BDM="100" BFM="27.5" BBM="0"/>
+          <Part UID="BD7F24DC-A913-2E74-1D12-CEA83D8843E4" name="薄背板1" subType="standard_board" PartNumber="gtb" type="door_core" isSplit="false" ID="674" sizeTransform="-0.5,-1.85,-0.5,0,-90,90,111,72.8,0.9" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122504061">
+            <Values W="1110" D="728" H="9" PX="-5" PY="-18.499999999999932" PZ="1105" RX="90" RY="0" RZ="0" BLM="-5" BRM="723" BUM="1105" BDM="-5" BFM="27.5" BBM="18.5" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="7A831F88-F3AF-D5D9-34B1-CEA83D887BB0" name="薄背板2" subType="standard_board" PartNumber="gtb" type="door_core" isSplit="false" ID="675" sizeTransform="-0.5,-1.85,119.5,0,-90,90,95.2,72.8,0.9" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122504061">
+            <Values W="952" D="728" H="9" PX="-5" PY="-18.499999999999943" PZ="2147" RX="90" RY="0" RZ="0" BLM="-5" BRM="723" BUM="2147" BDM="1195" BFM="27.5" BBM="18.5" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="F5C1F2BB-44AE-5D9D-D278-CEA83D8844FF" name="水平槽背拉1" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="676" sizeTransform="0,-1.4,110,0,-90,90,10,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122523698">
+            <Values W="100" D="718" H="18" PX="3.749399456654644e-31" PY="-13.999999999999995" PZ="1200" RX="90" RY="0" RZ="0" BLM="0" BRM="718" BUM="1200" BDM="1100" BFM="32" BBM="14" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+          </Part>
+          <Part UID="0A16CC55-49DB-81BE-3A65-CEA83D889B85" name="横放背拉杆-无膨胀" subType="" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="000" sizeTransform="0,0,51,0,-90,90,8,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122479659">
+            <Values W="80" D="718" H="18" PX="0" PY="0" PZ="510" RX="0" RY="-90" RZ="90" BLM="0" BRM="718" BUM="590" BDM="510" BFM="18" BBM="0"/>
+            <Part UID="55D55106-5740-7515-2574-CEA83D888EBE" name="拉条带膨胀" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="677" sizeTransform="0,0,0,0,0,0,8,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123532885">
+              <Values W="80" D="718" H="18" PX="80" PY="0" PZ="0" RX="0" RY="0" RZ="-90" BLM="0" BRM="80" BUM="18" BDM="0" BFM="718" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+            </Part>
+          </Part>
+          <Part UID="8E43ED2D-AAE0-BE9A-E3D6-CEA83D88A5F8" name="横放背拉杆-无膨胀" subType="" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="000" sizeTransform="0,0,163.1,0,-90,90,8,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122479659">
+            <Values W="80" D="718" H="18" PX="0" PY="0" PZ="1631" RX="0" RY="-90" RZ="90" BLM="0" BRM="718" BUM="1711" BDM="1631" BFM="18" BBM="0"/>
+            <Part UID="8CB4848D-0B0B-CAD5-F36C-CEA83D886814" name="拉条带膨胀" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="678" sizeTransform="0,0,0,0,0,0,8,71.8,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123532885">
+              <Values W="80" D="718" H="18" PX="80" PY="0" PZ="0" RX="0" RY="0" RZ="-90" BLM="0" BRM="80" BUM="18" BDM="0" BFM="718" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+            </Part>
+          </Part>
+        </Part>
+        <Part UID="FA804955-9DF4-D405-A2BF-164C295C2C03" name="三合一层板" subType="fixed_layer_board" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="75.4,-2.75,182.4,0,0,0,71.8,49.1,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123060274">
+          <Values W="718" D="491" H="18" PX="754" PY="-27.5" PZ="1824" RX="0" RY="0" RZ="0" BLM="754" BRM="1472" BUM="1842" BDM="1824" BFM="518.5" BBM="27.5"/>
+          <Part UID="079233A4-59E4-B5C0-7167-164C295C11BB" name="三合一层板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="405" sizeTransform="0,0,0,0,0,0,71.8,49.05,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122519275">
+            <Values W="718" D="490.5" H="18" PX="0" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="0" BRM="718" BUM="18" BDM="0" BFM="490.49999999999994" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+          </Part>
+        </Part>
+        <Part UID="7CAF811A-81DD-5DB0-632A-1F4D2E7D3A53" name="三合一层板" subType="fixed_layer_board" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="75.4,-2.75,95.4,0,0,0,71.8,49.1,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123060274">
+          <Values W="718" D="491" H="18" PX="754" PY="-27.5" PZ="954" RX="0" RY="0" RZ="0" BLM="754" BRM="1472" BUM="972" BDM="954" BFM="518.5" BBM="27.5"/>
+          <Part UID="E3EFC41C-5EE6-71DE-A6F6-1F4D2E7D3260" name="三合一层板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="408" sizeTransform="0,0,0,0,0,0,71.8,49.05,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122519275">
+            <Values W="718" D="490.5" H="18" PX="0" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="0" BRM="718" BUM="18" BDM="0" BFM="490.49999999999994" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+          </Part>
+        </Part>
+        <Part UID="248BC9CD-DA82-C424-2A9F-1F4D2E7D3EDD" name="三合一层板" subType="fixed_layer_board" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="75.4,-2.75,138.9,0,0,0,71.8,49.1,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123060274">
+          <Values W="718" D="491" H="18" PX="754" PY="-27.5" PZ="1389" RX="0" RY="0" RZ="0" BLM="754" BRM="1472" BUM="1407" BDM="1389" BFM="518.5" BBM="27.5"/>
+          <Part UID="1D330CCD-21BC-ED95-4B06-1F4D2E7D7F62" name="三合一层板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="409" sizeTransform="0,0,0,0,0,0,71.8,49.05,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122519275">
+            <Values W="718" D="490.5" H="18" PX="0" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="0" BRM="718" BUM="18" BDM="0" BFM="490.49999999999994" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+          </Part>
+        </Part>
+        <Part UID="B0DC2EF2-0881-EF81-893F-C41546C632C7" name="活动层板" subType="layer_board" PartNumber="cabinet-001" type="functor" isSplit="false" ID="000" sizeTransform="75.4,-2.75,51.8,0,0,0,71.8,49.1,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123056922">
+          <Values W="718" D="491" H="18" PX="754" PY="-27.5" PZ="518" RX="0" RY="0" RZ="0" BLM="754" BRM="1472" BUM="536" BDM="518" BFM="518.5" BBM="27.5"/>
+          <Part UID="59803D1B-7982-0E36-E8B0-C41546C6AB59" name="钉层板-三排" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="415" sizeTransform="0.05,0,0,0,0,0,71.7,49,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122500986">
+            <Values W="717" D="490" H="18" PX="0.5" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="0.5" BRM="717.5" BUM="18" BDM="0" BFM="490" BBM="0" BCGG="标板" BCGH="2430" BCKD="1210"/>
+            <Part UID="F0AD05C1-AE56-AA74-BD5D-32D5C12631FE" name="活动层板圆环标记" subType="" PartNumber="cabinet-001" type="cabinet_board" isSplit="false" ID="000" sizeTransform="33.85,-49,-1.1,0,-90,90,4,4,0.1" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="127944763">
+              <Values W="40" D="40" H="1" PX="338.5" PY="-490" PZ="-11" RX="0" RY="-90" RZ="90" BLM="338.5" BRM="378.5" BUM="29" BDM="-11" BFM="491" BBM="490"/>
+            </Part>
+          </Part>
+        </Part>
+        <Part UID="43B0D4D0-DEAD-3D31-359F-164C295CBEA7" name="掩门扇" subType="" PartNumber="MB" type="swingDoorLeafEntity" isSplit="false" ID="410" sizeTransform="0,0,0,0,0,0,36.95,1.8,217.5" doorMotionStatus="0" materialId="132319410" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319410/GT-8024白绒麻.jpg" BasicMaterial="颗粒板" Material="GT8024白绒麻" styleMaterialId="">
+          <Values W="369.5" D="18" H="2175" PX="371" PY="-540" PZ="83.5" RX="-90" RY="-90" RZ="0" BLM="0" BRM="369.5" BUM="2175" BDM="0" BFM="18" BBM="0" rotateZAndMoveW="true"/>
+        </Part>
+        <Part UID="43B0D4D0-DEAD-3D31-359F-164C295CBEA7" name="掩门扇" subType="" PartNumber="MB" type="swingDoorLeafEntity" isSplit="false" ID="411" sizeTransform="37.25,0,0,0,0,0,36.95,1.8,217.5" doorMotionStatus="0" materialId="132319410" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319410/GT-8024白绒麻.jpg" BasicMaterial="颗粒板" Material="GT8024白绒麻" styleMaterialId="">
+          <Values W="369.5" D="18" H="2175" PX="743.5" PY="-540" PZ="83.5" RX="-90" RY="-90" RZ="0" BLM="372.5" BRM="742" BUM="2175" BDM="0" BFM="18" BBM="0" rotateZAndMoveW="true"/>
+        </Part>
+        <Part UID="43B0D4D0-DEAD-3D31-359F-164C295CBEA7" name="掩门扇" subType="" PartNumber="MB" type="swingDoorLeafEntity" isSplit="false" ID="412" sizeTransform="74.5,0,0,0,0,0,36.95,1.8,217.5" doorMotionStatus="0" materialId="132319410" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319410/GT-8024白绒麻.jpg" BasicMaterial="颗粒板" Material="GT8024白绒麻" styleMaterialId="">
+          <Values W="369.5" D="18" H="2175" PX="1116" PY="-540" PZ="83.5" RX="-90" RY="-90" RZ="0" BLM="745" BRM="1114.5" BUM="2175" BDM="0" BFM="18" BBM="0" rotateZAndMoveW="true"/>
+        </Part>
+        <Part UID="43B0D4D0-DEAD-3D31-359F-164C295CBEA7" name="掩门扇" subType="" PartNumber="MB" type="swingDoorLeafEntity" isSplit="false" ID="413" sizeTransform="111.75,0,0,0,0,0,36.95,1.8,217.5" doorMotionStatus="0" materialId="132319410" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319410/GT-8024白绒麻.jpg" BasicMaterial="颗粒板" Material="GT8024白绒麻" styleMaterialId="">
+          <Values W="369.5" D="18" H="2175" PX="1488.5" PY="-540" PZ="83.5" RX="-90" RY="-90" RZ="0" BLM="1117.5" BRM="1487" BUM="2175" BDM="0" BFM="18" BBM="0" rotateZAndMoveW="true"/>
+        </Part>
+      </Part>
+      <Part UID="5022E668-441F-6FF7-8866-164C295C6CC0" name="顶收口组0420" subType="" PartNumber="gnj" type="unit" isSplit="false" ID="000" sizeTransform="5,0,226,0,0,0,149,54,10" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="129223980">
+        <Values W="1490" D="540" H="100" PX="50" PY="0" PZ="2260" RX="0" RY="0" RZ="0" BLM="50" BRM="1540" BUM="2360" BDM="2260" BFM="540" BBM="0"/>
+        <Part UID="08F5E4C9-7732-33A9-0A92-164C295CF5C1" name="顶收口前板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="416" sizeTransform="0,-52.2,0,0,-90,90,10,149,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123580773">
+          <Values W="100" D="1490" H="18" PX="3.749399456654644e-31" PY="-522" PZ="100" RX="90" RY="0" RZ="0" BLM="0" BRM="1490" BUM="100" BDM="0" BFM="540" BBM="522" BCGG="标板" BCGH="2430" BCKD="1210" rotateZAndMoveW="true"/>
+        </Part>
+        <Part UID="3143A6FF-0DE2-7B9F-3163-164C295C5494" name="收口备条C" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="417" sizeTransform="0,-47.2,0,0,0,0,147.2,5,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="123580686">
+          <Values W="1472" D="50" H="18" PX="0" PY="-472" PZ="0" RX="0" RY="0" RZ="0" BLM="0" BRM="1472" BUM="18" BDM="0" BFM="522" BBM="472" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+      </Part>
+      <Part UID="8C7D89B5-B0AE-0C71-D427-164C295C3409" name="侧收口组0330" subType="" PartNumber="cabinet-001" type="unit" isSplit="false" ID="000" sizeTransform="0,0,0,0,0,0,5,54,236" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="127532965">
+        <Values W="50" D="540" H="2360" PX="0" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="0" BRM="50" BUM="2360" BDM="0" BFM="540" BBM="0"/>
+        <Part UID="FF8DAC3A-DD32-19A7-2A3D-164C295C59C3" name="收口备条" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="418" sizeTransform="5,-47.2,1.8,0,-90,0,234.2,5,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122795141">
+          <Values W="2342" D="50" H="18" PX="50" PY="-472" PZ="18" RX="0" RY="-90" RZ="0" BLM="32" BRM="50" BUM="2360" BDM="18" BFM="522" BBM="472" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+        <Part UID="6033158C-3C22-3AA4-B684-164C295C0FAC" name="前封板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="419" sizeTransform="0,-52.2,0,0,-90,90,236,5,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122795894">
+          <Values W="2360" D="50" H="18" PX="0" PY="-522" PZ="0" RX="0" RY="-90" RZ="90" BLM="0" BRM="50" BUM="2360" BDM="0" BFM="540" BBM="522" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+      </Part>
+      <Part UID="D3B0BE06-4F6C-BE40-935C-164C295C3835" name="侧收口组0330" subType="" PartNumber="cabinet-001" type="unit" isSplit="false" ID="000" sizeTransform="154,0,0,0,0,0,5,54,236" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="127532965">
+        <Values W="50" D="540" H="2360" PX="1540" PY="0" PZ="0" RX="0" RY="0" RZ="0" BLM="1540" BRM="1590" BUM="2360" BDM="0" BFM="540" BBM="0"/>
+        <Part UID="D753FE90-E38F-2666-5B8B-164C295C825E" name="收口备条" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="420" sizeTransform="1.8,-47.2,1.8,0,-90,0,234.2,5,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122795141">
+          <Values W="2342" D="50" H="18" PX="18" PY="-472" PZ="18" RX="0" RY="-90" RZ="0" BLM="0" BRM="18" BUM="2360" BDM="18" BFM="522" BBM="472" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+        <Part UID="77E7BDFC-E1A5-783C-4AEB-164C295CDE5E" name="前封板" subType="standard_board" PartNumber="gtb" type="cabinet_board" isSplit="false" ID="421" sizeTransform="0,-52.2,0,0,-90,90,236,5,1.8" materialId="132319411" imagePath="https://img3.admin.3vjia.com//UpFile/C00007266/PMC/DesignMaterial/202105/132319411/GT-8033米维斯橡木.jpg" BasicMaterial="颗粒板" Material="GT8033米维斯橡木" styleMaterialId="122795894">
+          <Values W="2360" D="50" H="18" PX="0" PY="-522" PZ="0" RX="0" RY="-90" RZ="90" BLM="0" BRM="50" BUM="2360" BDM="0" BFM="540" BBM="522" BCGG="标板" BCGH="2430" BCKD="1210"/>
+        </Part>
+      </Part>
+    </Part>
+    <ExtendBomLists/>
+  </Cabinet>
+
+  <baseLine OrderNo="EMS-7266YG21090804"/>
+  <tables OrderNo="EMS-7266YG21090804"/>
+</Root>
