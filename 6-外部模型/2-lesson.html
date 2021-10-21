@@ -1,0 +1,417 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2021-07-19 14:54:14
+ * @LastEditors: DaskV
+ * @LastEditTime: 2021-10-21 13:06:01
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>第二课:GLTFLoader模型加载器</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #info {
+                color: white;
+                display: block;
+                font-family: "Press Start 2P";
+                font-size: 5vh;
+                position: absolute;
+                text-align: center;
+                text-shadow: 2px 2px #1f1f1f;
+                top: 5vh;
+                width: 100%;
+                z-index: 100;
+            }
+
+            #links {
+                position: absolute;
+                bottom: 10px;
+                width: 100%;
+                text-align: center;
+                color: black;
+                font-family: Monospace;
+                font-size: 13px;
+                font-weight: bold;
+            }
+
+            #links a {
+                color: black;
+                text-decoration: none;
+            }
+
+            #links a:hover {
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="http://www.yanhuangxueyuan.com/threejs/build/three.min.js"></script>
+        <script src="http://www.yanhuangxueyuan.com/threejs/examples/js/loaders/GLTFLoader.js"></script>
+        <script>
+
+            const TREX_JUMP_SPEED = 20;
+
+            const CACTUS_SPAWN_X = 20;
+            const CACTUS_DESTROY_X = -20;
+            const CACTUS_MAX_SCALE = 1;
+            const CACTUS_MIN_SCALE = 0.5;
+            const CACTUS_SPAWN_MAX_INTERVAL = 4;
+            const CACTUS_SPAWN_MIN_INTERVAL = 2;
+
+            const PTERODACTYL_MIN_Y = 4;
+            const PTERODACTYL_MAX_Y = 5;
+            const PTERODACTYL_SPAWN_X = -5;
+            const PTERODACTYL_SPAWN_INTERVAL = 10;
+            const PTERODACTYL_SPEED = 2;
+
+            const GRAVITY = -35;
+            const FLOOR_SPEED = -10;
+            const SKYSPHERE_ROTATE_SPEED = 0.02;
+            const SCORE_INCREASE_SPEED = 10;
+
+
+            const scene = new THREE.Scene();
+            let infoElement;
+            const clock = new THREE.Clock();
+            const mixers = [];
+            let trex;
+            let cactus;
+            let floor;
+            let pterodactyl;
+            let skySphere;
+            let directionalLight;
+            let jump = false;
+            let vel = 0;
+            let nextCactusSpawnTime = 0;
+            let nextPterodactylResetTime = 0;
+            let score = 0;
+            let isGameOver = true;
+            const cactusGroup = new THREE.Group();
+            scene.add(cactusGroup);
+            let renderer;
+            let camera;
+
+            //创建dom
+            function createInfoElement() {
+                infoElement = document.createElement("div");
+                infoElement.id = "info";
+                infoElement.innerHTML = "按任意键开始!";
+                document.body.appendChild(infoElement);
+            }
+            createInfoElement();
+            
+            //相机
+            function createCamera() {
+                camera = new THREE.PerspectiveCamera(
+                    45,
+                    window.innerWidth / window.innerHeight,
+                    0.1,
+                    1000
+                );
+                camera.position.set(0, 10, 90);
+                camera.lookAt(3, 3, 0);
+            }
+            createCamera();
+
+            //渲染器
+            function createRenderer() {
+                renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setClearColor(0x7f7f7f);
+                renderer.outputEncoding = THREE.sRGBEncoding;
+                document.body.appendChild(renderer.domElement);
+            }
+            createRenderer();
+            
+            function animate() {
+                requestAnimationFrame(animate);
+
+                const delta = clock.getDelta();
+                update(delta);
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            //创建光源
+            function createLighting() {
+                directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+                directionalLight.intensity = 2;
+                directionalLight.position.set(0, 10, 0);
+
+                const targetObject = new THREE.Object3D();
+                targetObject.position.set(0, 0, 0);
+                scene.add(targetObject);
+                directionalLight.target = targetObject;
+
+                scene.add(directionalLight);
+
+                const light = new THREE.AmbientLight(0x7f7f7f); // soft white light
+                light.intensity = 1;
+                scene.add(light);
+            }
+            createLighting();
+
+            //加载模型
+            function load3DModels() {
+                //创建GLTF加载器
+                const loader = new THREE.GLTFLoader();
+
+                //加载人物模型
+                loader.load(
+                    "./models/user/scene.gltf",
+                    function (gltf) {
+                        trex = gltf.scene;
+                        gltf.scene.scale.set(0.1,0.1,0.1)
+                        gltf.scene.position.set(0,15,0)
+                        scene.add(trex);
+                        const mixer = new THREE.AnimationMixer(trex);
+                        const clip = gltf.animations[0]
+                        if(clip){
+                            // const skeletonHelper = new THREE.SkeletonHelper(trex);
+                            // scene.add(skeletonHelper);
+                            const action = mixer.clipAction(clip);
+                            action.play();                                    
+                        }
+                        mixers.push(mixer);
+                    },
+                    function (xhr) {
+                        console.log(
+                            (xhr.loaded / xhr.total) * 100 + "% loaded"
+                        );
+                    },
+                    function (error) {
+                        console.log("错误");
+                    }
+                );
+
+             
+                //加载仙人掌模型
+                loader.load(
+                    "models/cactus/scene.gltf",
+                    function (gltf) {
+                        gltf.scene.position.set(0,-10,0)
+                        cactus = gltf.scene;
+                    },
+                    function (xhr) {
+                        console.log(
+                            (xhr.loaded / xhr.total) * 100 + "% loaded"
+                        );
+                    },
+                    function (error) {
+                        console.log("An error happened");
+                    }
+                );
+            }
+            load3DModels();
+
+            // //加载地面
+            function createFloor() {
+                const geometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+                const texture = THREE.ImageUtils.loadTexture("./textures/sand.jpg");
+                texture.wrapS = THREE.RepeatWrapping;
+                texture.wrapT = THREE.RepeatWrapping;
+                texture.repeat.set(100, 100);
+
+                const material = new THREE.MeshStandardMaterial({
+                    map: texture,
+                    color: 0xc4733b,
+                });
+
+                floor = new THREE.Mesh(geometry, material);
+         
+                floor.material.side = THREE.DoubleSide;
+                floor.rotation.x = -Math.PI / 2;
+                floor.position.set(0,-10,0)
+                floor.castShadow = false;
+                floor.receiveShadow = true;
+
+                scene.add(floor);
+            }
+            createFloor();
+
+            //加载天空
+            function createSkySphere(file) {
+                const geometry = new THREE.SphereGeometry(500, 60, 40);
+                // Invert the geometry on the x-axis so that all of the faces point inward
+                geometry.scale(-1, 1, 1);
+
+                const texture = new THREE.TextureLoader().load(file);
+                texture.encoding = THREE.sRGBEncoding;
+                const material = new THREE.MeshBasicMaterial({ map: texture });
+                skySphere = new THREE.Mesh(geometry, material);
+
+                scene.add(skySphere);
+            }
+            createSkySphere("./textures/desert.jpg");
+
+            //启用阴影
+            function enableShadow(renderer, light) {
+                renderer.shadowMap.enabled = true;
+                renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+                light.castShadow = true;
+
+                light.shadow.mapSize.width = 512;
+                light.shadow.mapSize.height = 512;
+                light.shadow.camera.near = 0.001;
+                light.shadow.camera.far = 500;
+            }
+            enableShadow(renderer, directionalLight);
+
+            function handleInput() {
+                const callback = () => {
+                    if (isGameOver) {
+                        restartGame();
+                        return;
+                    }
+
+                    jump = true;
+                };
+                
+
+                document.addEventListener("keydown", callback, false);
+                renderer.domElement.addEventListener("touchstart", callback);
+                renderer.domElement.addEventListener("click", callback);
+            }
+           handleInput();
+
+            function handleWindowResize() {
+                window.addEventListener(
+                    "resize",
+                    () => {
+                        camera.aspect = window.innerWidth / window.innerHeight;
+                        camera.updateProjectionMatrix();
+
+                        renderer.setSize(window.innerWidth, window.innerHeight);
+                    },
+                    false
+                );
+            }
+            handleWindowResize();
+
+            function randomInt(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            function randomFloat(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            function gameOver() {
+                isGameOver = true;
+
+                infoElement.innerHTML = "GAME OVER";
+            }
+
+            function restartGame() {
+                isGameOver = false;
+                score = 0;
+
+                cactusGroup.children.length = 0;
+            }
+
+            function update(delta) {
+                if (!cactus) return;              
+                if (!trex) return;              
+                if (!floor) return;            
+                if (isGameOver) return;
+                
+                for (const mixer of mixers) {
+                    mixer.update(delta);
+                }
+                // 跳跃
+                if (jump) {
+                    jump = false;
+                    
+                    // 开始跳跃，当位置处于地面时
+                    if (trex.position.y == 9) {
+                        vel = TREX_JUMP_SPEED;
+                        trex.position.y = 9 +  vel * delta;
+                    }
+                }
+
+                if (trex.position.y > 9) {
+                    vel += GRAVITY * delta;
+                    trex.position.y += vel * delta;
+                } else {
+                    trex.position.y = 9;
+                }
+
+                // 创建仙人掌
+                if (clock.elapsedTime > nextCactusSpawnTime) {
+                    const interval = randomFloat(
+                        CACTUS_SPAWN_MIN_INTERVAL,
+                        CACTUS_SPAWN_MAX_INTERVAL
+                    );
+
+                    nextCactusSpawnTime = clock.elapsedTime + interval;
+
+                    const numCactus = randomInt(3, 5);
+                    for (let i = 0; i < numCactus; i++) {
+                        const clone = cactus.clone();
+                        clone.position.x = CACTUS_SPAWN_X + i * 0.5;
+                        clone.scale.multiplyScalar(
+                            randomFloat(CACTUS_MIN_SCALE, CACTUS_MAX_SCALE)
+                        );
+
+                        cactusGroup.add(clone);
+                    }
+                }
+
+                // 移动仙人掌
+                for (const cactus of cactusGroup.children) {
+                    cactus.position.x += FLOOR_SPEED * delta;
+                }
+
+                // 把仙人掌从筛子里拿出来
+                while (
+                    cactusGroup.children.length > 0 &&
+                    cactusGroup.children[0].position.x < CACTUS_DESTROY_X // out of the screen
+                ) {
+                    cactusGroup.remove(cactusGroup.children[0]);
+                }
+
+                // 检查碰撞.
+                const trexAABB = new THREE.Box3(
+                    new THREE.Vector3(-1, trex.position.y, 0),
+                    new THREE.Vector3(1, trex.position.y + 2, 0)
+                );
+
+                for (const cactus of cactusGroup.children) {
+                    const cactusAABB = new THREE.Box3();
+                    cactusAABB.setFromObject(cactus);
+
+                    if (cactusAABB.intersectsBox(trexAABB)) {
+                        gameOver();
+                        return;
+                    }
+                }
+
+                // 更新纹理偏移以模拟地板移动
+                floor.material.map.offset.add(new THREE.Vector2(delta, 0));
+
+                trex.traverse((child) => {
+                    child.castShadow = true;
+                    child.receiveShadow = false;
+                });
+
+                if (skySphere) {
+                    skySphere.rotation.y += delta * SKYSPHERE_ROTATE_SPEED;
+                }
+
+                score += delta * SCORE_INCREASE_SPEED;
+                infoElement.innerHTML = Math.floor(score)
+                    .toString()
+                    .padStart(5, "0");
+            }
+        </script>
+    </body>
+</html>

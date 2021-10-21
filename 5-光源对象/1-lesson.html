@@ -2,7 +2,7 @@
  * @Author: DaskV
  * @Date: 2021-07-19 14:54:14
  * @LastEditors: DaskV
- * @LastEditTime: 2021-07-20 14:41:40
+ * @LastEditTime: 2021-10-15 15:11:41
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -132,6 +132,7 @@
             var routeY = 400 * Math.cos(angle);
             // 每次执行render函数，更新需要做圆周运动网格模型Mesh的位置属性
             light.position.set(routeX, y, routeY);
+            light.rotation.y = angle;
 
         }
 

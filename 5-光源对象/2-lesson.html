@@ -2,133 +2,141 @@
  * @Author: DaskV
  * @Date: 2021-07-19 14:54:14
  * @LastEditors: DaskV
- * @LastEditTime: 2021-07-20 14:48:31
+ * @LastEditTime: 2021-10-15 15:24:38
  * @Description: 
 -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第一课:光照原理和常见光源类型</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-</head>
-<body>
-    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="../OrbitControls.js"></script>
-    <script>
-        var scene = new THREE.Scene();  // 场景
-        
-        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);  //PerspectiveCamera ： 透视相机
-        
-        var renderer = new THREE.WebGLRenderer();  // 渲染器
-        renderer.setClearColor(0xffffff, 1.0);
-        var orbit = new THREE.OrbitControls(camera, renderer.domElement); 
-            orbit.target = new THREE.Vector3(0,0,0); // 设置中心点
-            orbit.minPolarAngle  = 0; // 最小上下旋转角度
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>第一课:光照原理和常见光源类型</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r123/three.min.js"></script>
+        <script src="../OrbitControls.js"></script>
+        <script>
+            var scene = new THREE.Scene(); // 场景
+
+            var camera = new THREE.PerspectiveCamera(
+                75,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000
+            ); //PerspectiveCamera ： 透视相机
+
+            var renderer = new THREE.WebGLRenderer(); // 渲染器
+            renderer.setClearColor(0xffffff, 1.0);
+            var orbit = new THREE.OrbitControls(camera, renderer.domElement);
+            orbit.target = new THREE.Vector3(0, 0, 0); // 设置中心点
+            orbit.minPolarAngle = 0; // 最小上下旋转角度
             orbit.maxPolarAngle = Math.PI; // 最大上下旋转角度
             orbit.minDistance = 140; // 距离中心点最小距离
             orbit.maxDistance = 10000; // 距离中心点最大距离
             orbit.zoomSpeed = 0.3; // 缩放速度
             orbit.rotateSpeed = 0.3; // 旋转速度
-        
-        camera.position.x = 50;
-        camera.position.y = 50;
-        camera.position.z = 500;  
-        
-        renderer.setSize(window.innerWidth, window.innerHeight);  //渲染器设置窗口大小
-   
-        document.body.appendChild(renderer.domElement);   //dom 注入渲染器
-     
-        //网格模型
-        var geometry = new THREE.BoxGeometry(100,100,100);
-        var material = new THREE.MeshLambertMaterial({
-            color: 0xffba14
-        });
-        var mesh= new THREE.Mesh(geometry,material);//网格模型对象
-        // clone对象 mesh2
-        var mesh2 = mesh.clone()
-        // 设置产生投影的网格模型
-        mesh.castShadow = true;
-        mesh2.castShadow = true;
 
-        mesh2.translateX(300)
-        scene.add(mesh,mesh2)
+            camera.position.x = 50;
+            camera.position.y = 50;
+            camera.position.z = 500;
 
-        
-        var light;
-        var x = 200, y = 200, z = 200;
-        var angle = 0;
+            renderer.setSize(window.innerWidth, window.innerHeight); //渲染器设置窗口大小
 
-        //平行光：对于一个平面而言，平面不同区域接收到平行光的入射角一样。
-        function initDirectionalLight(params) {
-            light = new THREE.DirectionalLight(0xffffff,1)
-            // 设置点光源位置，改变光源的位置
-            light.position.set(x,y,z);
-            // 设置用于计算阴影的光源对象
-            light.castShadow = true;
-            // 设置计算阴影的区域，最好刚好紧密包围在对象周围
-            // 计算阴影的区域过大：模糊  过小：看不到或显示不完整
-            light.shadow.camera.near = 0.5;
-            light.shadow.camera.far = 300;
-            light.shadow.camera.left = -50;
-            light.shadow.camera.right = 50;
-            light.shadow.camera.top = 200;
-            light.shadow.camera.bottom = -100;
-            
-            initlightHelper('DirectionalLightHelper')
-        }
+            document.body.appendChild(renderer.domElement); //dom 注入渲染器
 
-        // 光源辅助器 ，帮助我们看到该光源的位置以及辐射范围
-        // 不同类型的光，需要使用不同类型的辅助器
-        // 聚光源：SpotLightHelper ， 点光源辅助对象：PointLightHelper，平行光光源辅助对象：DirectionalLightHelper
-        function initlightHelper(HelperType) {
-            const lightHelper = new THREE[HelperType](light, 100); 
-            scene.add(lightHelper);  // 将此帮助器添加进场景
-        }
+            //网格模型
+            var geometry = new THREE.BoxGeometry(100, 100, 100);
+            var material = new THREE.MeshLambertMaterial({
+                color: 0xffba14,
+            });
+            var mesh = new THREE.Mesh(geometry, material); //网格模型对象
+            // clone对象 mesh2
+            var mesh2 = mesh.clone();
+            // 设置产生投影的网格模型
+            mesh.castShadow = true;
+            mesh2.castShadow = true;
 
-        //  光源运动
-        function animateLight() {
-            angle += 0.005;
-            // 圆周运动网格模型x坐标计算  绕转半径400
-            var routeX = 400 * Math.sin(angle) + 300;
-            // 圆周运动网格模型y坐标计算  绕转半径400
-            var routeY = 400 * Math.cos(angle);
-            // 每次执行render函数，更新需要做圆周运动网格模型Mesh的位置属性
-            light.position.set(routeX, y, routeY);
-        }
+            mesh2.translateX(300);
+            scene.add(mesh, mesh2);
 
-        // 平面网格模型作为投影面
-        var planeGeometry = new THREE.PlaneGeometry(1000, 1000);
-        var planeMaterial = new THREE.MeshLambertMaterial({
-            color: 0x4e6ef2
-        });
-        var planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
-        scene.add(planeMesh); //网格模型添加到场景中
-        planeMesh.rotateX(-Math.PI / 2); //旋转网格模型
-        planeMesh.position.y = -50; //设置网格模型y坐标
-        // 设置接收阴影的投影面
-        planeMesh.receiveShadow = true;
+            var light;
+            var x = 200,
+                y = 200,
+                z = 200;
+            var angle = 0;
 
-        //渲染动画
-        function render() {
-            animateLight();
-            requestAnimationFrame(render);
-            renderer.render(scene, camera);
-        }
+            //平行光：对于一个平面而言，平面不同区域接收到平行光的入射角一样。
+            function initDirectionalLight(params) {
+                light = new THREE.DirectionalLight(0xffffff, 1);
+                // 设置点光源位置，改变光源的位置
+                light.position.set(x, y, z);
+                // 设置用于计算阴影的光源对象
+                light.castShadow = true;
+                // 设置计算阴影的区域，最好刚好紧密包围在对象周围
+                // 计算阴影的区域过大：模糊  过小：看不到或显示不完整
+                light.shadow.camera.near = 0.5;
+                light.shadow.camera.far = 300;
+                light.shadow.camera.left = -50;
+                light.shadow.camera.right = 50;
+                light.shadow.camera.top = 200;
+                light.shadow.camera.bottom = -100;
+                scene.add(light)
+                setTimeout(() => {
+                    initlightHelper('DirectionalLightHelper')
+                }, 0);
+            }
 
+            // 光源辅助器 ，帮助我们看到该光源的位置以及辐射范围
+            // 不同类型的光，需要使用不同类型的辅助器
+            // 聚光源：SpotLightHelper ， 点光源辅助对象：PointLightHelper，平行光光源辅助对象：DirectionalLightHelper
+            function initlightHelper(HelperType) {
+                const lightHelper = new THREE[HelperType](light, 100);
+                scene.add(lightHelper); // 将此帮助器添加进场景
+            }
 
-        // initAmbientLight();
-        // initPointLight();
-        initDirectionalLight()
-        // initSpotLight()
-        render();
-    </script>
-</body>
+            //  光源运动
+            function animateLight() {
+                angle += 0.005;
+                // 圆周运动网格模型x坐标计算  绕转半径400
+                var routeX = 400 * Math.sin(angle) + 300;
+                // 圆周运动网格模型y坐标计算  绕转半径400
+                var routeY = 400 * Math.cos(angle);
+                // 每次执行render函数，更新需要做圆周运动网格模型Mesh的位置属性
+                light.position.set(routeX, y, routeY);
+                light.rotation.y = angle;
+            }
+
+            // 平面网格模型作为投影面
+            function initGround() {
+                var planeGeometry = new THREE.PlaneGeometry(1000, 1000);
+                var planeMaterial = new THREE.MeshLambertMaterial({
+                    color: 0x4e6ef2,
+                });
+                var planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+                scene.add(planeMesh); //网格模型添加到场景中
+                planeMesh.rotateX(-Math.PI / 2); //旋转网格模型
+                planeMesh.position.y = -50; //设置网格模型y坐标
+                // 设置接收阴影的投影面
+                planeMesh.receiveShadow = true;
+            }
+
+            //渲染动画
+            function render() {
+                animateLight();
+                requestAnimationFrame(render);
+                renderer.render(scene, camera);
+            }
+
+            initDirectionalLight();
+            initGround();
+            render();
+        </script>
+    </body>
 </html>
