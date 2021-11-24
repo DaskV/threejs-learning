@@ -1,9 +1,9 @@
 <!--
  * @Author: DaskV
- * @Date: 2021-07-19 14:54:14
+ * @Date: 2021-10-22 11:43:55
  * @LastEditors: DaskV
- * @LastEditTime: 2021-10-22 11:43:33
- * @Description: 
+ * @LastEditTime: 2021-10-22 11:49:47
+ * @Description: UV动画执行帧
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>第二课:GLTFLoader模型加载器 和UV动画</title>
+        <title>第三课:UV动画执行帧</title>
         <style>
             body {
                 margin: 0;
@@ -58,23 +58,8 @@
 
             const TREX_JUMP_SPEED = 20;
 
-            const CACTUS_SPAWN_X = 20;
-            const CACTUS_DESTROY_X = -20;
-            const CACTUS_MAX_SCALE = 1;
-            const CACTUS_MIN_SCALE = 0.5;
-            const CACTUS_SPAWN_MAX_INTERVAL = 4;
-            const CACTUS_SPAWN_MIN_INTERVAL = 2;
-
-            const PTERODACTYL_MIN_Y = 4;
-            const PTERODACTYL_MAX_Y = 5;
-            const PTERODACTYL_SPAWN_X = -5;
-            const PTERODACTYL_SPAWN_INTERVAL = 10;
-            const PTERODACTYL_SPEED = 2;
-
             const GRAVITY = -35;
             const FLOOR_SPEED = -10;
-            const SKYSPHERE_ROTATE_SPEED = 0.02;
-            const SCORE_INCREASE_SPEED = 10;
 
 
             const scene = new THREE.Scene();
@@ -82,19 +67,12 @@
             const clock = new THREE.Clock();
             const mixers = [];
             let trex;
-            let cactus;
             let floor;
-            let pterodactyl;
-            let skySphere;
             let directionalLight;
             let jump = false;
             let vel = 0;
-            let nextCactusSpawnTime = 0;
-            let nextPterodactylResetTime = 0;
             let score = 0;
             let isGameOver = true;
-            const cactusGroup = new THREE.Group();
-            scene.add(cactusGroup);
             let renderer;
             let camera;
 
@@ -139,6 +117,26 @@
                 renderer.render(scene, camera);
             }
             animate();
+
+            // //加载地面
+            function createFloor() {
+                const geometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+
+                const material = new THREE.MeshStandardMaterial({
+                    color: 0xc4733b,
+                });
+
+                floor = new THREE.Mesh(geometry, material);
+         
+                floor.material.side = THREE.DoubleSide;
+                floor.rotation.x = -Math.PI / 2;
+                floor.position.set(0,-10,0)
+                floor.castShadow = false;
+                floor.receiveShadow = true;
+
+                scene.add(floor);
+            }
+            createFloor();
 
             //创建光源
             function createLighting() {
@@ -191,80 +189,9 @@
                         console.log("错误");
                     }
                 );
-
-             
-                //加载仙人掌模型
-                loader.load(
-                    "models/cactus/scene.gltf",
-                    function (gltf) {
-                        gltf.scene.position.set(0,-10,0)
-                        cactus = gltf.scene;
-                    },
-                    function (xhr) {
-                        console.log(
-                            (xhr.loaded / xhr.total) * 100 + "% loaded"
-                        );
-                    },
-                    function (error) {
-                        console.log("An error happened");
-                    }
-                );
             }
             load3DModels();
 
-            // //加载地面
-            function createFloor() {
-                const geometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
-                const texture = THREE.ImageUtils.loadTexture("./textures/sand.jpg");
-                texture.wrapS = THREE.RepeatWrapping;
-                texture.wrapT = THREE.RepeatWrapping;
-                texture.repeat.set(100, 100);
-
-                const material = new THREE.MeshStandardMaterial({
-                    map: texture,
-                    color: 0xc4733b,
-                });
-
-                floor = new THREE.Mesh(geometry, material);
-         
-                floor.material.side = THREE.DoubleSide;
-                floor.rotation.x = -Math.PI / 2;
-                floor.position.set(0,-10,0)
-                floor.castShadow = false;
-                floor.receiveShadow = true;
-
-                scene.add(floor);
-            }
-            createFloor();
-
-            //加载天空
-            function createSkySphere(file) {
-                const geometry = new THREE.SphereGeometry(500, 60, 40);
-                // Invert the geometry on the x-axis so that all of the faces point inward
-                geometry.scale(-1, 1, 1);
-
-                const texture = new THREE.TextureLoader().load(file);
-                texture.encoding = THREE.sRGBEncoding;
-                const material = new THREE.MeshBasicMaterial({ map: texture });
-                skySphere = new THREE.Mesh(geometry, material);
-
-                scene.add(skySphere);
-            }
-            createSkySphere("./textures/desert.jpg");
-
-            //启用阴影
-            function enableShadow(renderer, light) {
-                renderer.shadowMap.enabled = true;
-                renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
-                light.castShadow = true;
-
-                light.shadow.mapSize.width = 512;
-                light.shadow.mapSize.height = 512;
-                light.shadow.camera.near = 0.001;
-                light.shadow.camera.far = 500;
-            }
-            enableShadow(renderer, directionalLight);
 
             function handleInput() {
                 const callback = () => {
@@ -281,7 +208,8 @@
                 renderer.domElement.addEventListener("touchstart", callback);
                 renderer.domElement.addEventListener("click", callback);
             }
-           handleInput();
+
+            handleInput();
 
             function handleWindowResize() {
                 window.addEventListener(
@@ -297,13 +225,6 @@
             }
             handleWindowResize();
 
-            function randomInt(min, max) {
-                return Math.floor(Math.random() * (max - min)) + min;
-            }
-
-            function randomFloat(min, max) {
-                return Math.random() * (max - min) + min;
-            }
 
             function gameOver() {
                 isGameOver = true;
@@ -318,12 +239,10 @@
                 cactusGroup.children.length = 0;
             }
 
-            function update(delta) {
-                if (!cactus) return;              
-                if (!trex) return;              
-                if (!floor) return;            
-                if (isGameOver) return;
-                
+            function update(delta) {           
+                if (!trex) return;           
+                if (!floor) return;           
+                                           
                 for (const mixer of mixers) {
                     mixer.update(delta);
                 }
@@ -345,72 +264,6 @@
                     trex.position.y = 9;
                 }
 
-                // 创建仙人掌
-                if (clock.elapsedTime > nextCactusSpawnTime) {
-                    const interval = randomFloat(
-                        CACTUS_SPAWN_MIN_INTERVAL,
-                        CACTUS_SPAWN_MAX_INTERVAL
-                    );
-
-                    nextCactusSpawnTime = clock.elapsedTime + interval;
-
-                    const numCactus = randomInt(3, 5);
-                    for (let i = 0; i < numCactus; i++) {
-                        const clone = cactus.clone();
-                        clone.position.x = CACTUS_SPAWN_X + i * 0.5;
-                        clone.scale.multiplyScalar(
-                            randomFloat(CACTUS_MIN_SCALE, CACTUS_MAX_SCALE)
-                        );
-
-                        cactusGroup.add(clone);
-                    }
-                }
-
-                // 移动仙人掌
-                for (const cactus of cactusGroup.children) {
-                    cactus.position.x += FLOOR_SPEED * delta;
-                }
-
-                // 把仙人掌从筛子里拿出来
-                while (
-                    cactusGroup.children.length > 0 &&
-                    cactusGroup.children[0].position.x < CACTUS_DESTROY_X // out of the screen
-                ) {
-                    cactusGroup.remove(cactusGroup.children[0]);
-                }
-
-                // 检查碰撞.
-                const trexAABB = new THREE.Box3(
-                    new THREE.Vector3(-1, trex.position.y, 0),
-                    new THREE.Vector3(1, trex.position.y + 2, 0)
-                );
-
-                for (const cactus of cactusGroup.children) {
-                    const cactusAABB = new THREE.Box3();
-                    cactusAABB.setFromObject(cactus);
-
-                    if (cactusAABB.intersectsBox(trexAABB)) {
-                        gameOver();
-                        return;
-                    }
-                }
-
-                // 更新纹理偏移以模拟地板移动
-                floor.material.map.offset.add(new THREE.Vector2(delta, 0));
-
-                trex.traverse((child) => {
-                    child.castShadow = true;
-                    child.receiveShadow = false;
-                });
-
-                if (skySphere) {
-                    skySphere.rotation.y += delta * SKYSPHERE_ROTATE_SPEED;
-                }
-
-                score += delta * SCORE_INCREASE_SPEED;
-                infoElement.innerHTML = Math.floor(score)
-                    .toString()
-                    .padStart(5, "0");
             }
         </script>
     </body>
