@@ -2,7 +2,7 @@
  * @Author: DaskV
  * @Date: 2021-07-15 10:51:40
  * @LastEditors: DaskV
- * @LastEditTime: 2021-09-24 14:16:37
+ * @LastEditTime: 2024-03-29 19:11:19
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -20,20 +20,38 @@
                 height: 100vh;
                 background-color: #eeeeee;
             }
+            .btn{
+                position: fixed;
+                right: 50%;
+                bottom: 0;
+                padding: 5px 20px;
+            }
         </style>
     </head>
     <body>
         <div id="canvas-frame"></div>
+        <div
+            id="infoBox"
+            style="
+                display: none;
+                position: absolute;
+                z-index: 10;
+                padding: 10px;
+                background: white;
+            "
+        ></div>
+        <button class="btn">切换</button>
         <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r123/three.min.js"></script>
         <script src="https://cdn.bootcdn.net/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
-        <script src="../OrbitControls.js"></script>
+        <script src="./OrbitControls.js"></script>
         <script src="./xmlTojson.js"></script>
         <script>
             //初始化threejs ， 和渲染器
-            var renderer;
-            var axisX = new THREE.Vector3(1,0,0)
-            var axisY = new THREE.Vector3(0,1,0)
-            var axisZ = new THREE.Vector3(0,0,1)
+            let renderer;
+            let axisX = new THREE.Vector3(1, 0, 0);
+            let axisY = new THREE.Vector3(0, 1, 0);
+            let axisZ = new THREE.Vector3(0, 0, 1);
+            let infoBox = document.getElementById("infoBox");
             function initThree() {
                 width = document.getElementById("canvas-frame").clientWidth;
                 height = document.getElementById("canvas-frame").clientHeight;
@@ -41,11 +59,13 @@
                     antialias: true,
                 });
                 renderer.setSize(width, height);
-                document.getElementById("canvas-frame").appendChild(renderer.domElement);
+                document
+                    .getElementById("canvas-frame")
+                    .appendChild(renderer.domElement);
                 renderer.setClearColor(0xffffff, 1.0);
             }
             //初始化相机
-            var camera;
+            let camera;
             function initCamera() {
                 camera = new THREE.PerspectiveCamera(
                     45,
@@ -54,130 +74,136 @@
                     10000
                 );
                 camera.position.x = 0;
-                camera.position.y = 0;
-                camera.position.z = 7000;
+                camera.position.y = 2000;
+                camera.position.z = 4000;
                 camera.up.x = 0;
                 camera.up.y = 1;
                 camera.up.z = 0;
-                camera.lookAt(0,0,0);
+                camera.lookAt(0, 0, 0);
             }
-            //初始化场景    
-            var scene;
+            //初始化场景
+            let scene;
             function initScene() {
                 scene = new THREE.Scene();
             }
             //初始化光源
-            var light;
+            let light;
             function initLight() {
                 //Light:基类光， DirectionalLight ： 方向光，  AmbientLight：环境光，AreaLight:区域光，PointLight:点光，SpotLight:聚光灯
                 light = new THREE.DirectionalLight(0xff0000, 1.0, 0);
-                light.position.set(100, 100, 200);  //光源方向
+                light.position.set(100, 100, 200); //光源方向
                 scene.add(light);
             }
-            //初始化物体    
-            var cube;
-            function initObject(opt) {
-                var geometry = new THREE.BoxGeometry(opt.W,opt.H,opt.D);
-                //纹理
-                var texture = new THREE.TextureLoader().load(opt.imagePath)
-                texture.wrapS = THREE.RepeatWrapping;
-                texture.wrapT = THREE.RepeatWrapping;
-                texture.repeat.set( 4, 1 );
+            //初始化物体
+            let cube;
+            function createCube(opt) {
+                let geometry = new THREE.BoxGeometry(
+                    opt.width,
+                    opt.height,
+                    opt.depth
+                );
 
-                var material = new THREE.MeshBasicMaterial({
-                    map:texture,
-                    opacity:0.7,
-                    transparent:true,
-                    wireframe:opt.wireframe
+                geometry.translate(
+                    opt.width / 2,
+                    opt.height / 2,
+                    opt.depth / 2
+                );
+                geometry.verticesNeedUpdate = true;
+
+                // 边框
+                let edgesGeometry = new THREE.EdgesGeometry(geometry);
+                let edgeMaterial = new THREE.LineBasicMaterial({
+                    color: 0x000000,
                 });
-                cube = new THREE.Mesh(geometry, material);
+                let wireframe = new THREE.LineSegments(
+                    edgesGeometry,
+                    edgeMaterial
+                );
 
+                //纹理
+                let texture = ""          
+                if (opt.imagePath) {              
+                    texture = new THREE.TextureLoader().load(opt.imagePath);
+                    texture.wrapS = THREE.RepeatWrapping;
+                    texture.wrapT = THREE.RepeatWrapping;
+                    if (opt.rotate) {
+                        texture.center.set(0.5, 0.5);
+                        texture.rotation = Math.PI / 2;
+                    }
+                }
+
+                
+                let material = new THREE.MeshBasicMaterial({
+                    transparent:  true,
+                    color: "gray",
+                    opacity: 0.3,
+                });
+
+
+                let material2 = new THREE.MeshBasicMaterial({
+                    map: opt.imagePath ? texture : undefined,
+                    transparent:  opt.imagePath ? false : true,
+                    opacity: 0.6,
+                });
+
+                cube = new THREE.Mesh(geometry, material2);
+                cube.name = opt.name;
+                cube.UID = opt.id;
                 cube.position.x = opt.PX || 0;
                 cube.position.y = opt.PY || 0;
                 cube.position.z = opt.PZ || 0;
-                cube.rotation.x = opt.RX ? Math.PI/ (180 / opt.RX) : 0;
-                cube.rotation.y = opt.RY ? Math.PI/ (180 / opt.RY) : 0;
-                cube.rotation.z = opt.RY ? Math.PI/ (180 / opt.RZ) : 0;
+                cube.rotation.x = opt.RX || 0;
+                cube.rotation.y = opt.RY || 0;
+                cube.rotation.z = opt.RZ || 0;
+                cube.add(wireframe);
                 scene.add(cube);
-               
             }
 
             //网格
-            function initGrid(){
+            function initGrid() {
                 // 网格的边长是1000，每个小网格的边长是50
-                var grid = new THREE.GridHelper( 5000, 50 ,'#dddddd','#dddddd' );
-                scene.add( grid );
+                let grid = new THREE.GridHelper(
+                    10000,
+                    50,
+                    "#dddddd",
+                    "#dddddd"
+                );
+                scene.add(grid);
             }
 
             //坐标系
             function initAxis(params) {
-                var axis = new THREE.AxisHelper(5000);
+                let axis = new THREE.AxesHelper(10000);
                 scene.add(axis);
             }
 
             // gui
-            var controls = new function () {
+            let controls = new (function () {
                 this.rotationSpeed = 0.02;
-            }
-            var gui = new dat.GUI();
-            gui.add(controls, 'rotationSpeed', 0, 0.5);
-
-
-            var startX, startY,endX,endY;
-            var isLeftDown = false;
-            var offsetX = 0;
-            var offsetY = 0;
-            function addTouchListener() {         
-                document.onmousedown = function (event) {
-                    startX = event.clientX;
-                    startY = event.clientY;
-                    isLeftDown = event.button == 0;
-                };
-                document.onmouseup = function(event){
-                    isLeftDown = isRightDown = false
-                };
-                
-                //禁止右键默认 context 菜单
-                document.oncontextmenu= function(event){ 
-                    return false
-                }
-                document.onmousemove = function (event) {
-                    //左键按下
-                    if (isLeftDown) {
-                        offsetX = event.clientX - startX
-                        offsetY = event.clientY - startY
-                        if(offsetX > 50 ){
-                            cube.rotation.z = cube.rotation.z + controls.rotationSpeed;
-                        }else if(offsetX < -50){
-                            cube.rotation.z = cube.rotation.z - controls.rotationSpeed;
-                        }
-                        if(offsetY > 50){
-                            cube.rotation.x = cube.rotation.x + controls.rotationSpeed;
-                        }else if(offsetY < -50){
-                            cube.rotation.x = cube.rotation.x - controls.rotationSpeed;
-                        }
-                        endX = event.clientX
-                        endY = event.clientY;   
-                    }
-                }
-            }
+            })();
+            let gui = new dat.GUI();
+            gui.add(controls, "rotationSpeed", 0, 0.5);
 
             //OrbitControls 相机控件
-            function initOrbit(){
-                var orbit = new THREE.OrbitControls(camera, renderer.domElement); 
-                orbit.target = new THREE.Vector3(0,0,0); // 设置中心点
-                orbit.minPolarAngle  = 0; // 最小上下旋转角度
+            function initOrbit() {
+                let orbit = new THREE.OrbitControls(
+                    camera,
+                    renderer.domElement
+                );
+                orbit.target = new THREE.Vector3(0, 0, 0); // 设置中心点
+                orbit.minPolarAngle = 0; // 最小上下旋转角度
                 orbit.maxPolarAngle = Math.PI; // 最大上下旋转角度
                 orbit.minDistance = 140; // 距离中心点最小距离
                 orbit.maxDistance = 10000; // 距离中心点最大距离
                 orbit.zoomSpeed = 0.3; // 缩放速度
                 orbit.rotateSpeed = 0.3; // 旋转速度
+                orbit.mouseButtons = {
+                    LEFT: THREE.MOUSE.RIGHT,
+                    ZOOM: THREE.MOUSE.MIDDLE,
+                    RIGHT: THREE.MOUSE.LEFT,
+                };
                 // orbit.enabled = false //是否启用
-                // orbit.addEventListener('change',()=>{
-                    
-                // })
             }
-            
 
             //渲染
             function render() {
@@ -186,7 +212,6 @@
                 requestAnimationFrame(render);
             }
 
-
             function threeStart() {
                 initThree();
                 initCamera();
@@ -194,105 +219,308 @@
                 initGrid();
                 initAxis();
                 initLight();
-                initRaycaster(); 
+                initRaycaster();
                 initOrbit();
                 render();
             }
 
-
+            let arr = [];
+            let panel = [];
             async function loadXml(params) {
-                const res = await fetch('./source/data3.xml')
+                const res = await fetch("./source/data12.xml");
                 const xmlString = await res.text();
-                var XmlNode = new DOMParser().parseFromString(xmlString, 'text/xml')
-                const data = xmlToJson(XmlNode)
-                const root =  data.Root.Cabinet.Part
-                console.log(root)
-                loadPart(root.Part)
+                let XmlNode = new DOMParser().parseFromString(
+                    xmlString,
+                    "text/xml"
+                );
+                const data = xmlToJson(XmlNode);
+                const { Panels, Part } = data.Root.Cabinet;
+
+                panel = Panels.Panel.map((v) => {
+                    const data = v["@attributes"];
+                    return {
+                        id: data.ID,
+                        subId: data.ID.substring(
+                            data.ID.length - 3,
+                            data.ID.length
+                        ),
+                        rotate: data.Grain == "H" ? true : false,
+                        uid: data.uid,
+                    };
+                });
+                Part["@attributes"].sizeTransform = "0,0,0,0,0,0,0,0,0";
+                loadPart(Part, 0);
+                arr.forEach((v) => {
+                    renderPart(v);
+                });
+                console.log(arr.map(v=>v['@attributes'].ID));
+                console.log(panel.map(v=>v.id))
+            }
+
+            function loadPart(
+                data,
+                index = 0,
+                accrualData = [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                parentInfo = []
+            ) {
+                let info = data["@attributes"].sizeTransform
+                    .split(",")
+                    .map((v) => Number(v));
                 
-            }
 
-            function loadPart(data,parentData = undefined) {
-                if(typeof data === 'object' && data.constructor !== Array){
-                    initObject({
-                        W:data.Values['@attributes'].W,
-                        H:data.Values['@attributes'].H,
-                        D:data.Values['@attributes'].D,
-                        imagePath:data['@attributes'].imagePath,
-                        PX:data.Values['@attributes'].W /2 + Number(data.Values['@attributes'].PX) + (parentData ? Number(parentData.PX) : 0),
-                        PY:data.Values['@attributes'].H /2 + Number(data.Values['@attributes'].PZ) + (parentData ? Number(parentData.PZ) : 0),
-                        PZ:data.Values['@attributes'].D /2 + Number(data.Values['@attributes'].PY) + (parentData ? Number(parentData.PY) : 0),
-                        RX:data.Values['@attributes'].RX + (parentData ? Number(parentData.RX) : 0),
-                        RY:data.Values['@attributes'].RZ + (parentData ? Number(parentData.RZ) : 0),
-                        RZ:data.Values['@attributes'].RY + (parentData ? Number(parentData.RY) : 0),
-                        wireframe:true                            
-                    })
+                const isSame = compareToParent(info, parentInfo)
+                if(isSame){
+                    info = accrualData
                 }
-                else{
-                    data.forEach(v=>{
-                        if(v.Part){
-                            loadPart(v.Part,v.Values['@attributes'])
+                else {
+                    info.forEach((v, i) => {
+                    info[i] += accrualData[i];
+                })
+
+                }
+                if (index == 0) {
+                    if (data.Part.constructor === Array) {
+                        data.Part.forEach((v) => {
+                            loadPart(v, index + 1, info);
+                        });
+                    } else {
+                        let obj = {
+                            id: "",
+                            rotate: false,
+                        };
+                        obj = getTextureData(data, obj);
+                        data["@attributes"].ID = obj.id;
+                        data.Values["@attributes"].PX = info[0] + Number(data.Part['@attributes'].PX);
+                        data.Values["@attributes"].PY = info[2] + Number(data.Part['@attributes'].PY);
+                        data.Values["@attributes"].PZ = info[1] + Number(data.Part['@attributes'].PZ);
+                        data.Values["@attributes"].RX = info[3] + Number(data.Part['@attributes'].RX);
+                        data.Values["@attributes"].RY = info[5] + Number(data.Part['@attributes'].RY);
+                        data.Values["@attributes"].RZ = info[4] + Number(data.Part['@attributes'].RZ);
+                        data["@attributes"].bomId = obj.id;
+                        data["@attributes"].rotate = obj.rotate;
+                        arr.push(data);
+                    }
+                } else if (index == 1) {
+                    if (data["@attributes"].type == "unit") {
+                        loadPart(data, 0, [0, 0, 0, 0, 0, 0, 0, 0, 0]);
+                    } else if (!data.Part) {
+                        let obj = {
+                            id: "",
+                            rotate: false,
+                        };
+                        obj = getTextureData(data, obj);
+                        data["@attributes"].ID = obj.id;
+                        data.Values["@attributes"].PX = info[0];
+                        data.Values["@attributes"].PY = info[2];
+                        data.Values["@attributes"].PZ = info[1];
+                        data.Values["@attributes"].RX = info[3];
+                        data.Values["@attributes"].RY = info[5];
+                        data.Values["@attributes"].RZ = info[4];
+                        data["@attributes"].bomId = obj.id;
+                        data["@attributes"].rotate = obj.rotate;
+                        arr.push(data);
+                    } else if (data.Part.constructor !== Array) {
+                        let obj = {
+                            id: "",
+                            rotate: false,
+                        };
+                        obj = getTextureData(data, obj);
+                        data["@attributes"].ID = obj.id;
+                        data.Values["@attributes"].PX = info[0];
+                        data.Values["@attributes"].PY = info[2];
+                        data.Values["@attributes"].PZ = info[1];
+                        data.Values["@attributes"].RX = info[3];
+                        data.Values["@attributes"].RY = info[5];
+                        data.Values["@attributes"].RZ = info[4];
+                        data["@attributes"].bomId = obj.id;
+                        data["@attributes"].rotate = obj.rotate;
+                        arr.push(data);
+                    } else if (data.Part.constructor === Array) {
+                        data.Part.forEach((v) => {
+                            loadPart(v, index + 1, info);
+                        });
+                    }
+                } 
+                else if (index > 1) {
+                    let obj = {
+                        id: "",
+                        rotate: false,
+                    };
+                    if (!data.Part) {
+                        let obj = {
+                            id: "",
+                            rotate: false,
+                        };
+                        obj = getTextureData(data, obj);
+                        if(obj.id){
+                            data["@attributes"].ID = obj.id;
+                            data.Values["@attributes"].PX = info[0];
+                            data.Values["@attributes"].PY = info[2];
+                            data.Values["@attributes"].PZ = info[1];
+                            data.Values["@attributes"].RX = info[3];
+                            data.Values["@attributes"].RY = info[5];
+                            data.Values["@attributes"].RZ = info[4];
+                            data["@attributes"].bomId = obj.id;
+                            data["@attributes"].rotate = obj.rotate;
+                            arr.push(data);
                         }
-                        initObject({
-                            W:v.Values['@attributes'].W,
-                            H:v.Values['@attributes'].H,
-                            D:v.Values['@attributes'].D,
-                            imagePath:v['@attributes'].imagePath,
-                            PX:v.Values['@attributes'].W /2 + Number(v.Values['@attributes'].PX) + parentData ? Number(parentData.PX) : 0,
-                            PY:v.Values['@attributes'].H /2 + Number(v.Values['@attributes'].PZ) + (parentData ? Number(parentData.PZ) : 0),
-                            PZ:v.Values['@attributes'].D /2 + Number(v.Values['@attributes'].PY) + (parentData ? Number(parentData.PY) : 0),
-                            RX:v.Values['@attributes'].RX + (parentData ? Number(parentData.RX) : 0),
-                            RY:v.Values['@attributes'].RZ + (parentData ? Number(parentData.RZ) : 0),
-                            RZ:v.Values['@attributes'].RY + (parentData ? Number(parentData.RY) : 0),
-                            wireframe:false                            
-                        })
-                    })
+                    } else if (data.Part.constructor !== Array) {
+                        let obj = {
+                            id: "",
+                            rotate: false,
+                        };
+                        obj = getTextureData(data, obj);
+                        if(obj.id){                                          
+                            data["@attributes"].ID = obj.id;
+                            data.Values["@attributes"].PX = info[0];
+                            data.Values["@attributes"].PY = info[2];
+                            data.Values["@attributes"].PZ = info[1];
+                            data.Values["@attributes"].RX = info[3];
+                            data.Values["@attributes"].RY = info[5];
+                            data.Values["@attributes"].RZ = info[4];
+                            data["@attributes"].bomId = obj.id;
+                            data["@attributes"].rotate = obj.rotate;
+                            arr.push(data);
+                        }              
+                    } else if (data.Part.constructor === Array) {
+                        const parentInfo = data["@attributes"].sizeTransform.split(",").map((v) => Number(v));
+                        data.Part.forEach((v) => {
+                            loadPart(v, index + 1, info, parentInfo);
+                        });
+                    }
                 }
-
             }
 
-             //光投射器
-            var raycaster;
-            var rayMouse;
+            function getTextureData(data, obj) {
+                if (data["@attributes"].ID !== "000") {
+                    obj = panel.find((v) => v.subId == data["@attributes"].ID);
+                } else if (data.Part) {
+                    let ID = "";
+                    if (data.Part.constructor === Array) {
+                        data.Part.forEach((v) => {
+                            if (
+                                v["@attributes"].ID &&
+                                v["@attributes"].ID !== "000"
+                            ) {
+                                ID = v["@attributes"].ID;
+                            }
+                        });
+                        obj = panel.find((v) => v.subId == ID);
+                    } else {
+                        obj = getTextureData(data.Part, obj);
+                    }
+                }
+                return obj;
+            }
+
+
+            function compareToParent(data, parentData){                       
+                const PX = data[0] ===  parentData[0] 
+                const PY = data[2] ===  parentData[2] 
+                const PZ = data[1] ===  parentData[1] 
+                const RX = data[3] ===  parentData[3] 
+                const RY = data[5] ===  parentData[5] 
+                const RZ = data[4] ===  parentData[4]
+                return PX && PY && PZ && RX && RY && RZ
+            }
+
+            function renderPart(opt) {
+                const data = {
+                    id: opt["@attributes"].UID,
+                    name: opt["@attributes"].name,
+                    imagePath: opt["@attributes"].imagePath,
+                    width: Number(opt.Values["@attributes"].W),
+                    height: Number(opt.Values["@attributes"].H),
+                    depth: Number(opt.Values["@attributes"].D),
+                    PX: Number(opt.Values["@attributes"].PX),
+                    PY: Number(opt.Values["@attributes"].PY),
+                    PZ: -Number(opt.Values["@attributes"].PZ),
+                    RX: degreesToRadians(Number(opt.Values["@attributes"].RX)),
+                    RY: degreesToRadians(Number(opt.Values["@attributes"].RY)),
+                    RZ: -degreesToRadians(Number(opt.Values["@attributes"].RZ)),
+                    rotate: opt["@attributes"].rotate,
+                };
+                createCube(data);
+            }
+
+            //光投射器
+            let raycaster;
+            let rayMouse;
             function initRaycaster(params) {
                 raycaster = new THREE.Raycaster();
-                rayMouse = new THREE.Vector2();  //二维向量
-                document.addEventListener( 'dblclick', function(){
-                    
-                    rayMouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-                    rayMouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-                    renderRaycasterObj()
-                }, false )
-            }   
+                rayMouse = new THREE.Vector2(); //二维向量
+                document.addEventListener(
+                    "dblclick",
+                    function () {
+                        rayMouse.x =
+                            (event.clientX / window.innerWidth) * 2 - 1;
+                        rayMouse.y =
+                            -(event.clientY / window.innerHeight) * 2 + 1;
+                        renderRaycasterObj(event);
+                    },
+                    false
+                );
+            }
 
             // 渲染光投射器，根据光投射器判断鼠标所在向量方向是否穿过物体
-            var selectdObjList = []; //选中的列表
-            function renderRaycasterObj() {
+            let selectdObjList = []; //选中的列表
+            function renderRaycasterObj(event) {
                 raycaster.setFromCamera(rayMouse, camera);
-                var intersects = raycaster.intersectObjects(scene.children);        
-                if (intersects.length > 0) {                     
-                    cube = intersects[0].object
-                    const index = selectdObjList.findIndex(v=>v == cube.uuid)
-                    if(index > -1){
+                let intersects = raycaster.intersectObjects(scene.children);
+                if (intersects.length > 0) {
+                    cube = intersects[0].object;
+                    const index = selectdObjList.findIndex(
+                        (v) => v == cube.uuid
+                    );
+                    if (index > -1) {
                         cube.hasChecked = false;
-                        cube.material.color.set(0xffffff);
-                        selectdObjList.splice(index,1)
-                    }
-                    else{
-                        if((cube instanceof THREE.AxisHelper) || (cube instanceof THREE.GridHelper)){                    
+                        cube.material.color.set('gray');
+                        selectdObjList.splice(index, 1);
+                    } else {
+                        if (
+                            cube instanceof THREE.AxesHelper ||
+                            cube instanceof THREE.GridHelper
+                        ) {
                             return;
                         }
                         cube.hasChecked = true;
-                        cube.material.color.set("gray");
-                        selectdObjList.push(cube.uuid)
+                        cube.material.color.set("blue");
+                        selectdObjList.push(cube.uuid);
                     }
+
+                    console.log(cube)
+                    infoBox.innerHTML = cube.name;
+                    infoBox.style.display = "block";
+                    infoBox.style.left = `${event.clientX}px`;
+                    infoBox.style.top = `${event.clientY}px`;
+                } else {
+                    infoBox.style.display = "none";
                 }
             }
-            
-            window.onload = function(){
-                threeStart()
-                loadXml()
-                // addTouchListener()
+
+            // 创建一个函数来生成对话框的Canvas
+            function createDialogCanvas() {
+                let canvas = document.createElement("canvas");
+                let ctx = canvas.getContext("2d");
+                canvas.width = 200; // 设置对话框宽度
+                canvas.height = 100; // 设置对话框高度
+                ctx.fillStyle = "rgba(0,0,0,0.5)"; // 设置对话框背景颜色和透明度
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "black"; // 设置对话框文字颜色
+                ctx.font = "20px Arial";
+                ctx.fillText("Hello, World!", 20, 50); // 设置对话框内容
+                return canvas;
             }
+
+            // 将角度转换为弧度
+            function degreesToRadians(degrees) {
+                return (degrees * Math.PI) / 180;
+            }
+
+            window.onload = function () {
+                threeStart();
+                loadXml();
+            };
         </script>
     </body>
 </html>

@@ -2,7 +2,7 @@
  * @Author: DaskV
  * @Date: 2021-10-22 11:43:55
  * @LastEditors: DaskV
- * @LastEditTime: 2021-10-22 11:49:47
+ * @LastEditTime: 2024-02-26 11:03:14
  * @Description: UV动画执行帧
 -->
 <!DOCTYPE html>
@@ -52,29 +52,320 @@
         </style>
     </head>
     <body>
-        <script src="http://www.yanhuangxueyuan.com/threejs/build/three.min.js"></script>
-        <script src="http://www.yanhuangxueyuan.com/threejs/examples/js/loaders/GLTFLoader.js"></script>
+        <!-- <script src="http://www.yanhuangxueyuan.com/threejs/build/three.min.js"></script> -->
+        <script src="https://cdn.furnitureim.com/js/three.min.js"></script>
+        <script src="../GLTFLoader.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/tween.js/18.6.4/tween.umd.min.js"></script>
+        <script src="../OrbitControls.js"></script>
         <script>
-
+            console.log(TWEEN)
             const TREX_JUMP_SPEED = 20;
 
             const GRAVITY = -35;
             const FLOOR_SPEED = -10;
 
-
-            const scene = new THREE.Scene();
             let infoElement;
+            const scene = new THREE.Scene();
             const clock = new THREE.Clock();
             const mixers = [];
+            const clips = {
+                girl: {},
+                monster: {},
+            };
+            const actions = {
+                girl: {},
+                monster: {},
+            };
+            let lastestAction;
             let trex;
+            let delta;
             let floor;
             let directionalLight;
-            let jump = false;
             let vel = 0;
             let score = 0;
             let isGameOver = true;
             let renderer;
             let camera;
+            let jumping = false;
+            let direction = 'right'
+            let walkingType = 'idle'
+
+            const eventList = [
+                {
+                    keyCode: 18,
+                    event: "all",
+                    type: "normal",
+                    startFrame: 0,
+                    endFrame: 900,
+                    loop: THREE.LoopRepeat,
+                },
+                {
+                    keyCode: 32,
+                    event: "jump",
+                    unplay:true
+                },
+                {
+                    keyCode: 65,
+                    event: "left",
+                    unplay:true
+                },
+                {
+                    keyCode: 68,
+                    event: "right",
+                    unplay:true
+                },
+                {
+                    keyCode: 83,
+                    event: "idle",
+                    type: "normal",
+                    startFrame: 0,
+                    endFrame: 60,
+                    loop: THREE.LoopRepeat,
+                },
+                {
+                    event: "walk",
+                    type: "normal",
+                    startFrame: 475,
+                    endFrame: 665,
+                    loop: THREE.LoopRepeat,
+                },
+                {
+                    keyCode: 16,
+                    event: "run",
+                    type: "normal",
+                    startFrame: 65,
+                    endFrame: 85,
+                    loop: THREE.LoopRepeat,
+                },
+                {
+                    keyCode: 74,
+                    event: "hit",
+                    type: "attack",
+                    startFrame: 90,
+                    endFrame: 100,
+                    loop: THREE.LoopOnce,
+                    attacking: false,
+                },
+                {
+                    keyCode: 75,
+                    event: "punch",
+                    type: "attack",
+                    startFrame: 100,
+                    endFrame: 175,
+                    loop: THREE.LoopOnce,
+                    attacking: false,
+                },
+                {
+                    keyCode: 76,
+                    event: "leg",
+                    type: "attack",
+                    startFrame: 175,
+                    endFrame: 240,
+                    loop: THREE.LoopOnce,
+                    attacking: false,
+                },
+            ];
+
+            //加载模型
+            function load3DModels() {
+                //创建GLTF加载器
+                const loader = new THREE.GLTFLoader();
+
+                //加载人物模型
+                loader.load(
+                    "./models/user/scene.gltf",
+                    function (gltf) {
+                        trex = gltf.scene;
+                        gltf.scene.scale.set(0.1, 0.1, 0.1);
+                        gltf.scene.position.set(5, 19, 0);
+                        scene.add(trex);
+                        const mixer = new THREE.AnimationMixer(trex);
+                        const clip = gltf.animations[0];
+                        if (clip) {
+                            //骨骼helper
+                            const skeletonHelper = new THREE.SkeletonHelper(
+                                trex
+                            );
+                            // scene.add(skeletonHelper);
+
+                            //遍历所有子节点，增加阴影
+                            trex.traverse(function (object) {
+                                if (object.isMesh) object.castShadow = true;
+                            });
+
+                            eventList.forEach((item) => {
+                                const eventClip = THREE.AnimationUtils.subclip(
+                                    clip,
+                                    [item.event],
+                                    item.startFrame,
+                                    item.endFrame
+                                );
+                                const eventAction = mixer.clipAction(eventClip);
+                                clips.girl[item.event] = eventClip;
+                                actions.girl[item.event] = eventAction;
+                            });
+                        }
+                        mixers.push(mixer);
+                    },
+                    function (xhr) {
+                        console.log(
+                            (xhr.loaded / xhr.total) * 100 + "% loaded"
+                        );
+                    },
+                    function (error) {
+                        console.log("错误", error);
+                    }
+                );
+            }
+            load3DModels();
+
+            function handleInput() {
+                const callback = () => {
+                    if (isGameOver) {
+                        restartGame();
+                        return;
+                    }
+
+                    jump = true;
+                };
+
+                document.addEventListener(
+                    "keydown",
+                    function ({ keyCode }) {
+                        const opt = eventList.find((v) => v.keyCode == keyCode);
+                        if(opt){
+                            if(!opt.unplay){
+                                girlPlayAction(opt)
+                            }
+                            girlMoveAction(opt)
+                        }      
+                    },
+                    false
+                );
+            }
+
+            handleInput();
+
+            function girlPlayAction(opt) {
+                if (lastestAction) {
+                    if(opt.event == lastestAction.event && opt.event === 'run'){
+                        const event = walkingType == 'run' ? 'walk' : 'run'
+                        const action = eventList.find((v) => v.event == event)
+                        walkingType = opt.event
+                        girlPlayAction(action)
+                        return
+                    }
+
+                    //处于攻击动作时，除轻击外不允许切换其他动作
+                    if (
+                        lastestAction.type == "attack" &&
+                        lastestAction.event !== "hit" &&
+                        lastestAction.attacking
+                    ) {
+                        return false;
+                    }
+                }
+
+                if (opt.event === "leg") {
+                    jump();
+                }
+
+                for (let event in actions.girl) {
+                    actions.girl[event].stop();
+                }
+                const action = actions.girl[opt.event];
+                action.loop = opt.loop;
+
+                if(opt.type == 'normal'){
+                    walkingType = opt.event
+                }
+
+
+                if (opt.type == "attack") {
+                    opt.attacking = true;
+                    const timeout =
+                        ((opt.endFrame - opt.startFrame) / 30) * 1000;
+                    setTimeout(() => {
+                        opt.attacking = false;
+                        const idle = eventList.find((v) => v.event == 'idle');
+                        girlPlayAction(idle)
+                    }, timeout);
+                }
+                lastestAction = opt;
+                action.play();
+            }
+
+            function girlMoveAction(opt) {
+                if(opt.event == 'jump'){
+                    jump()
+                }
+                if(opt.event == 'right'){
+                    move('right')
+                }
+                if(opt.event == 'left'){
+                    move('left')
+                }
+            }
+
+            function jump() {
+                if(jumping) {
+                    return
+                }
+                const coordsUp = { y: 19 };
+                jumping = true
+                const jumpUp = new TWEEN.Tween(coordsUp) 
+                    .to({y: 30 }, 1000) 
+                    .easing(TWEEN.Easing.Quadratic.Out) 
+                    .onUpdate(() => {
+                        trex.position.y = coordsUp.y
+                    }).start()
+                const coordsDown = { y: 30 };
+                const jumpDown = new TWEEN.Tween(coordsDown) 
+                    .to({y: 19 }, 1000) 
+                    .easing(TWEEN.Easing.Quadratic.In) 
+                    .onUpdate(() => {
+                        trex.position.y = coordsDown.y
+                        
+                    })
+                    .onComplete(()=>{
+                        jumping = false
+                    })
+                jumpUp.chain(jumpDown)
+            }
+
+            function move(newDirection) {
+                if(direction === newDirection){
+                    return
+                }
+                if(newDirection === 'right'){
+                    trex.rotation.y = 0             
+                }
+                if(newDirection === 'left'){
+                    trex.rotation.y = -160     
+                    
+                }
+                moveFloor()
+                direction = newDirection
+            }
+
+            function moveFloor() {
+                floor.position.x  += direction == 'right' ?  0.1 : -0.1
+                requestAnimationFrame(moveFloor)
+            }
+
+            function handleWindowResize() {
+                window.addEventListener(
+                    "resize",
+                    () => {
+                        camera.aspect = window.innerWidth / window.innerHeight;
+                        camera.updateProjectionMatrix();
+
+                        renderer.setSize(window.innerWidth, window.innerHeight);
+                    },
+                    false
+                );
+            }
+            handleWindowResize();
 
             //创建dom
             function createInfoElement() {
@@ -84,7 +375,7 @@
                 document.body.appendChild(infoElement);
             }
             createInfoElement();
-            
+
             //相机
             function createCamera() {
                 camera = new THREE.PerspectiveCamera(
@@ -104,34 +395,26 @@
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setClearColor(0x7f7f7f);
                 renderer.outputEncoding = THREE.sRGBEncoding;
+                renderer.shadowMap.enabled = true;
                 document.body.appendChild(renderer.domElement);
             }
             createRenderer();
-            
-            function animate() {
-                requestAnimationFrame(animate);
 
-                const delta = clock.getDelta();
-                update(delta);
-
-                renderer.render(scene, camera);
-            }
-            animate();
-
-            // //加载地面
+            //加载地面
             function createFloor() {
-                const geometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+                const geometry = new THREE.PlaneGeometry(1000, 1000);
 
                 const material = new THREE.MeshStandardMaterial({
-                    color: 0xc4733b,
+                    color: "white",
                 });
 
                 floor = new THREE.Mesh(geometry, material);
-         
+
                 floor.material.side = THREE.DoubleSide;
                 floor.rotation.x = -Math.PI / 2;
-                floor.position.set(0,-10,0)
-                floor.castShadow = false;
+                floor.position.y = 0;
+                floor.castShadow = true;
+                //接收阴影
                 floor.receiveShadow = true;
 
                 scene.add(floor);
@@ -142,13 +425,8 @@
             function createLighting() {
                 directionalLight = new THREE.DirectionalLight(0xffffff, 1);
                 directionalLight.intensity = 2;
-                directionalLight.position.set(0, 10, 0);
-
-                const targetObject = new THREE.Object3D();
-                targetObject.position.set(0, 0, 0);
-                scene.add(targetObject);
-                directionalLight.target = targetObject;
-
+                directionalLight.position.set(100, 200, 0);
+                directionalLight.castShadow = true;
                 scene.add(directionalLight);
 
                 const light = new THREE.AmbientLight(0x7f7f7f); // soft white light
@@ -157,74 +435,27 @@
             }
             createLighting();
 
-            //加载模型
-            function load3DModels() {
-                //创建GLTF加载器
-                const loader = new THREE.GLTFLoader();
+            function initAxis() {
+                axis = new THREE.AxisHelper(5000);
+                scene.add(axis);
+            }
+            initAxis();
 
-                //加载人物模型
-                loader.load(
-                    "./models/user/scene.gltf",
-                    function (gltf) {
-                        trex = gltf.scene;
-                        gltf.scene.scale.set(0.1,0.1,0.1)
-                        gltf.scene.position.set(0,15,0)
-                        scene.add(trex);
-                        const mixer = new THREE.AnimationMixer(trex);
-                        const clip = gltf.animations[0]
-                        if(clip){
-                            // const skeletonHelper = new THREE.SkeletonHelper(trex);
-                            // scene.add(skeletonHelper);
-                            const action = mixer.clipAction(clip);
-                            action.play();                                    
-                        }
-                        mixers.push(mixer);
-                    },
-                    function (xhr) {
-                        console.log(
-                            (xhr.loaded / xhr.total) * 100 + "% loaded"
-                        );
-                    },
-                    function (error) {
-                        console.log("错误");
-                    }
+            //OrbitControls 相机控件
+            function initOrbit() {
+                var orbit = new THREE.OrbitControls(
+                    camera,
+                    renderer.domElement
                 );
+                orbit.target = new THREE.Vector3(0, 0, 0); // 设置中心点
+                orbit.minPolarAngle = 0; // 最小上下旋转角度
+                orbit.maxPolarAngle = Math.PI; // 最大上下旋转角度
+                orbit.minDistance = 140; // 距离中心点最小距离
+                orbit.maxDistance = 10000; // 距离中心点最大距离
+                orbit.zoomSpeed = 0.3; // 缩放速度
+                orbit.rotateSpeed = 0.3; // 旋转速度
             }
-            load3DModels();
-
-
-            function handleInput() {
-                const callback = () => {
-                    if (isGameOver) {
-                        restartGame();
-                        return;
-                    }
-
-                    jump = true;
-                };
-                
-
-                document.addEventListener("keydown", callback, false);
-                renderer.domElement.addEventListener("touchstart", callback);
-                renderer.domElement.addEventListener("click", callback);
-            }
-
-            handleInput();
-
-            function handleWindowResize() {
-                window.addEventListener(
-                    "resize",
-                    () => {
-                        camera.aspect = window.innerWidth / window.innerHeight;
-                        camera.updateProjectionMatrix();
-
-                        renderer.setSize(window.innerWidth, window.innerHeight);
-                    },
-                    false
-                );
-            }
-            handleWindowResize();
-
+            initOrbit();
 
             function gameOver() {
                 isGameOver = true;
@@ -235,36 +466,26 @@
             function restartGame() {
                 isGameOver = false;
                 score = 0;
-
-                cactusGroup.children.length = 0;
             }
 
-            function update(delta) {           
-                if (!trex) return;           
-                if (!floor) return;           
-                                           
+            function update(delta) {
+                if (!trex) return;
+                if (!floor) return;
+
                 for (const mixer of mixers) {
                     mixer.update(delta);
                 }
-                // 跳跃
-                if (jump) {
-                    jump = false;
-                    
-                    // 开始跳跃，当位置处于地面时
-                    if (trex.position.y == 9) {
-                        vel = TREX_JUMP_SPEED;
-                        trex.position.y = 9 +  vel * delta;
-                    }
-                }
-
-                if (trex.position.y > 9) {
-                    vel += GRAVITY * delta;
-                    trex.position.y += vel * delta;
-                } else {
-                    trex.position.y = 9;
-                }
-
+                TWEEN.update();
             }
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                delta = clock.getDelta();
+                update(delta);
+                renderer.render(scene, camera);
+            }
+            animate();
         </script>
     </body>
 </html>

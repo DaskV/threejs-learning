@@ -2,19 +2,17 @@
  * @Author: DaskV
  * @Date: 2021-09-14 14:47:26
  * @LastEditors: DaskV
- * @LastEditTime: 2021-09-14 14:49:25
+ * @LastEditTime: 2024-03-21 09:33:41
  * @Description: 
  */
 
 function xmlToJson(xml) {
-	
 	var obj = {};
- 
 	if (xml.nodeType == 1) { // element
 		if (xml.attributes.length > 0) {
 		obj["@attributes"] = {};
 			for (var j = 0; j < xml.attributes.length; j++) {
-				var attribute = xml.attributes.item(j);
+				var attribute = xml.attributes.item(j);			
 				obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
 			}
 		}
