@@ -2,7 +2,7 @@
  * @Author: DaskV
  * @Date: 2021-07-15 10:51:40
  * @LastEditors: DaskV
- * @LastEditTime: 2024-03-29 19:11:19
+ * @LastEditTime: 2024-04-12 15:08:54
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
                 height: 100vh;
                 background-color: #eeeeee;
             }
-            .btn{
+            .btn {
                 position: fixed;
                 right: 50%;
                 bottom: 0;
@@ -40,17 +40,15 @@
                 background: white;
             "
         ></div>
-        <button class="btn">切换</button>
-        <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r123/three.min.js"></script>
+        <button id="btn" class="btn">切换</button>
+        <script src="https://cdn.furnitureim.com/js/three.min.js"></script>
+        <script src="https://cdn.furnitureim.com/js/OrbitControls.js"></script>
         <script src="https://cdn.bootcdn.net/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
-        <script src="./OrbitControls.js"></script>
+
         <script src="./xmlTojson.js"></script>
         <script>
             //初始化threejs ， 和渲染器
             let renderer;
-            let axisX = new THREE.Vector3(1, 0, 0);
-            let axisY = new THREE.Vector3(0, 1, 0);
-            let axisZ = new THREE.Vector3(0, 0, 1);
             let infoBox = document.getElementById("infoBox");
             function initThree() {
                 width = document.getElementById("canvas-frame").clientWidth;
@@ -94,19 +92,24 @@
                 light.position.set(100, 100, 200); //光源方向
                 scene.add(light);
             }
-            //初始化物体
+            //创建多边体
             let cube;
-            function createCube(opt) {
+            function createCube(
+                opt,
+                parentNode,
+                addToScene = true,
+                transform = true
+            ) {
                 let geometry = new THREE.BoxGeometry(
                     opt.width,
-                    opt.height,
-                    opt.depth
+                    opt.depth,
+                    opt.height
                 );
 
                 geometry.translate(
                     opt.width / 2,
-                    opt.height / 2,
-                    opt.depth / 2
+                    opt.depth / 2,
+                    opt.height / 2
                 );
                 geometry.verticesNeedUpdate = true;
 
@@ -121,42 +124,295 @@
                 );
 
                 //纹理
-                let texture = ""          
-                if (opt.imagePath) {              
-                    texture = new THREE.TextureLoader().load(opt.imagePath);
-                    texture.wrapS = THREE.RepeatWrapping;
-                    texture.wrapT = THREE.RepeatWrapping;
-                    if (opt.rotate) {
-                        texture.center.set(0.5, 0.5);
-                        texture.rotation = Math.PI / 2;
-                    }
-                }
+                let texture = opt.imagePath
+                    ? createTexture(opt.imagePath, opt.rotate)
+                    : null;
 
-                
                 let material = new THREE.MeshBasicMaterial({
-                    transparent:  true,
+                    transparent: true,
                     color: "gray",
                     opacity: 0.3,
                 });
 
-
                 let material2 = new THREE.MeshBasicMaterial({
-                    map: opt.imagePath ? texture : undefined,
-                    transparent:  opt.imagePath ? false : true,
+                    map: texture,
+                    transparent: opt.imagePath ? false : true,
                     opacity: 0.6,
                 });
 
                 cube = new THREE.Mesh(geometry, material2);
                 cube.name = opt.name;
                 cube.UID = opt.id;
-                cube.position.x = opt.PX || 0;
-                cube.position.y = opt.PY || 0;
-                cube.position.z = opt.PZ || 0;
-                cube.rotation.x = opt.RX || 0;
-                cube.rotation.y = opt.RY || 0;
-                cube.rotation.z = opt.RZ || 0;
+                cube.materialImage = opt.imagePath;
+                cube.materialRotate = opt.rotate;
+                cube.position.x = transform ? opt.PX : 0;
+                cube.position.y = transform ? opt.PY : 0;
+                cube.position.z = transform ? opt.PZ : 0;
+                cube.rotation.x = transform ? opt.RX : 0;
+                cube.rotation.y = transform ? opt.RY : 0;
+                cube.rotation.z = transform ? opt.RZ : 0;
                 cube.add(wireframe);
-                scene.add(cube);
+                addToScene && parentNode.add(cube);
+                return cube;
+            }
+
+            // 创建异形体
+            function createIrregular(opt, parentNode) {
+                const dataList = opt.accurateData.reverse();
+                dataList.push(dataList[0]);
+                // 创建Shape
+                var IrregularShape = new THREE.Shape();
+                IrregularShape.moveTo(dataList[0].EndX, dataList[0].EndY);
+                dataList.forEach((v, i) => {
+                    let angle = Number(v.Angle);
+                    if (angle != 0) {
+                        let start = {
+                                x: Number(v.EndX),
+                                y: Number(v.EndY),
+                                angle: 0,
+                            },
+                            end = {
+                                x: Number(dataList[i + 1].EndX),
+                                y: Number(dataList[i + 1].EndY),
+                                angle: 0,
+                            };
+
+                        const { center, radius, startAngle, endAngle } =
+                            calculatePointsAndRadius(start, end, angle);
+                        start.angle = startAngle;
+                        end.angle = endAngle;
+                        IrregularShape.absarc(
+                            center.x,
+                            center.y,
+                            radius,
+                            degreesToRadians(start.angle),
+                            degreesToRadians(end.angle),
+                            angle > 0
+                        );
+                    } else {
+                        IrregularShape.lineTo(Number(v.EndX), Number(v.EndY));
+                    }
+                });
+
+                var extrudeSettings = {
+                    depth: opt.depth, // 定义扇形体的厚度
+                    bevelEnabled: false, // 关闭斜角
+                };
+
+                var IrregularGeometry = new THREE.ExtrudeGeometry(
+                    IrregularShape,
+                    extrudeSettings
+                );
+
+                //纹理
+                let texture = opt.imagePath
+                    ? createTexture(opt.imagePath, opt.rotate)
+                    : null;
+                if (texture) {
+                    texture.offset.set(0, 0.5);
+                    texture.repeat.set(0.01, 0.01);
+                }
+                var IrregularMaterial = new THREE.MeshBasicMaterial({
+                    map: texture,
+                    transparent: opt.imagePath ? false : true,
+                    opacity: 0.6,
+                });
+
+                // 线条
+                let edgesGeometry = new THREE.EdgesGeometry(IrregularGeometry);
+                let edgeMaterial = new THREE.LineBasicMaterial({
+                    color: 0x000000,
+                });
+                let wireframe = new THREE.LineSegments(
+                    edgesGeometry,
+                    edgeMaterial
+                );
+
+                var IrregularMesh = new THREE.Mesh(
+                    IrregularGeometry,
+                    IrregularMaterial
+                );
+
+             
+
+                IrregularMesh.name = opt.name;
+                IrregularMesh.UID = opt.id;
+                IrregularMesh.materialImage = opt.imagePath;
+                IrregularMesh.materialRotate = opt.rotate;
+                // IrregularMesh.add(wireframe);
+
+                // 还原异形到正形的默认位置
+                if(opt.width == opt.machiningData.height && opt.width != opt.height){
+                    IrregularMesh.rotateY(degreesToRadians(-90))
+                }
+                else {
+                    IrregularMesh.position.add(new THREE.Vector3(0, 0, opt.height));
+                }
+                IrregularMesh.rotateX(degreesToRadians(-90))
+                // 将调整位置后的异形重新包裹为一个空间体  
+                var container = new THREE.Object3D();
+                container.add(IrregularMesh);
+                // 根据参数调整实际位置
+                container.position.x = opt.PX;
+                container.position.y = opt.PY;
+                container.position.z = opt.PZ;
+                container.rotation.x = opt.RX;
+                container.rotation.y = opt.RY;
+                container.rotation.z = opt.RZ;     
+                parentNode.add(container)     
+                return container;
+            }
+
+            // 计算角度
+            function calculateAngle(center, start, end) {
+                // 计算偏移量
+                var dx = start.x - center.x;
+                var dy = start.y - center.y;
+
+                var dx2 = end.x - center.x;
+                var dy2 = end.y - center.y;
+
+                // 计算角度（以弧度为单位）
+                var startAngleRadians = Math.atan2(dy, dx);
+                var endAngleRadians = Math.atan2(dy2, dx2);
+
+                // 将弧度转换为角度
+                var startAngle = startAngleRadians * (180 / Math.PI);
+                var endAngle = endAngleRadians * (180 / Math.PI);
+
+                // 确保角度在 0 到 360 度之间
+                if (startAngle < 0) {
+                    startAngle += 0;
+                }
+
+                // 确保角度在 0 到 360 度之间
+                if (endAngle < 0) {
+                    endAngle += 0;
+                }
+
+                return { startAngle, endAngle };
+            }
+
+            // 获取圆心和半径
+            function calculatePointsAndRadius(start, end, angle) {
+                if (Math.abs(angle) == 180) {
+                    var dx = end.x - start.x;
+                    var dy = end.y - start.y;
+                    const center = {
+                        x: (start.x + end.x) / 2,
+                        y: (start.y + end.y) / 2,
+                    };
+                    const radius = Math.sqrt(dx * dx + dy * dy) / 2;
+                    const { startAngle, endAngle } = calculateAngle(
+                        center,
+                        start,
+                        end
+                    );
+                    return { center, radius, startAngle, endAngle };
+                } else {
+                    // 计算中点的坐标
+                    var midPoint = {
+                        x: (start.x + end.x) / 2,
+                        y: (start.y + end.y) / 2,
+                    };
+                    // 计算起始点到中点向量
+                    var startToMidpointVector = {
+                        x: midPoint.x - start.x,
+                        y: midPoint.y - start.y,
+                    };
+                    // 计算中心垂直线向量（向量逆时针旋转90度）
+                    var DC = {
+                        x: -startToMidpointVector.y,
+                        y: startToMidpointVector.x,
+                    };
+                    // 计算中心点的两个可能坐标
+                    var center1 = {
+                        x: midPoint.x + DC.x,
+                        y: midPoint.y + DC.y,
+                    };
+                    var center2 = {
+                        x: midPoint.x - DC.x,
+                        y: midPoint.y - DC.y,
+                    };
+                    // 计算半径长度
+                    var radius1 = Math.sqrt(
+                        Math.pow(center1.x - start.x, 2) +
+                            Math.pow(center1.y - start.y, 2)
+                    );
+                    var radius2 = Math.sqrt(
+                        Math.pow(center2.x - start.x, 2) +
+                            Math.pow(center2.y - start.y, 2)
+                    );
+
+                    const data = calculateAngle(center1, start, end);
+                    const data2 = calculateAngle(center2, start, end);
+                    const centerFind = findCenterForArc(
+                        start,
+                        end,
+                        angle,
+                        center1,
+                        center2
+                    );
+                    if (centerFind == center1) {
+                        return {
+                            center: center1,
+                            radius: radius1,
+                            startAngle: data.startAngle,
+                            endAngle: data.endAngle,
+                        };
+                    } else if (centerFind == center2) {
+                        return {
+                            center: center2,
+                            radius: radius2,
+                            startAngle: data2.startAngle,
+                            endAngle: data2.endAngle,
+                        };
+                    } else {
+                        throw "错误";
+                    }
+                }
+            }
+
+            // 找到最合理的圆心
+            function findCenterForArc(A, B, angle, center1, center2) {
+                // 向量AB
+                var AB = { x: B.x - A.x, y: B.y - A.y };
+
+                // 向量AC1和AC2
+                var AC1 = { x: center1.x - A.x, y: center1.y - A.y };
+                var AC2 = { x: center2.x - A.x, y: center2.y - A.y };
+
+                // 计算叉乘
+                var crossProduct1 = AB.x * AC1.y - AB.y * AC1.x;
+                var crossProduct2 = AB.x * AC2.y - AB.y * AC2.x;
+
+                if (
+                    (angle > 0 && crossProduct1 > 0) ||
+                    (angle < 0 && crossProduct2 > 0)
+                ) {
+                    // 从A到B画逆时针圆弧，
+                    return center2;
+                } else if (
+                    (angle > 0 && crossProduct1 < 0) ||
+                    (angle < 0 && crossProduct2 < 0)
+                ) {
+                    // 从A到B画顺时针圆弧，
+                    return center1;
+                } else {
+                    throw "错误，未找到接近的圆心";
+                }
+            }
+
+            // 创建纹理
+            function createTexture(imagePath, isRotate) {
+                var texture = new THREE.TextureLoader().load(imagePath);
+                texture.wrapS = THREE.RepeatWrapping;
+                texture.wrapT = THREE.RepeatWrapping;
+                if (isRotate) {
+                    texture.center.set(0.5, 0.5);
+                    texture.rotation = Math.PI / 2;
+                }
+                return texture;
             }
 
             //网格
@@ -226,169 +482,158 @@
 
             let arr = [];
             let panel = [];
-            async function loadXml(params) {
-                const res = await fetch("./source/data12.xml");
+            async function loadXml(url) {
+                const res = await fetch(url);
                 const xmlString = await res.text();
                 let XmlNode = new DOMParser().parseFromString(
                     xmlString,
                     "text/xml"
                 );
                 const data = xmlToJson(XmlNode);
-                const { Panels, Part } = data.Root.Cabinet;
-
-                panel = Panels.Panel.map((v) => {
-                    const data = v["@attributes"];
-                    return {
-                        id: data.ID,
-                        subId: data.ID.substring(
-                            data.ID.length - 3,
-                            data.ID.length
-                        ),
-                        rotate: data.Grain == "H" ? true : false,
-                        uid: data.uid,
-                    };
-                });
-                Part["@attributes"].sizeTransform = "0,0,0,0,0,0,0,0,0";
-                loadPart(Part, 0);
-                arr.forEach((v) => {
-                    renderPart(v);
-                });
-                console.log(arr.map(v=>v['@attributes'].ID));
-                console.log(panel.map(v=>v.id))
+                if (data.Root.Cabinet instanceof Array) {
+                    console.error("Cabinet is mulitple");
+                } else {
+                    let { Panels, Part } = data.Root.Cabinet;
+                    if(!Panels.Panel){
+                        return
+                    }
+                    if (!(Panels.Panel instanceof Array)) {
+                        Panels.Panel = [Panels.Panel];
+                    }
+                    
+                    panel = Panels.Panel.map((v) => {
+                        const data = v["@attributes"];
+                        const isAccurate = Number(data.IsAccurate) == 1;
+                        let accurateData = []
+                        let machiningData = {}
+                        if(v.Machines.Machining){
+                            const { Length, Width, Thickness } = v["@attributes"]
+                            machiningData = { width: Number(Length), height:Number(Width), depth: Number(Thickness) }
+                            if(v.Machines.Machining["@attributes"] && v.Machines.Machining["@attributes"].Type == 3){
+                                const obj = v.Machines.Machining
+                                accurateData = obj.Lines.Line instanceof Array ? obj.Lines.Line.map((d) => d["@attributes"]) : obj.Lines.Line["@attributes"] 
+                            }
+                            else {
+                                const obj = v.Machines.Machining.find(v=>v["@attributes"].Type == 3)
+                                
+                                if(obj && obj.Lines){
+                                    accurateData = obj.Lines.Line instanceof Array ? obj.Lines.Line.map((d) => d["@attributes"]) : obj.Lines.Line["@attributes"] 
+                                }
+                            }
+                        }
+                        return {
+                            id: data.ID,
+                            subId: data.ID.substring(
+                                data.ID.length - 3,
+                                data.ID.length
+                            ),
+                            rotate: data.Grain == "H" ? true : false,
+                            uid: data.uid,
+                            isAccurate,
+                            accurateData: isAccurate ? accurateData : [],
+                            machiningData
+                        };
+                    });
+                    Part = resetData(Part);
+                    const rootNode = renderPart(Part, null, true);
+                    loadPart(Part, rootNode);
+                }
+                // console.log(arr.map((v) => v["@attributes"].ID));
+                // console.log(panel.map((v) => v.id));
             }
 
-            function loadPart(
-                data,
-                index = 0,
-                accrualData = [0, 0, 0, 0, 0, 0, 0, 0, 0],
-                parentInfo = []
-            ) {
-                let info = data["@attributes"].sizeTransform
+            function resetData(Part, resetIndex = [0, 1, 2]) {
+                let resetData = Part["@attributes"].sizeTransform
                     .split(",")
                     .map((v) => Number(v));
-                
+                resetIndex.forEach((index) => {
+                    resetData[index] = 0;
+                });
+                Part["@attributes"].sizeTransform = resetData.join(",");
+                return Part;
+            }
 
-                const isSame = compareToParent(info, parentInfo)
-                if(isSame){
-                    info = accrualData
-                }
-                else {
-                    info.forEach((v, i) => {
-                    info[i] += accrualData[i];
-                })
+            function createObject3D(opt) {
+                const object3D = new THREE.Object3D();
+                object3D.position.x = opt.PX;
+                object3D.position.y = opt.PY;
+                object3D.position.z = opt.PZ;
+                object3D.rotation.x = opt.RX;
+                object3D.rotation.y = opt.RY;
+                object3D.rotation.z = opt.RZ;
+                return object3D;
+            }
 
-                }
-                if (index == 0) {
+            function createParentObject(opt, parentNode = null) {
+                const object3D = createObject3D(opt);
+                parentNode ? parentNode.add(object3D) : scene.add(object3D);
+                return object3D;
+            }
+
+            function loadPart(data, parentNode, parentData = null) {
+                if (data.Part) {
+                    const node = renderPart(data, parentNode, true);
                     if (data.Part.constructor === Array) {
                         data.Part.forEach((v) => {
-                            loadPart(v, index + 1, info);
+                            loadPart(v, node, data);
                         });
                     } else {
-                        let obj = {
-                            id: "",
-                            rotate: false,
-                        };
-                        obj = getTextureData(data, obj);
-                        data["@attributes"].ID = obj.id;
-                        data.Values["@attributes"].PX = info[0] + Number(data.Part['@attributes'].PX);
-                        data.Values["@attributes"].PY = info[2] + Number(data.Part['@attributes'].PY);
-                        data.Values["@attributes"].PZ = info[1] + Number(data.Part['@attributes'].PZ);
-                        data.Values["@attributes"].RX = info[3] + Number(data.Part['@attributes'].RX);
-                        data.Values["@attributes"].RY = info[5] + Number(data.Part['@attributes'].RY);
-                        data.Values["@attributes"].RZ = info[4] + Number(data.Part['@attributes'].RZ);
-                        data["@attributes"].bomId = obj.id;
-                        data["@attributes"].rotate = obj.rotate;
-                        arr.push(data);
+                        loadPart(data.Part, node, data);
                     }
-                } else if (index == 1) {
-                    if (data["@attributes"].type == "unit") {
-                        loadPart(data, 0, [0, 0, 0, 0, 0, 0, 0, 0, 0]);
-                    } else if (!data.Part) {
-                        let obj = {
-                            id: "",
-                            rotate: false,
-                        };
-                        obj = getTextureData(data, obj);
-                        data["@attributes"].ID = obj.id;
-                        data.Values["@attributes"].PX = info[0];
-                        data.Values["@attributes"].PY = info[2];
-                        data.Values["@attributes"].PZ = info[1];
-                        data.Values["@attributes"].RX = info[3];
-                        data.Values["@attributes"].RY = info[5];
-                        data.Values["@attributes"].RZ = info[4];
-                        data["@attributes"].bomId = obj.id;
-                        data["@attributes"].rotate = obj.rotate;
-                        arr.push(data);
-                    } else if (data.Part.constructor !== Array) {
-                        let obj = {
-                            id: "",
-                            rotate: false,
-                        };
-                        obj = getTextureData(data, obj);
-                        data["@attributes"].ID = obj.id;
-                        data.Values["@attributes"].PX = info[0];
-                        data.Values["@attributes"].PY = info[2];
-                        data.Values["@attributes"].PZ = info[1];
-                        data.Values["@attributes"].RX = info[3];
-                        data.Values["@attributes"].RY = info[5];
-                        data.Values["@attributes"].RZ = info[4];
-                        data["@attributes"].bomId = obj.id;
-                        data["@attributes"].rotate = obj.rotate;
-                        arr.push(data);
-                    } else if (data.Part.constructor === Array) {
-                        data.Part.forEach((v) => {
-                            loadPart(v, index + 1, info);
-                        });
-                    }
-                } 
-                else if (index > 1) {
+                } else {
                     let obj = {
                         id: "",
                         rotate: false,
                     };
-                    if (!data.Part) {
-                        let obj = {
-                            id: "",
-                            rotate: false,
-                        };
-                        obj = getTextureData(data, obj);
-                        if(obj.id){
-                            data["@attributes"].ID = obj.id;
-                            data.Values["@attributes"].PX = info[0];
-                            data.Values["@attributes"].PY = info[2];
-                            data.Values["@attributes"].PZ = info[1];
-                            data.Values["@attributes"].RX = info[3];
-                            data.Values["@attributes"].RY = info[5];
-                            data.Values["@attributes"].RZ = info[4];
-                            data["@attributes"].bomId = obj.id;
-                            data["@attributes"].rotate = obj.rotate;
-                            arr.push(data);
+                    obj = getTextureData(data, obj);
+                    if (compareToParent(data, parentData)) {
+                        data = resetData(data);
+                    }
+                    if (parentData.ValuesExpression.MiddleValuesExpression) {
+                        const rotation =
+                            parentData.ValuesExpression.MiddleValuesExpression[
+                                "@attributes"
+                            ].rotation;
+                        const angle = rotation.split("*")[1].split("/")[0];
+                        if (!isNaN(Number(angle))) {
+                            const sizeTransform = data[
+                                "@attributes"
+                            ].sizeTransform
+                                .split(",")
+                                .map((v) => Number(v));
+                            let RY = Number(`${sizeTransform[4]}`),
+                                RZ = Number(`${sizeTransform[5]}`);
+                            sizeTransform[4] = RZ;
+                            sizeTransform[5] = RY;
+                            data["@attributes"].sizeTransform =
+                                sizeTransform.join(",");
                         }
-                    } else if (data.Part.constructor !== Array) {
-                        let obj = {
-                            id: "",
-                            rotate: false,
-                        };
-                        obj = getTextureData(data, obj);
-                        if(obj.id){                                          
-                            data["@attributes"].ID = obj.id;
-                            data.Values["@attributes"].PX = info[0];
-                            data.Values["@attributes"].PY = info[2];
-                            data.Values["@attributes"].PZ = info[1];
-                            data.Values["@attributes"].RX = info[3];
-                            data.Values["@attributes"].RY = info[5];
-                            data.Values["@attributes"].RZ = info[4];
-                            data["@attributes"].bomId = obj.id;
-                            data["@attributes"].rotate = obj.rotate;
-                            arr.push(data);
-                        }              
-                    } else if (data.Part.constructor === Array) {
-                        const parentInfo = data["@attributes"].sizeTransform.split(",").map((v) => Number(v));
-                        data.Part.forEach((v) => {
-                            loadPart(v, index + 1, info, parentInfo);
-                        });
+                    }
+                    if (obj.id) {
+                        data["@attributes"].bomId = obj.id;
+                        data["@attributes"].rotate = obj.rotate;
+                        data["@attributes"].isAccurate = obj.isAccurate;
+                        data["@attributes"].accurateData = obj.accurateData;
+                        data["@attributes"].machiningData = obj.machiningData
+                        renderPart(data, parentNode, false);
                     }
                 }
+            }
+
+            function compareToParent(data, parentData) {
+                const dataInfo = data["@attributes"].sizeTransform
+                    .split(",")
+                    .map((v) => Number(v));
+                const parentDataInfo = parentData["@attributes"].sizeTransform
+                    .split(",")
+                    .map((v) => Number(v));
+                const PX = dataInfo[0] === parentDataInfo[0];
+                const PY = dataInfo[2] === parentDataInfo[2];
+                const PZ = dataInfo[1] === parentDataInfo[1];
+                const RX = dataInfo[3] === parentDataInfo[3];
+                const RY = dataInfo[5] === parentDataInfo[5];
+                const RZ = dataInfo[4] === parentDataInfo[4];
+                return PX && PY && PZ && RX && RY && RZ;
             }
 
             function getTextureData(data, obj) {
@@ -413,40 +658,45 @@
                 return obj;
             }
 
-
-            function compareToParent(data, parentData){                       
-                const PX = data[0] ===  parentData[0] 
-                const PY = data[2] ===  parentData[2] 
-                const PZ = data[1] ===  parentData[1] 
-                const RX = data[3] ===  parentData[3] 
-                const RY = data[5] ===  parentData[5] 
-                const RZ = data[4] ===  parentData[4]
-                return PX && PY && PZ && RX && RY && RZ
-            }
-
-            function renderPart(opt) {
+            function renderPart(opt, parentNode = null, isNode = false) {
+                const sizeTransform = opt["@attributes"].sizeTransform
+                    .split(",")
+                    .map((v) => Number(v));
                 const data = {
                     id: opt["@attributes"].UID,
                     name: opt["@attributes"].name,
                     imagePath: opt["@attributes"].imagePath,
-                    width: Number(opt.Values["@attributes"].W),
-                    height: Number(opt.Values["@attributes"].H),
-                    depth: Number(opt.Values["@attributes"].D),
-                    PX: Number(opt.Values["@attributes"].PX),
-                    PY: Number(opt.Values["@attributes"].PY),
-                    PZ: -Number(opt.Values["@attributes"].PZ),
-                    RX: degreesToRadians(Number(opt.Values["@attributes"].RX)),
-                    RY: degreesToRadians(Number(opt.Values["@attributes"].RY)),
-                    RZ: -degreesToRadians(Number(opt.Values["@attributes"].RZ)),
+                    width: Number(opt.Values["@attributes"].W),       
+                    height: Number(opt.Values["@attributes"].D),
+                    depth: Number(opt.Values["@attributes"].H),
+                    PX: sizeTransform[0],
+                    PY: sizeTransform[2],
+                    PZ: -sizeTransform[1],
+                    RX: degreesToRadians(sizeTransform[3]),
+                    RY: degreesToRadians(sizeTransform[5]),
+                    RZ: -degreesToRadians(sizeTransform[4]),
                     rotate: opt["@attributes"].rotate,
+                    isAccurate: opt["@attributes"].isAccurate,
+                    accurateData: opt["@attributes"].accurateData,
+                    machiningData: opt["@attributes"].machiningData
                 };
-                createCube(data);
+                if (isNode) {
+                    return createParentObject(data, parentNode);
+                } else {
+                    arr.push(opt);
+                    // 异形
+                    if (data.isAccurate) {
+                        return createIrregular(data, parentNode);
+                    } else {
+                        return createCube(data, parentNode);
+                    }
+                }
             }
 
             //光投射器
             let raycaster;
             let rayMouse;
-            function initRaycaster(params) {
+            function initRaycaster() {
                 raycaster = new THREE.Raycaster();
                 rayMouse = new THREE.Vector2(); //二维向量
                 document.addEventListener(
@@ -474,7 +724,7 @@
                     );
                     if (index > -1) {
                         cube.hasChecked = false;
-                        cube.material.color.set('gray');
+                        cube.material.color.set("#ffffff");
                         selectdObjList.splice(index, 1);
                     } else {
                         if (
@@ -488,7 +738,7 @@
                         selectdObjList.push(cube.uuid);
                     }
 
-                    console.log(cube)
+                    console.log(cube);
                     infoBox.innerHTML = cube.name;
                     infoBox.style.display = "block";
                     infoBox.style.left = `${event.clientX}px`;
@@ -498,28 +748,64 @@
                 }
             }
 
-            // 创建一个函数来生成对话框的Canvas
-            function createDialogCanvas() {
-                let canvas = document.createElement("canvas");
-                let ctx = canvas.getContext("2d");
-                canvas.width = 200; // 设置对话框宽度
-                canvas.height = 100; // 设置对话框高度
-                ctx.fillStyle = "rgba(0,0,0,0.5)"; // 设置对话框背景颜色和透明度
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = "black"; // 设置对话框文字颜色
-                ctx.font = "20px Arial";
-                ctx.fillText("Hello, World!", 20, 50); // 设置对话框内容
-                return canvas;
-            }
-
             // 将角度转换为弧度
             function degreesToRadians(degrees) {
                 return (degrees * Math.PI) / 180;
             }
+            // 弧度转角度
+            function radiansToDegrees(radians) {
+                return radians * (180 / Math.PI);
+            }
+
+            let materialType = "material";
+            async function switchMaterial() {
+                scene.traverse(function (child) {
+                    if (child.name) {
+                        if (materialType == "material") {
+                            if (child.material) {
+                                if (child.material.map) {
+                                    child.material.map = null;
+                                }
+                                child.material.transparent = true;
+                                child.material.opacity = 0.5;
+                                if (child.hasChecked) {
+                                    child.material.color.set("blue");
+                                } else {
+                                    child.material.color.set("gray");
+                                }
+                                child.material.needsUpdate = true;
+                            }
+                        } else {
+                            const texture = child.materialImage
+                                ? createTexture(
+                                      child.materialImage,
+                                      child.materialRotate
+                                  )
+                                : null;
+                            if (child.material) {
+                                child.material.map = texture;
+                                child.material.transparent = texture
+                                    ? false
+                                    : true;
+                                child.material.opacity = 0.6;
+                                if (child.hasChecked) {
+                                    child.material.color.set("blue");
+                                } else {
+                                    child.material.color.set("#ffffff");
+                                }
+                                child.material.needsUpdate = true;
+                            }
+                        }
+                    }
+                });
+                materialType =
+                    materialType == "transparent" ? "material" : "transparent";
+            }
 
             window.onload = function () {
                 threeStart();
-                loadXml();
+                loadXml("./source/data28.xml");
+                document.getElementById("btn").onclick = switchMaterial;
             };
         </script>
     </body>

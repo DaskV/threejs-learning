@@ -1,0 +1,43 @@
+<Root ApplicationVersion="5.0" Application="WoodMachine" ExportTime="Wed Apr 10 2024 16:44:31 GMT+0800 (中国标准时间)" version="5.0.0.102224.3" MaterialManagementVersion="1.0">
+    <Cabinet uid="34" Name="无侧槽墙板_1" Id="223778106" Series="" Length="450" Width="18" Height="700" CabinetType="unit" SubType="" Material="丁香枫木—哑光" BasicMaterial="" Model="" CraftMark="" PartNumber="YZSB-025" GroupName="" RoomName="未命名-衣柜" CabinetNo="2" OrderDate="2024-04-10" CustomId="" BatchNo="" ThinEdgeValue="1" ThickEdgeValue="1" OrderNo="" AlongSys="" Designer="" designerName="" designerUserRealName="" designerMobile="" designerPhone="" designerCode="">
+      <ProduceValues/>
+      <Panels>
+        <Panel Grain="H" ProduceNumber="" IsProduce="true" CraftMark="" Length="700" Width="450" Thickness="18" ID="001" CabinetPanelNo="2-001" Name="无侧槽墙板" StandardCategory="FENGB" PartNumber="GTB" CabinetType="cabinet_board" SubType="standard_board" Material="丁香枫木—哑光" BasicMaterial="" MaterialId="223593332" BaseMaterialCategoryId="" MaterialCategoryId="112055216" Model="" uid="35" Type="1" PkgNo="" Face5ID="" Face6ID="" clerk="" edgeMaterial="丁香枫木—哑光" IsAccurate="1" MachiningPoint="5" ProdutionNo="" ProductionName="" DoorDirection="" Category="Board" EdgeGroupType="2" EdgeGroupTypeName="四薄" thickLength="0" thinLength="2556.858" customLength="0" ActualLength="698" ActualWidth="448" HasHorizontalHole="0" Series="" isOutsourcing="false" BasicMaterialCode="" BasicMaterialMCode="" BasicMaterialColorNumber="" BasicMaterialColorCode="" EdgeThickCodeNo="" EdgeThickName="" EdgeThickMaterialCode="" EdgeThickWidth="" EdgeThickThickness="" EdgeThickType="" EdgeThinName="" EdgeThinType="" EdgeThinThickness="" EdgeThinWidth="" EdgeThinCodeNo="" EdgeThinMaterialCode="" frontFace="5" isDoubleMaterial="1" backMaterial="" backBasicMaterialCode="" backMaterialId="" backMaterialCategoryId="" backBasicMaterialColorNumber="" backBasicMaterialColorCode="" BasicMaterialXCode="" isDoubleEdge="1" thinEdgeMaterial="" thickEdgeMaterial="" InnerthickLength="0" InnerthinLength="0" InnercustomLength="0">
+          <EdgeGroup X1="0" Y1="0">
+            <Edge Face="1" LindID="1" Thickness="1" EdgeType="B" Length="450" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+            <Edge Face="2" LindID="2" Thickness="1" EdgeType="B" Length="700" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+            <Edge Face="3" LindID="3" Thickness="1" EdgeType="B" Length="706.858" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+            <Edge Face="4" LindID="4" Thickness="1" EdgeType="B" Length="700" Pre_Milling="0" X="0" Y="0" CentralAngle="0"/>
+          </EdgeGroup>
+          <InnerEdgeGroup/>
+          <Machines>
+            <Machining ID="000001" Type="3" IsGenCode="2" Face="5" X="0.00" Y="450.00" Depth="18.1" ToolName="开料铣型刀" ToolMark="" ToolOffset="右" EdgeABThickness="1" GrooveType="0">
+              <Lines>
+                <Line LineID="1" EndX="0.00" EndY="0.00" Angle="0"/>
+                <Line LineID="2" EndX="700.00" EndY="0.00" Angle="0"/>
+                <Line LineID="3" EndX="700.00" EndY="450.00" Angle="-180"/>
+                <Line LineID="4" EndX="0.00" EndY="450.00" Angle="0"/>
+              </Lines>
+            </Machining>
+          </Machines>
+          <ProduceValues/>
+          <Panels/>
+        </Panel>
+      </Panels>
+      <Metals/>
+      <Hardwares/>
+      <Part UID="34" name="无侧槽墙板" subType="" PartNumber="YZSB-025" type="unit" ID="000" sizeTransform="-7291.68,3770,500,0,0,0,450,18,700" materialId="223593332" imagePath="https://img3.admin.3vjia.com//UpFile/C00007003/PMC/DesignMaterial/202011/951b1cc5627a441cab8dec3171712e1c/丁香枫木1.1.jpg" BasicMaterial="" Material="丁香枫木—哑光" materialImgId="223593332" styleMaterialId="223778106">
+        <Values W="450" D="18" H="700" PX="-7291.680000000001" PY="3770" PZ="500" RX="0" RY="0" RZ="0" BLM="0" BRM="0" BUM="0" BDM="0" BFM="0" BBM="0" GTBH="18" BCLX="2730" HQCCWZ="无" HQCCK="6" HQCCS="6" HQCCJH="6" RWALL="500" LWALL="500" rotation="1.570795"/>
+        <ValuesExpression W="450" D="18" H="700" PX="-7291.680000000001" PY="-3770" PZ="500" RX="0" RY="0" RZ="0" GTBH="18" BCLX="2730" HQCCWZ="&quot;无&quot;" HQCCK="6" HQCCS="6" HQCCJH="6" BLM="0" BRM="0" BUM="0" BDM="0" BFM="0" BBM="0">
+          <MiddleValuesExpression RWALL="500+0" LWALL="500+0" rotation="3.14159*90/180"/>
+        </ValuesExpression>
+        <Part UID="35" name="无侧槽墙板" subType="standard_board" PartNumber="GTB" type="cabinet_board" isSplit="false" ID="001" sizeTransform="0,0,0,0,-90,90,700,450,18" materialId="223593332" imagePath="https://img3.admin.3vjia.com//UpFile/C00007003/PMC/DesignMaterial/202011/951b1cc5627a441cab8dec3171712e1c/丁香枫木1.1.jpg" BasicMaterial="" Material="丁香枫木—哑光" materialImgId="223593332" styleMaterialId="223778921" isDoubleMaterial="1" isDoubleEdge="1" backMaterial="" backMaterialId="">
+          <Values W="700" D="450" H="18" PX="0" PY="0" PZ="0" RX="0" RY="-90" RZ="90" BLM="0" BRM="450" BUM="700" BDM="0" BFM="18" BBM="0"/>
+          <ValuesExpression W="H" D="W" H="D" PX="0" PY="0" PZ="0" RX="0" RY="-90" RZ="90" BLM="0" BRM="450" BUM="700" BDM="0" BFM="18" BBM="0"/>
+        </Part>
+      </Part>
+    </Cabinet>
+
+    <tables/>
+    <baseLine/>
+</Root>

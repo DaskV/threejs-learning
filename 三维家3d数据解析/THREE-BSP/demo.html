@@ -1,0 +1,84 @@
+<!--
+ * @Author: DaskV
+ * @Date: 2024-04-09 18:27:44
+ * @LastEditors: DaskV
+ * @LastEditTime: 2024-04-09 18:32:15
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="../../three.min.js"></script>
+        <script src="https://cdn.furnitureim.com/js/OrbitControls.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+        <script src="./bsp-lib.js"></script>
+        <script>
+             // 创建场景
+             const scene = new THREE.Scene();
+            // 渲染场景
+            const width = document.getElementById("canvas-frame").clientWidth;
+            const height = document.getElementById("canvas-frame").clientHeight;
+            const renderer = new THREE.WebGLRenderer({
+                antialias: true,
+            });
+            renderer.setSize(width, height);
+            document
+                .getElementById("canvas-frame")
+                .appendChild(renderer.domElement);
+            renderer.setClearColor(0xffffff, 1.0);
+            const camera = new THREE.PerspectiveCamera(
+                75,
+                width / height,
+                0.1,
+                1000
+            );
+            camera.position.z = 300;
+            camera.position.z = 300;
+
+            let axis = new THREE.AxesHelper(10000);
+            scene.add(axis);
+
+            
+            // 使用 ThreeBSP 进行减法操作
+            var geometry = new THREE.BoxGeometry(400, 400, 18);
+            var material = new THREE.MeshBasicMaterial({
+                color: "gray",
+            })
+            var mesh = new THREE.Mesh(geometry, material)
+            var fanShape = new THREE.Shape();
+            fanShape.moveTo(0, 0);
+            fanShape.lineTo(0, 70);
+            fanShape.moveTo(30, 70); // 圆弧起点
+            fanShape.absarc(30, 70, 30, 0, (90 * Math.PI) / 180, true); // 以原点为中心创建扇形
+            fanShape.lineTo(100, 100);
+            fanShape.lineTo(100, 0);
+            fanShape.closePath();
+            var fanMesh = new THREE.Mesh(fanGeometry, fanMaterial);
+            var extrudeSettings = {
+                depth: 18, // 定义厚度
+                bevelEnabled: false, // 关闭斜角
+            };
+
+            var fanGeometry = new THREE.ExtrudeGeometry(
+                fanShape,
+                extrudeSettings
+            );
+            var meshBSP = new ThreeBSP(mesh);
+            var fanBSP = new ThreeBSP(fanMesh);
+            var resultBSP2 = meshBSP.subtract(fanBSP);
+            // 将结果转换回 Three.js 对象
+            var resultGeometry = resultBSP2.toGeometry();
+            var resultMaterial = new THREE.MeshBasicMaterial({
+                color: "gray",
+            });
+            var resultMesh = new THREE.Mesh(resultGeometry, resultMaterial);
+            resultMesh.add(wireframe);
+            scene.add(resultMesh);
+        </script>
+    </body>
+</html>
